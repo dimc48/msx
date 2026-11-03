@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg-ext" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a3412"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg-ext)"/>
+  <rect x="6" y="6" width="108" height="108" rx="18" fill="none" stroke="#fed7aa" stroke-width="2"/>
+  <text x="60" y="44" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">RUSSIAN</text>
+  <text x="60" y="68" font-family="'Impact', 'Arial Black', sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">EXTREME</text>
+  <rect x="25" y="78" width="70" height="22" rx="11" fill="#431407"/>
+  <text x="60" y="93" font-family="'Arial Black', sans-serif" font-size="11" font-weight="900" fill="#fb923c" text-anchor="middle" letter-spacing="1">ULTRA 2K</text>
+</svg>

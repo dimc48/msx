@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="referrer" content="no-referrer">
+    <title>FootDroid TV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/hls.min.js"></script>
+</head>
+<body>
+    <div id="app" class="tv-container">
+        <!-- Top Navigation Bar -->
+        <header class="tv-header">
+            <div class="logo-area">
+                <span class="logo-icon">⚽</span>
+                <span class="logo-text">Foot<span class="highlight">Droid</span></span>
+                <span class="tv-badge">TV</span>
+            </div>
+
+            <nav class="categories-nav" id="categoriesNav">
+                <button class="nav-btn active focusable" data-cat="live" tabindex="0">
+                    <span class="live-indicator"></span>В ЭФИРЕ
+                </button>
+                <button class="nav-btn focusable" data-cat="football" tabindex="0">ФУТБОЛ</button>
+                <button class="nav-btn focusable" data-cat="hockey" tabindex="0">ХОККЕЙ</button>
+                <button class="nav-btn focusable" data-cat="basketball" tabindex="0">БАСКЕТБОЛ</button>
+                <button class="nav-btn focusable" data-cat="mma" tabindex="0">UFC / MMA</button>
+                <button class="nav-btn focusable" data-cat="channels" tabindex="0">СПОРТ ТВ 24/7</button>
+            </nav>
+
+            <div class="header-info">
+                <span id="clock" class="digital-clock">00:00</span>
+            </div>
+        </header>
+
+        <!-- Main Content Grid Area -->
+        <main class="content-viewport" id="contentViewport">
+            <div class="section-title-bar">
+                <div class="title-left">
+                    <h2 id="sectionTitle">🔴 Прямые трансляции в эфире</h2>
+                    <span id="matchCounter" class="match-count-badge">Загрузка...</span>
+                </div>
+                <div id="refreshHint" class="refresh-hint">Автообновление потоков Full HD</div>
+            </div>
+
+            <div class="cards-grid" id="cardsGrid">
+                <!-- Dynamically populated by app.js -->
+            </div>
+        </main>
+
+        <!-- Fullscreen Video Player Modal -->
+        <div id="playerModal" class="player-modal hidden">
+            <video id="tvVideo" class="tv-video" playsinline></video>
+            
+            <div id="playerOverlay" class="player-overlay">
+                <div class="player-header">
+                    <div class="player-match-info">
+                        <span id="playerLeague" class="player-league-badge">ЛИГА</span>
+                        <h1 id="playerTitle" class="player-title">Матч</h1>
+                        <div id="playerMatchMeta" class="player-match-meta"></div>
+                    </div>
+                    <div class="player-status-badges">
+                        <span id="playerQualityBadge" class="player-quality-pill">⚡ 1080p Full HD</span>
+                        <div class="player-status-badge">
+                            <span class="live-indicator"></span> ПРЯМОЙ ЭФИР
+                        </div>
+                    </div>
+                </div>
+
+                <div class="player-controls-bottom">
+                    <div class="server-selectors-wrapper">
+                        <span class="servers-label">ЗЕРКАЛА ТРАНСЛЯЦИИ:</span>
+                        <div class="server-selectors" id="serverButtons">
+                            <!-- Dynamic server buttons -->
+                        </div>
+                    </div>
+                    <div class="player-hints">
+                        <span class="hint-item"><kbd>OK</kbd> Пауза / Пуск</span>
+                        <span class="hint-item"><kbd>◀ ▶</kbd> Сменить зеркало</span>
+                        <span class="hint-item"><kbd>НАЗАД</kbd> Закрыть плеер</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buffering / Loading Indicator -->
+            <div id="playerLoader" class="player-loader hidden">
+                <div class="spinner"></div>
+                <div id="loaderText" class="loader-text">Подключение к трансляции Full HD...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

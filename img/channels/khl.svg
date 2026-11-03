@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg-khl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a8a"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg-khl)"/>
+  <polygon points="60,16 94,36 94,84 60,104 26,84 26,36" fill="none" stroke="#38bdf8" stroke-width="3"/>
+  <text x="60" y="58" font-family="'Impact', 'Arial Black', sans-serif" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">КХЛ</text>
+  <text x="60" y="82" font-family="'Arial Black', sans-serif" font-size="14" font-weight="900" fill="#facc15" text-anchor="middle" letter-spacing="2">PRIME HD</text>
+</svg>

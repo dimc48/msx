@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <circle cx="50" cy="50" r="46" fill="#18181b" stroke="#e11d48" stroke-width="3"/>
+  <path d="M50 22 C43 22 38 27 38 34 C38 42 43 47 50 47 C57 47 62 42 62 34 C62 27 57 22 50 22 Z M32 68 C32 55 40 51 50 51 C60 51 68 55 68 68 Z" fill="#fda4af"/>
+  <rect x="20" y="72" width="60" height="18" rx="9" fill="#e11d48"/>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">PITBULL 25-13</text>
+</svg>

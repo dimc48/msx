@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg-bein" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg-bein)"/>
+  <rect x="6" y="6" width="108" height="108" rx="18" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+  <text x="60" y="48" font-family="'Arial Black', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">beIN</text>
+  <rect x="15" y="58" width="90" height="22" rx="11" fill="#3b0764"/>
+  <text x="60" y="74" font-family="'Arial', sans-serif" font-size="12" font-weight="900" fill="#e9d5ff" text-anchor="middle" letter-spacing="2">SPORTS</text>
+  <text x="60" y="101" font-family="'Arial Black', sans-serif" font-size="13" font-weight="900" fill="#facc15" text-anchor="middle" letter-spacing="2">XTRA HD</text>
+</svg>
