@@ -1,7 +1,7 @@
 {
   "name": "FootDroid & Media Portal",
   "version": "1.2.0",
-  "parameter": "menu:start.json",
+  "parameter": "menu:https://dimc48.github.io/msx/start.json",
   "menu": [
     {
       "label": "КИНО И ПРИЛОЖЕНИЯ",
