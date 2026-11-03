@@ -69,10 +69,14 @@
                 "icon": "theaters",
                 "color": "#b45309",
                 "action": "link:https://rezka.ag"
-              },
+              }
+            ]
+          },
+          {
+            "items": [
               {
                 "type": "default",
-                "layout": "0,6,4,3",
+                "layout": "0,0,4,3",
                 "title": "KinoPub (Кинопаб)",
                 "headline": "Премиум кинотеатр",
                 "text": "Фильмы и сериалы в оригинале и дубляже до 4K Dolby Vision",
@@ -82,7 +86,7 @@
               },
               {
                 "type": "default",
-                "layout": "4,6,4,3",
+                "layout": "4,0,4,3",
                 "title": "TorrServe Web",
                 "headline": "Торрент-сервер",
                 "text": "Веб-интерфейс для воспроизведения торрентов без скачивания",
@@ -92,7 +96,7 @@
               },
               {
                 "type": "default",
-                "layout": "8,6,4,3",
+                "layout": "8,0,4,3",
                 "title": "FootDroid Web",
                 "headline": "Веб-приложение FootDroid",
                 "text": "Оригинальный интерфейс с календарем игр, счетом матчей и ТВ",
@@ -183,10 +187,14 @@
                 "text": "Теннис ATP/WTA, Бундеслига, Евролига и автогонки",
                 "color": "#15803d",
                 "action": "video:http://stream.mcquack.net/235/index.m3u8"
-              },
+              }
+            ]
+          },
+          {
+            "items": [
               {
                 "type": "default",
-                "layout": "0,6,3,3",
+                "layout": "0,0,3,3",
                 "title": "KHL Prime HD",
                 "headline": "Full HD 1080p / 50 FPS",
                 "text": "Континентальная Хоккейная Лига: матчи дня, Кубок Гагарина",
@@ -195,7 +203,7 @@
               },
               {
                 "type": "default",
-                "layout": "3,6,3,3",
+                "layout": "3,0,3,3",
                 "title": "Беларусь 5 HD",
                 "headline": "Full HD 1080p",
                 "text": "Прямые трансляции КХЛ, еврокубков, биатлона и мирового спорта",
@@ -204,7 +212,7 @@
               },
               {
                 "type": "default",
-                "layout": "6,6,3,3",
+                "layout": "6,0,3,3",
                 "title": "viju+ Sport HD",
                 "headline": "Full HD 1080p",
                 "text": "Прямые трансляции НХЛ, НБА, европейского баскетбола и гонок",
@@ -213,7 +221,7 @@
               },
               {
                 "type": "default",
-                "layout": "9,6,3,3",
+                "layout": "9,0,3,3",
                 "title": "Телеканал UDAR HD",
                 "headline": "Full HD 1080p",
                 "text": "Кулачные бои Top Dog, Hardcore FC, RCC, турниры MMA",
@@ -222,7 +230,7 @@
               },
               {
                 "type": "default",
-                "layout": "0,9,3,3",
+                "layout": "0,3,3,3",
                 "title": "Матч! Боец HD",
                 "headline": "Full HD 1080p",
                 "text": "Главный канал единоборств: UFC, Bellator, ACA, бокс",
@@ -231,7 +239,7 @@
               },
               {
                 "type": "default",
-                "layout": "3,9,3,3",
+                "layout": "3,3,3,3",
                 "title": "Бокс ТВ HD",
                 "headline": "Full HD 1080p",
                 "text": "Профессиональный и олимпийский бокс, чемпионские бои",
@@ -240,7 +248,7 @@
               },
               {
                 "type": "default",
-                "layout": "6,9,3,3",
+                "layout": "6,3,3,3",
                 "title": "MMA-TV.com HD",
                 "headline": "Full HD 1080p",
                 "text": "Международный канал о смешанных боевых единоборствах MMA",
@@ -249,16 +257,20 @@
               },
               {
                 "type": "default",
-                "layout": "9,9,3,3",
+                "layout": "9,3,3,3",
                 "title": "Eurosport 1 HD",
                 "headline": "Full HD 1080p / 50 FPS",
                 "text": "Мировой спорт, теннис Большого шлема, велоспорт, снукер",
                 "color": "#0369a1",
                 "action": "video:https://s7.iptv-24.net/1439/playlist.m3u8"
-              },
+              }
+            ]
+          },
+          {
+            "items": [
               {
                 "type": "default",
-                "layout": "0,12,3,3",
+                "layout": "0,0,3,3",
                 "title": "Eurosport 2 HD",
                 "headline": "Full HD 1080p / 50 FPS",
                 "text": "Эксклюзивные трансляции автоспорта, тенниса и кубков мира",
@@ -267,7 +279,7 @@
               },
               {
                 "type": "default",
-                "layout": "3,12,3,3",
+                "layout": "3,0,3,3",
                 "title": "Матч! Арена HD",
                 "headline": "Full HD 1080p",
                 "text": "Биатлон, лыжные гонки, фигурное катание, плавание",
@@ -276,7 +288,7 @@
               },
               {
                 "type": "default",
-                "layout": "6,12,3,3",
+                "layout": "6,0,3,3",
                 "title": "Матч! Игра HD",
                 "headline": "Full HD 1080p",
                 "text": "Игровые виды: баскетбол Единая лига ВТБ, волейбол, гандбол",
@@ -285,7 +297,7 @@
               },
               {
                 "type": "default",
-                "layout": "9,12,3,3",
+                "layout": "9,0,3,3",
                 "title": "Матч! Страна HD",
                 "headline": "Full HD 1080p",
                 "text": "Российский спорт: региональные лиги, молодежный футбол",
@@ -294,7 +306,7 @@
               },
               {
                 "type": "default",
-                "layout": "0,15,3,3",
+                "layout": "0,3,3,3",
                 "title": "Спортивный HD",
                 "headline": "Full HD 1080p",
                 "text": "Динамичный спортивный канал с футболом, хоккеем и гонками",
@@ -303,7 +315,7 @@
               },
               {
                 "type": "default",
-                "layout": "3,15,3,3",
+                "layout": "3,3,3,3",
                 "title": "Russian Extreme Ultra",
                 "headline": "2K Ultra HD 1440p",
                 "text": "Экстремальный спорт, сноуборд, мотоспорт, фрирайд и гонки",
@@ -312,7 +324,7 @@
               },
               {
                 "type": "default",
-                "layout": "6,15,3,3",
+                "layout": "6,3,3,3",
                 "title": "Red Bull TV HD",
                 "headline": "Full HD 1080p",
                 "text": "Мировые соревнования по экстриму, мотокроссу, клифф-дайвингу",
@@ -378,10 +390,14 @@
                 "headline": "Английская Премьер-лига (АПЛ)",
                 "color": "#0369a1",
                 "action": "video:http://45.228.234.9:8000/play/a06b/index.m3u8"
-              },
+              }
+            ]
+          },
+          {
+            "items": [
               {
                 "type": "default",
-                "layout": "0,6,6,3",
+                "layout": "0,0,6,3",
                 "title": "Setanta Sports 1 HD",
                 "headline": "АПЛ / Ла Лига / Серия А",
                 "color": "#b45309",
@@ -389,7 +405,7 @@
               },
               {
                 "type": "default",
-                "layout": "6,6,6,3",
+                "layout": "6,0,6,3",
                 "title": "Setanta Sports 2 HD",
                 "headline": "Бундеслига / Серия А",
                 "color": "#15803d",
