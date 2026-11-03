@@ -1,7 +1,7 @@
 {
   "name": "FootDroid & Media Portal",
   "version": "1.2.0",
-  "parameter": "menu:default",
+  "parameter": "menu:start.json",
   "menu": [
     {
       "label": "КИНО И ПРИЛОЖЕНИЯ",
