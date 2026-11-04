@@ -123,7 +123,7 @@
                 "headline": "Главный спортивный канал",
                 "text": "Прямые эфиры, футбол, аналитика и новости спорта в Full HD",
                 "color": "#b91c1c",
-                "action": "video:https://stream.mcquack.net/169/index.m3u8"
+                "action": "video:http://stream.mcquack.net/169/index.m3u8"
               },
               {
                 "type": "default",
@@ -132,7 +132,7 @@
                 "headline": "Российская Премьер-Лига",
                 "text": "Эксклюзивные трансляции РПЛ и Кубка России в 1080p 50 FPS",
                 "color": "#047857",
-                "action": "video:https://stream.mcquack.net/193/index.m3u8"
+                "action": "video:http://stream.mcquack.net/193/index.m3u8"
               },
               {
                 "type": "default",
@@ -141,7 +141,7 @@
                 "headline": "Европейский футбол",
                 "text": "Лига Чемпионов, Лига Европы и топ-чемпионаты континента",
                 "color": "#0369a1",
-                "action": "video:https://stream.mcquack.net/130/index.m3u8"
+                "action": "video:http://stream.mcquack.net/130/index.m3u8"
               },
               {
                 "type": "default",
@@ -150,7 +150,7 @@
                 "headline": "Мировой футбол",
                 "text": "Итальянская Серия А, Ла Лига и международные матчи",
                 "color": "#1d4ed8",
-                "action": "video:https://stream.mcquack.net/142/index.m3u8"
+                "action": "video:http://stream.mcquack.net/142/index.m3u8"
               }
             ]
           },
@@ -163,7 +163,7 @@
                 "headline": "Немецкая Бундеслига",
                 "text": "Чемпионат Германии, кубки и международный футбол в Full HD",
                 "color": "#4338ca",
-                "action": "video:https://stream.mcquack.net/185/index.m3u8"
+                "action": "video:http://stream.mcquack.net/185/index.m3u8"
               },
               {
                 "type": "default",
@@ -181,7 +181,7 @@
                 "headline": "Английская Премьер-Лига",
                 "text": "Лучшие матчи АПЛ и Чемпионшипа в оригинальном вещании",
                 "color": "#0e7490",
-                "action": "video:https://stream.mcquack.net/234/index.m3u8"
+                "action": "video:http://stream.mcquack.net/234/index.m3u8"
               },
               {
                 "type": "default",
@@ -190,7 +190,7 @@
                 "headline": "Международный спорт",
                 "text": "Еврокубки, футбол и топовые спортивные турниры мира",
                 "color": "#b45309",
-                "action": "video:https://stream.mcquack.net/235/index.m3u8"
+                "action": "video:http://stream.mcquack.net/235/index.m3u8"
               }
             ]
           },
@@ -203,7 +203,7 @@
                 "headline": "Континентальная Хоккейная Лига",
                 "text": "Матчи дня, плей-офф Кубка Гагарина и аналитика в 1080p",
                 "color": "#1e3a8a",
-                "action": "video:https://stream.mcquack.net/178/index.m3u8"
+                "action": "video:http://stream.mcquack.net/178/index.m3u8"
               },
               {
                 "type": "default",
@@ -212,7 +212,7 @@
                 "headline": "Футбол и хоккей",
                 "text": "Прямые спортивные трансляции в высоком качестве Full HD",
                 "color": "#15803d",
-                "action": "video:https://stream.mcquack.net/33/index.m3u8"
+                "action": "video:http://178.124.179.122:8080/BT5/index.m3u8"
               },
               {
                 "type": "default",
@@ -221,7 +221,7 @@
                 "headline": "Top Dog / Hardcore / RCC",
                 "text": "Кулачные бои, кикбоксинг и турниры MMA в Full HD 1080p",
                 "color": "#ea580c",
-                "action": "video:https://stream.mcquack.net/279/index.m3u8"
+                "action": "video:http://stream.mcquack.net/279/index.m3u8"
               },
               {
                 "type": "default",
@@ -230,7 +230,7 @@
                 "headline": "UFC / ACA / Bellator",
                 "text": "Главный канал единоборств в прямом эфире",
                 "color": "#991b1b",
-                "action": "video:https://stream.mcquack.net/112/index.m3u8"
+                "action": "video:http://stream.mcquack.net/112/index.m3u8"
               }
             ]
           },
@@ -243,7 +243,7 @@
                 "headline": "Мировой спорт",
                 "text": "Теннис, биатлон, снукер, велоспорт и Олимпиада в Full HD",
                 "color": "#0284c7",
-                "action": "video:https://stream.mcquack.net/143/index.m3u8"
+                "action": "video:https://s7.iptv-24.net/1439/playlist.m3u8"
               },
               {
                 "type": "default",
@@ -252,7 +252,7 @@
                 "headline": "Экстремальный и командный спорт",
                 "text": "Прямые трансляции мировых чемпионатов",
                 "color": "#0369a1",
-                "action": "video:https://stream.mcquack.net/188/index.m3u8"
+                "action": "video:https://s7.iptv-24.net/1452/playlist.m3u8"
               },
               {
                 "type": "default",
@@ -261,7 +261,7 @@
                 "headline": "Профессиональный бокс",
                 "text": "Титульные поединки и чемпионаты мира в Full HD",
                 "color": "#7f1d1d",
-                "action": "video:https://stream.mcquack.net/154/index.m3u8"
+                "action": "video:http://stream.mcquack.net/154/index.m3u8"
               },
               {
                 "type": "default",
