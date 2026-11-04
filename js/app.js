@@ -1,625 +1,226 @@
-// FootDroid TV - Production Leanback Application Logic
+﻿// FootDroid TV - Production Leanback Application Logic
 (function () {
     'use strict';
 
-    // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with exact official logos & direct match broadcasts)
+    // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with Authentic Official Logos)
     const tvChannels = [
         {
             id: 'ch-matchtv',
             isChannel: true,
             name: 'Матч ТВ HD',
-            logo: 'img/channels/match-tv.svg',
-            badge: 'МАТЧ ТВ',
-            badgeBg: 'linear-gradient(135deg, #b91c1c, #dc2626)',
-            desc: 'Федеральный спортивный канал: главные футбольные матчи, еврокубки, аналитика',
+            logo: 'img/channels/match-tv.png',
+            desc: 'Главный федеральный спортивный телеканал России',
             quality: 'Full HD 1080p',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/169/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
             id: 'ch-premier',
             isChannel: true,
             name: 'Матч Премьер HD',
-            logo: 'img/channels/match-premier.svg',
-            badge: 'МАТЧ ПРЕМЬЕР',
-            badgeBg: 'linear-gradient(135deg, #059669, #10b981)',
-            desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Фонбет Кубка России эксклюзивно в прямом эфире',
+            logo: 'img/channels/match-premier.png',
+            desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/193/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/193/index.m3u8' }
             ]
         },
         {
             id: 'ch-futbol1',
             isChannel: true,
             name: 'Матч! Футбол 1 HD',
-            logo: 'img/channels/match-futbol1.svg',
-            badge: 'ФУТБОЛ 1',
-            badgeBg: 'linear-gradient(135deg, #15803d, #22c55e)',
-            desc: 'Флагманский европейский футбол: Лига Чемпионов, топ-чемпионаты и матчи звезд',
+            logo: 'img/channels/match-futbol1.png',
+            desc: 'Флагманский европейский футбол и топ-чемпионаты',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/130/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/130/index.m3u8' }
             ]
         },
         {
             id: 'ch-futbol2',
             isChannel: true,
             name: 'Матч! Футбол 2 HD',
-            logo: 'img/channels/match-futbol2.svg',
-            badge: 'ФУТБОЛ 2',
-            badgeBg: 'linear-gradient(135deg, #0f766e, #0d9488)',
-            desc: 'Испанская Ла Лига (Реал Мадрид, Барселона, Атлетико) и Кубок Испании в прямом эфире',
+            logo: 'img/channels/match-futbol2.png',
+            desc: 'Испанская Ла Лига и матчи Кубка Короля',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/142/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/142/index.m3u8' }
             ]
         },
         {
             id: 'ch-futbol3',
             isChannel: true,
             name: 'Матч! Футбол 3 HD',
-            logo: 'img/channels/match-futbol3.svg',
-            badge: 'ФУТБОЛ 3',
-            badgeBg: 'linear-gradient(135deg, #6b21a8, #9333ea)',
-            desc: 'Немецкая Бундеслига (Бавария, Боруссия Д, Байер), Серия А и международные матчи',
+            logo: 'img/channels/match-futbol3.png',
+            desc: 'Немецкая Бундеслига и итальянская Серия А',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Зеркало 1 (Full HD 1080p)', url: 'http://stream.mcquack.net/185/index.m3u8' },
-                { name: 'Зеркало 2 (SD Резерв)', url: 'http://185.57.68.33/110/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/185/index.m3u8' },
+                { name: '⚡ Резерв 1', url: 'http://185.57.68.33/110/index.m3u8' }
             ]
         },
         {
-            id: 'ch-euro1',
+            id: 'ch-okko',
             isChannel: true,
-            name: 'Eurosport 1 HD',
-            logo: 'img/channels/eurosport1.svg',
-            badge: 'EUROSPORT 1',
-            badgeBg: 'linear-gradient(135deg, #0369a1, #0284c7)',
-            desc: 'Мировой спорт, теннис Большого шлема, велоспорт, снукер, олимпийские виды спорта',
+            name: 'Okko Спорт HD',
+            logo: 'img/channels/okko-sport.png',
+            desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-euro2',
-            isChannel: true,
-            name: 'Eurosport 2 HD',
-            logo: 'img/channels/eurosport2.svg',
-            badge: 'EUROSPORT 2',
-            badgeBg: 'linear-gradient(135deg, #0284c7, #0f172a)',
-            desc: 'Эксклюзивные трансляции автоспорта, зимних видов, тенниса и мировых кубков',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-sky-football',
-            isChannel: true,
-            name: 'Sky Sports Football HD',
-            logo: 'img/channels/sky-sports.svg',
-            badge: 'SKY FOOTBALL',
-            badgeBg: 'linear-gradient(135deg, #0369a1, #0284c7)',
-            desc: 'Английская Премьер-лига (АПЛ), Чемпионшип, мировые кубки и суперматчи Великобритании',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://45.228.234.9:8000/play/a06b/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' }
             ]
         },
         {
             id: 'ch-setanta1',
             isChannel: true,
             name: 'Setanta Sports 1 HD',
-            logo: 'img/channels/setanta.svg',
-            badge: 'SETANTA 1',
-            badgeBg: 'linear-gradient(135deg, #b45309, #d97706)',
-            desc: 'АПЛ, Ла Лига, Серия А, Формула 1, НБА и бои UFC в высоком качестве 1080p',
+            logo: 'img/channels/setanta1.png',
+            desc: 'АПЛ, Серия А, Формула 1 и мировые лиги',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/234/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/234/index.m3u8' }
             ]
         },
         {
             id: 'ch-setanta2',
             isChannel: true,
             name: 'Setanta Sports 2 HD',
-            logo: 'img/channels/setanta2.svg',
-            badge: 'SETANTA 2',
-            badgeBg: 'linear-gradient(135deg, #15803d, #16a34a)',
-            desc: 'Теннис ATP/WTA, Бундеслига, гонки, баскетбол Евролиги и кубковые противостояния',
+            logo: 'img/channels/setanta2.png',
+            desc: 'Бундеслига, теннис ATP/WTA и евробаскетбол',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/235/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-khl',
-            isChannel: true,
-            name: 'KHL Prime HD',
-            logo: 'img/channels/khl.svg',
-            badge: 'KHL PRIME',
-            badgeBg: 'linear-gradient(135deg, #1e3a8a, #2563eb)',
-            desc: 'Континентальная Хоккейная Лига в наилучшем качестве: матчи дня, плей-офф Кубка Гагарина',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: 'Зеркало 1 (Full HD 1080p)', url: 'http://stream.mcquack.net/178/index.m3u8' },
-                { name: 'Зеркало 2 (KHL ТВ Резерв)', url: 'http://stream.mcquack.net/166/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-boets',
-            isChannel: true,
-            name: 'Матч! Боец HD',
-            logo: 'img/channels/match-boets.svg',
-            badge: 'МАТЧ БОЕЦ',
-            badgeBg: 'linear-gradient(135deg, #991b1b, #dc2626)',
-            desc: 'Главный телеканал единоборств: турниры UFC, Bellator, ACA, профессиональный бокс и кикбоксинг',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/112/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-udar',
-            isChannel: true,
-            name: 'Телеканал UDAR HD',
-            logo: 'img/channels/udar.svg',
-            badge: '⚡ UDAR HD',
-            badgeBg: 'linear-gradient(135deg, #ea580c, #f97316)',
-            desc: 'Кулачные бои Top Dog, Hardcore FC, RCC, турниры по смешанным единоборствам и боксу',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/279/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-boxtv',
-            isChannel: true,
-            name: 'Бокс ТВ HD',
-            logo: 'img/channels/boxtv.svg',
-            badge: 'БОКС ТВ',
-            badgeBg: 'linear-gradient(135deg, #b91c1c, #7f1d1d)',
-            desc: 'Профессиональный и олимпийский бокс, чемпионские поединки и эксклюзивные репортажи',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/154/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-mmatv',
-            isChannel: true,
-            name: 'MMA-TV.com HD',
-            logo: 'img/channels/mmatv.svg',
-            badge: 'MMA-TV',
-            badgeBg: 'linear-gradient(135deg, #4c1d95, #6d28d9)',
-            desc: 'Международный канал о смешанных боевых единоборствах (MMA), грэпплинге и кикбоксинге',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-arena',
-            isChannel: true,
-            name: 'Матч! Арена HD',
-            logo: 'img/channels/match-arena.svg',
-            badge: 'МАТЧ АРЕНА',
-            badgeBg: 'linear-gradient(135deg, #1e40af, #3b82f6)',
-            desc: 'Престижные мировые турниры: биатлон, лыжные гонки, фигурное катание, плавание, гимнастика',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/163/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-igra',
-            isChannel: true,
-            name: 'Матч! Игра HD',
-            logo: 'img/channels/match-igra.svg',
-            badge: 'МАТЧ ИГРА',
-            badgeBg: 'linear-gradient(135deg, #0e7490, #06b6d4)',
-            desc: 'Игровые виды спорта: баскетбол (Единая лига ВТБ), волейбол, гандбол и международные чемпионаты',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/188/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-strana',
-            isChannel: true,
-            name: 'Матч! Страна HD',
-            logo: 'img/channels/match-strana.svg',
-            badge: 'МАТЧ СТРАНА',
-            badgeBg: 'linear-gradient(135deg, #854d0e, #ca8a04)',
-            desc: 'Российский спорт: региональные лиги, молодежный футбол, мини-футбол и первенства страны',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/143/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/235/index.m3u8' }
             ]
         },
         {
             id: 'ch-bt5',
             isChannel: true,
             name: 'Беларусь 5 HD',
-            logo: 'img/channels/belarus5.svg',
-            badge: 'БЕЛАРУСЬ 5',
-            badgeBg: 'linear-gradient(135deg, #15803d, #22c55e)',
-            desc: 'Прямые трансляции КХЛ, еврокубков, биатлона и мирового футбола без гео-блокировок',
+            logo: 'img/channels/belarus5.png',
+            desc: 'Еврокубки, мировой футбол, биатлон и спорт',
             quality: 'Full HD 1080p',
             streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/33/index.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/33/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-sky-football',
+            isChannel: true,
+            name: 'Sky Sports Football HD',
+            logo: 'img/channels/sky-football.png',
+            desc: 'Английская Премьер-лига (АПЛ) и британские кубки',
+            quality: 'Full HD 1080p / 50 FPS',
+            streams: [
+                { name: '⚡ Основной поток', url: 'http://45.228.234.9:8000/play/a06b/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-strana',
+            isChannel: true,
+            name: 'Матч! Страна HD',
+            logo: 'img/channels/match-strana.png',
+            desc: 'Российский спорт, региональный футбол и первенства',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/143/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-igra',
+            isChannel: true,
+            name: 'Матч! Игра HD',
+            logo: 'img/channels/match-igra.png',
+            desc: 'Игровые виды спорта, евролиги и кубки',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/188/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-arena',
+            isChannel: true,
+            name: 'Матч! Арена HD',
+            logo: 'img/channels/match-arena.png',
+            desc: 'Престижные мировые первенства и турниры',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/163/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-boets',
+            isChannel: true,
+            name: 'Матч! Боец HD',
+            logo: 'img/channels/match-boets.png',
+            desc: 'Единоборства, бои UFC, турниры ACA и бокс',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/112/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-wwe',
+            isChannel: true,
+            name: 'WWE TV HD',
+            logo: 'img/channels/wwe.svg',
+            desc: 'Мировой рестлинг, суперзвезды WWE, Raw, SmackDown и турниры',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Full HD 1080p', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8' },
+                { name: '⚡ HD 720p (Быстрый)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' },
+                { name: '⚡ SD Резерв', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_404.m3u8' },
+                { name: '⚡ Зеркало 1 (Динамическое)', url: 'https://jmp2.uk/rok-ac0caef9123a35df3b884b139340a597.m3u8' },
+                { name: '⚡ Зеркало 2 (Superstar)', url: 'https://dpv6ceilvhyrw.cloudfront.net/playlist.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-euro1',
+            isChannel: true,
+            name: 'Eurosport 1 HD',
+            logo: 'img/channels/eurosport1.png',
+            desc: 'Мировой спорт, теннис Большого шлема и велоспорт',
+            quality: 'Full HD 1080p / 50 FPS',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-euro2',
+            isChannel: true,
+            name: 'Eurosport 2 HD',
+            logo: 'img/channels/eurosport2.png',
+            desc: 'Зимние виды спорта, автогонки и мировые кубки',
+            quality: 'Full HD 1080p / 50 FPS',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-khl',
+            isChannel: true,
+            name: 'KHL Prime HD',
+            logo: 'img/channels/khl-prime.png',
+            desc: 'Матчи Континентальной Хоккейной Лиги и Кубок Гагарина',
+            quality: 'Full HD 1080p / 50 FPS',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/178/index.m3u8' }
             ]
         },
         {
             id: 'ch-viju',
             isChannel: true,
             name: 'viju+ Sport HD',
-            logo: 'img/channels/viju-sport.svg',
-            badge: 'VIJU+ SPORT',
-            badgeBg: 'linear-gradient(135deg, #6b21a8, #a855f7)',
-            desc: 'Прямые трансляции НХЛ, НБА, европейского баскетбола, бейсбола и автогонок',
+            logo: 'img/channels/viju-sport.png',
+            desc: 'Мировой баскетбол, хоккей и автогонки',
             quality: 'Full HD 1080p',
             streams: [
-                { name: 'Зеркало 1 (Full HD 1080p)', url: 'http://stream.mcquack.net/333/index.m3u8' },
-                { name: 'Зеркало 2 (Full HD Резерв)', url: 'http://46.53.200.153:7777/play/a01l/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-sportivny',
-            isChannel: true,
-            name: 'Спортивный HD',
-            logo: 'img/channels/sportivny.svg',
-            badge: 'СПОРТ HD',
-            badgeBg: 'linear-gradient(135deg, #4338ca, #6366f1)',
-            desc: 'Динамичный спортивный канал с прямыми трансляциями футбола, хоккея и автоспорта',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-extreme',
-            isChannel: true,
-            name: 'Russian Extreme Ultra',
-            logo: 'img/channels/extreme.svg',
-            badge: 'EXTREME 2K',
-            badgeBg: 'linear-gradient(135deg, #c2410c, #f97316)',
-            desc: 'Экстремальные виды спорта, сноуборд, мотоспорт, фрирайд и гонки в 1440p',
-            quality: '2K 1440p',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'http://stream.mcquack.net/148/index.m3u8' }
-            ]
-        },
-        {
-            id: 'ch-redbull',
-            isChannel: true,
-            name: 'Red Bull TV HD',
-            logo: 'img/channels/redbull.svg',
-            badge: 'RED BULL TV',
-            badgeBg: 'linear-gradient(135deg, #0f172a, #dc2626)',
-            desc: 'Мировые соревнования по экстриму, скоростному спуску, мотокроссу, клифф-дайвингу и сноуборду',
-            quality: 'Full HD 1080p / 30 FPS',
-            streams: [
-                { name: 'Full HD 1080p (Основной поток)', url: 'https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8' }
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/333/index.m3u8' }
             ]
         }
     ];
 
-    // 2. Curated MMA / UFC Cards with REAL Vector Avatars & Accurate Channels
-    const mmaMatches = [
-        {
-            id: 'mma-ufc-312',
-            league: 'UFC 312 • Lightweight Championship',
-            leagueIcon: 'img/mma/ufc.svg',
-            team1: {
-                name: 'Ислам Махачев (RUS)',
-                logo: 'img/mma/makhachev.svg',
-                score: '27-1'
-            },
-            team2: {
-                name: 'Арман Царукян (ARM)',
-                logo: 'img/mma/tsarukyan.svg',
-                score: '22-3'
-            },
-            status: 'Суббота, 06:00',
-            isLive: false,
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: 'Телеканал UDAR HD (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' },
-                { name: 'Матч! Боец HD', url: 'http://stream.mcquack.net/112/index.m3u8' },
-                { name: 'Бокс ТВ HD', url: 'http://stream.mcquack.net/154/index.m3u8' },
-                { name: 'MMA-TV.com HD', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'mma-ufc-313',
-            league: 'UFC 313 • Light Heavyweight Title',
-            leagueIcon: 'img/mma/ufc.svg',
-            team1: {
-                name: 'Алекс Перейра (BRA)',
-                logo: 'img/mma/pereira.svg',
-                score: '12-2'
-            },
-            team2: {
-                name: 'Магомед Анкалаев (RUS)',
-                logo: 'img/mma/ankalaev.svg',
-                score: '20-1'
-            },
-            status: 'Суббота, 05:30',
-            isLive: false,
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Телеканал UDAR HD (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' },
-                { name: 'Матч! Боец HD', url: 'http://stream.mcquack.net/112/index.m3u8' },
-                { name: 'Бокс ТВ HD', url: 'http://stream.mcquack.net/154/index.m3u8' },
-                { name: 'MMA-TV.com HD', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'mma-ufc-314',
-            league: 'UFC 314 • Middleweight Title',
-            leagueIcon: 'img/mma/ufc.svg',
-            team1: {
-                name: 'Дрикус Дю Плесси (RSA)',
-                logo: 'img/mma/duplessis.svg',
-                score: '22-2'
-            },
-            team2: {
-                name: 'Хамзат Чимаев (UAE)',
-                logo: 'img/mma/chimaev.svg',
-                score: '14-0'
-            },
-            status: 'Сегодня, 05:00',
-            isLive: false,
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Телеканал UDAR HD (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' },
-                { name: 'Матч! Боец HD', url: 'http://stream.mcquack.net/112/index.m3u8' },
-                { name: 'Бокс ТВ HD', url: 'http://stream.mcquack.net/154/index.m3u8' },
-                { name: 'MMA-TV.com HD', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'mma-aca-183',
-            league: 'ACA 183 • Гран-при полусредний вес',
-            leagueIcon: 'img/mma/aca.svg',
-            team1: {
-                name: 'Альберт Туменов (RUS)',
-                logo: 'img/mma/tumenov.svg',
-                score: '25-5'
-            },
-            team2: {
-                name: 'Устармагомед Гаджидаудов (RUS)',
-                logo: 'img/mma/vagaev.svg',
-                score: '23-4'
-            },
-            status: 'Пятница, 21:00',
-            isLive: false,
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Телеканал UDAR HD (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' },
-                { name: 'Матч! Боец HD', url: 'http://stream.mcquack.net/112/index.m3u8' },
-                { name: 'MMA-TV.com HD', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
-            ]
-        },
-        {
-            id: 'mma-bellator',
-            league: 'Bellator Champions Series',
-            leagueIcon: 'img/mma/bellator.svg',
-            team1: {
-                name: 'Усман Нурмагомедов (RUS)',
-                logo: 'img/mma/nurmagomedov.svg',
-                score: '18-0'
-            },
-            team2: {
-                name: 'Патрисио Питбуль (BRA)',
-                logo: 'img/mma/pitbull.svg',
-                score: '25-10'
-            },
-            status: 'Суббота, 23:00',
-            isLive: false,
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: 'Телеканал UDAR HD (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' },
-                { name: 'Матч! Боец HD', url: 'http://stream.mcquack.net/112/index.m3u8' },
-                { name: 'Setanta Sports 1 HD', url: 'http://stream.mcquack.net/234/index.m3u8' },
-                { name: 'MMA-TV.com HD', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
-            ]
-        }
-    ];
-
-    // 3. Intelligent Match-to-Channel Stream Allocator
-    function getStreamsForFootball(leagueTitle, homeName, awayName) {
-        const text = ((leagueTitle || '') + ' ' + (homeName || '') + ' ' + (awayName || '')).toLowerCase();
-
-        // A. Russian Premier League / Russian Cup (РПЛ, Кубок России)
-        const isRussian = text.includes('рпл') || 
-                          text.includes('кубок россии') || 
-                          text.includes('зенит') || 
-                          text.includes('спартак') || 
-                          text.includes('цска') || 
-                          text.includes('локомотив') || 
-                          text.includes('динамо м') || 
-                          text.includes('крылья') || 
-                          text.includes('краснодар') || 
-                          text.includes('ростов') || 
-                          text.includes('рубин') || 
-                          text.includes('пари нн') || 
-                          text.includes('факел') || 
-                          text.includes('ахмат') || 
-                          text.includes('оренбург') || 
-                          text.includes('химки') || 
-                          text.includes('акрон') || 
-                          text.includes('балтика') ||
-                          text.includes('динамо махачкала');
-
-        if (isRussian) {
-            return [
-                { name: 'Матч Премьер HD (1080p)', url: 'http://stream.mcquack.net/193/index.m3u8' },
-                { name: 'Матч ТВ HD (1080p)', url: 'http://stream.mcquack.net/169/index.m3u8' }
-            ];
-        }
-
-        // B. Italian Serie A / Coppa Italia
-        const isSerieA = text.includes('серия а') || 
-                         text.includes('серия b') || 
-                         text.includes('serie a') ||
-                         text.includes('ювентус') || 
-                         text.includes('juventus') ||
-                         text.includes('наполи') || 
-                         text.includes('napoli') ||
-                         text.includes('милан') || 
-                         text.includes('milan') ||
-                         text.includes('интер') || 
-                         text.includes('inter') ||
-                         text.includes('рома') || 
-                         text.includes('лацио') || 
-                         text.includes('lazio') ||
-                         text.includes('фиорентина') || 
-                         text.includes('fiorentina') ||
-                         text.includes('аталанта') || 
-                         text.includes('atalanta') ||
-                         text.includes('италия') ||
-                         text.includes('italy');
-
-        if (isSerieA) {
-            return [
-                { name: 'Матч! Футбол 2 HD (1080p)', url: 'http://stream.mcquack.net/142/index.m3u8' },
-                { name: 'Setanta Sports 1 HD (1080p)', url: 'http://stream.mcquack.net/234/index.m3u8' }
-            ];
-        }
-
-        // C. Spanish La Liga (Ла Лига)
-        const isLaLiga = text.includes('ла лига') || 
-                         text.includes('примера') || 
-                         text.includes('la liga') || 
-                         text.includes('laliga') ||
-                         text.includes('реал мадрид') || 
-                         text.includes('барселона') || 
-                         text.includes('атлетико') || 
-                         text.includes('севилья') || 
-                         text.includes('валенсия') || 
-                         text.includes('вильярреал') || 
-                         text.includes('бетис') || 
-                         text.includes('сосьедад') || 
-                         text.includes('жирона') || 
-                         text.includes('атлетик') || 
-                         text.includes('кубок испании') ||
-                         text.includes('испания') ||
-                         text.includes('spain');
-
-        if (isLaLiga) {
-            return [
-                { name: 'Матч! Футбол 2 HD (1080p)', url: 'http://stream.mcquack.net/142/index.m3u8' },
-                { name: 'Setanta Sports 1 HD (1080p)', url: 'http://stream.mcquack.net/234/index.m3u8' }
-            ];
-        }
-
-        // D. German Bundesliga
-        const isBundesliga = text.includes('бундеслига') || 
-                             text.includes('bundesliga') || 
-                             text.includes('бавария') || 
-                             text.includes('боруссия') || 
-                             text.includes('байер') || 
-                             text.includes('лейпциг') || 
-                             text.includes('штутгарт') || 
-                             text.includes('айнтрахт') || 
-                             text.includes('вольфсбург') || 
-                             text.includes('германия') || 
-                             text.includes('germany');
-
-        if (isBundesliga) {
-            return [
-                { name: 'Матч! Футбол 3 HD (1080p)', url: 'http://stream.mcquack.net/185/index.m3u8' },
-                { name: 'Setanta Sports 2 HD (1080p)', url: 'http://stream.mcquack.net/235/index.m3u8' }
-            ];
-        }
-
-        // E. English Premier League (АПЛ)
-        const isEPL = text.includes('апл') || 
-                      text.includes('премьер-лига англии') || 
-                      text.includes('англия') || 
-                      text.includes('manchester') || 
-                      text.includes('манчестер') || 
-                      text.includes('ливерпуль') || 
-                      text.includes('liverpool') || 
-                      text.includes('арсенал') || 
-                      text.includes('arsenal') || 
-                      text.includes('челси') || 
-                      text.includes('chelsea') || 
-                      text.includes('тоттенхэм') || 
-                      text.includes('ньюкасл') || 
-                      text.includes('астон вилла') || 
-                      text.includes('эвертон');
-
-        if (isEPL) {
-            return [
-                { name: 'Sky Sports Football HD (1080p)', url: 'http://45.228.234.9:8000/play/a06b/index.m3u8' },
-                { name: 'Setanta Sports 1 HD (1080p)', url: 'http://stream.mcquack.net/234/index.m3u8' }
-            ];
-        }
-
-        // F. European Competitions (Лига Чемпионов, Лига Европы, Лига Конференций)
-        const isUEFA = text.includes('лига чемпионов') || 
-                       text.includes('лига европы') || 
-                       text.includes('лига конференций') || 
-                       text.includes('champions league') || 
-                       text.includes('uefa');
-
-        if (isUEFA) {
-            return [
-                { name: 'Матч ТВ HD (1080p)', url: 'http://stream.mcquack.net/169/index.m3u8' },
-                { name: 'Матч! Футбол 1 HD (1080p)', url: 'http://stream.mcquack.net/130/index.m3u8' },
-                { name: 'Матч! Футбол 2 HD (1080p)', url: 'http://stream.mcquack.net/142/index.m3u8' },
-                { name: 'Матч! Футбол 3 HD (1080p)', url: 'http://stream.mcquack.net/185/index.m3u8' }
-            ];
-        }
-
-        // G. South American Football (Бока, Ривер, Аргентина, Бразилия)
-        const isSouthAmerica = text.includes('бока') || 
-                               text.includes('boca') || 
-                               text.includes('ривер') || 
-                               text.includes('river') || 
-                               text.includes('аргентин') || 
-                               text.includes('argentina') || 
-                               text.includes('бразил') || 
-                               text.includes('палмейрас') || 
-                               text.includes('гремио') || 
-                               text.includes('либертадорес');
-
-        if (isSouthAmerica) {
-            return [
-                { name: 'Setanta Sports 1 HD (1080p)', url: 'http://stream.mcquack.net/234/index.m3u8' },
-                { name: 'Setanta Sports 2 HD (1080p)', url: 'http://stream.mcquack.net/235/index.m3u8' }
-            ];
-        }
-
-        // H. European & World Football (General Default)
-        return [
-            { name: 'Setanta Sports 1 HD (1080p)', url: 'http://stream.mcquack.net/234/index.m3u8' },
-            { name: 'Матч ТВ HD (1080p)', url: 'http://stream.mcquack.net/169/index.m3u8' }
-        ];
-    }
-
-    function getStreamsForHockey() {
-        return [
-            { name: 'KHL Prime HD (1080p)', url: 'http://stream.mcquack.net/178/index.m3u8' },
-            { name: 'Беларусь 5 HD (1080p)', url: 'http://stream.mcquack.net/33/index.m3u8' },
-            { name: 'Матч! Игра HD (1080p)', url: 'http://stream.mcquack.net/188/index.m3u8' }
-        ];
-    }
-
-    function getStreamsForBasketball() {
-        return [
-            { name: 'viju+ Sport HD (1080p)', url: 'http://stream.mcquack.net/333/index.m3u8' },
-            { name: 'Матч! Игра HD (1080p)', url: 'http://stream.mcquack.net/188/index.m3u8' }
-        ];
-    }
-
-    // Direct club & league emblem mapping for professional look
+    // Club & league emblem mapping for professional presentation
     const logoMap = {
         'зенит': 'https://s5o.ru/storage/simple/ru/edt/70/46/64/79/ruebe75dffc32.png',
         'спартак': 'https://s5o.ru/storage/simple/ru/edt/91/97/34/00/rue9b84b553e1.png',
@@ -656,21 +257,10 @@
         'ювентус': 'https://s5o.ru/storage/simple/ru/edt/56/61/89/95/ruea1e0589a59.png',
         'милан': 'https://s5o.ru/storage/simple/ru/edt/69/96/12/82/ruec23cb23c04.png',
         'наполи': 'https://s5o.ru/storage/simple/ru/edt/57/46/09/16/rue7f564757c9.png',
-        'псж': 'https://s5o.ru/storage/simple/ru/edt/45/77/89/62/rue53bb990818.png',
-        'бока': 'https://s5o.ru/storage/simple/ru/edt/62/16/08/99/ruee18375e011.png',
-        'ривер': 'https://s5o.ru/storage/simple/ru/edt/90/47/84/16/ruee18375e011.png',
-
-        'ска': 'https://s5o.ru/storage/simple/ru/edt/87/48/40/85/rue9541a54728.png',
-        'авангард': 'https://s5o.ru/storage/simple/ru/edt/68/73/06/33/rue2a188fba75.png',
-        'ак барс': 'https://s5o.ru/storage/simple/ru/edt/04/81/86/67/rue9e94326f59.png',
-        'металлург мг': 'https://s5o.ru/storage/simple/ru/edt/73/77/43/99/rueee5c5cf14e.png',
-        'салават юлаев': 'https://s5o.ru/storage/simple/ru/edt/68/56/65/28/ruef068739958.png',
-        'трактор': 'https://s5o.ru/storage/simple/ru/edt/45/38/53/98/ruec23cb23c04.png',
-        'динамо мн': 'https://s5o.ru/storage/simple/ru/edt/72/49/71/61/rue7f564757c9.png',
-        'локомотив я': 'https://s5o.ru/storage/simple/ru/edt/08/96/63/12/rue526baee7a1.png'
+        'псж': 'https://s5o.ru/storage/simple/ru/edt/45/77/89/62/rue53bb990818.png'
     };
 
-    function getTeamLogo(teamName, sportId) {
+    function getTeamLogo(teamName) {
         if (!teamName) return '';
         const lower = teamName.toLowerCase();
         for (const [key, url] of Object.entries(logoMap)) {
@@ -679,88 +269,404 @@
         return '';
     }
 
-    // Helper: Parse Official VAR.TV API matchlist
-    function parseVarlineMatchlist(apiData, targetSport) {
-        if (!apiData) return [];
-        const rawList = Array.isArray(apiData) ? apiData : (apiData.data || []);
+    // Tournament Classification by Country and Championship
+    function classifyTournament(leagueTitle, homeName, awayName) {
+        const l = (leagueTitle || '').toLowerCase();
+        const text = ((leagueTitle || '') + ' ' + (homeName || '') + ' ' + (awayName || '')).toLowerCase();
+
+        // 1. European competitions (Лига Чемпионов УЕФА, Лига Европы, Лига Конференций, Юношеская лига УЕФА)
+        if (l.includes('лига чемпион') || l.includes('лига европ') || l.includes('лига конференц') || 
+            l.includes('юношеская лига') || l.includes('uefa') || l.includes('уефа') || 
+            text.includes('champions league') || text.includes('europa league')) {
+            return {
+                groupKey: 'uefa',
+                groupTitle: '🇪🇺 ЕВРОКУБКИ (ЛИГА ЧЕМПИОНОВ, ЛЕ, ЛК)',
+                badge: 'ЕВРОКУБКИ',
+                order: 1
+            };
+        }
+
+        // 2. Russia (РПЛ, Кубок России, Первая Лига)
+        if (l.includes('росси') || l.includes('рпл') || text.includes('зенит') || text.includes('спартак') || 
+            text.includes('цска') || text.includes('локомотив') || text.includes('краснодар') || 
+            text.includes('динамо м') || text.includes('рубин') || text.includes('акрон') || 
+            text.includes('ростов') || text.includes('пари нн') || text.includes('факел')) {
+            return {
+                groupKey: 'russia',
+                groupTitle: '🇷🇺 РОССИЯ (РПЛ И КУБОК РОССИИ)',
+                badge: 'РОССИЯ',
+                order: 2
+            };
+        }
+
+        // 3. England (АПЛ, Чемпионшип, Кубок Англии, Кубок Лиги)
+        if (l.includes('англи') || l.includes('premier league') || l.includes('epl') || 
+            text.includes('манчестер') || text.includes('ливерпуль') || text.includes('арсенал') || 
+            text.includes('челси') || text.includes('тоттенхэм') || text.includes('ньюкасл') || 
+            text.includes('астон вилла') || text.includes('эвертон')) {
+            return {
+                groupKey: 'england',
+                groupTitle: '🏴󠁧󠁢󠁥󠁮󠁧󠁿 АНГЛИЯ (ПРЕМЬЕР-ЛИГА И КУБКИ)',
+                badge: 'АНГЛИЯ',
+                order: 3
+            };
+        }
+
+        // 4. Spain (Ла Лига, Сегунда, Кубок Испании)
+        if (l.includes('испани') || l.includes('примера') || l.includes('сегунда') || l.includes('la liga') || 
+            text.includes('реал мадрид') || text.includes('барселона') || text.includes('атлетико') || 
+            text.includes('севилья') || text.includes('валенсия') || text.includes('вильярреал') || 
+            text.includes('сосьедад') || text.includes('бетис')) {
+            return {
+                groupKey: 'spain',
+                groupTitle: '🇪🇸 ИСПАНИЯ (ЛА ЛИГА И КУБОК КОРОЛЯ)',
+                badge: 'ИСПАНИЯ',
+                order: 4
+            };
+        }
+
+        // 5. Italy (Серия А, Серия B, Кубок Италии)
+        if (l.includes('итали') || l.includes('серия а') || l.includes('серия b') || l.includes('serie a') || 
+            text.includes('ювентус') || text.includes('интер') || text.includes('милан') || 
+            text.includes('наполи') || text.includes('рома') || text.includes('лацио') || 
+            text.includes('аталанта') || text.includes('фиорентина')) {
+            return {
+                groupKey: 'italy',
+                groupTitle: '🇮🇹 ИТАЛИЯ (СЕРИЯ А И КУБОК)',
+                badge: 'ИТАЛИЯ',
+                order: 5
+            };
+        }
+
+        // 6. Germany (Бундеслига, Бундеслига 2, Кубок Германии)
+        if (l.includes('германи') || l.includes('бундеслиг') || text.includes('бавария') || 
+            text.includes('боруссия') || text.includes('байер') || text.includes('лейпциг') || 
+            text.includes('штутгарт') || text.includes('айнтрахт') || text.includes('вольфсбург')) {
+            return {
+                groupKey: 'germany',
+                groupTitle: '🇩🇪 ГЕРМАНИЯ (БУНДЕСЛИГА)',
+                badge: 'ГЕРМАНИЯ',
+                order: 6
+            };
+        }
+
+        // 7. France (Лига 1, Лига 2, Кубок Франции)
+        if (l.includes('франци') || l.includes('лига 1') || text.includes('псж') || 
+            text.includes('марсель') || text.includes('монако') || text.includes('лион') || 
+            text.includes('ренн') || text.includes('лилль')) {
+            return {
+                groupKey: 'france',
+                groupTitle: '🇫🇷 ФРАНЦИЯ (ЛИГА 1)',
+                badge: 'ФРАНЦИЯ',
+                order: 7
+            };
+        }
+
+        // 8. Other Countries & Championships
+        return {
+            groupKey: 'other',
+            groupTitle: '🌍 ДРУГИЕ ЧЕМПИОНАТЫ И КУБКИ',
+            badge: 'ДРУГИЕ',
+            order: 8
+        };
+    }
+
+    // Resolves CDN3 / .php stream wrappers to valid direct HLS manifest URLs
+    function resolveCdn3Fast(url) {
+        if (!url || typeof url !== 'string') return url;
+        if (url.includes('.m3u8') || url.includes('.mp4')) return url;
+        if (url.includes('/CDN3/') || url.includes('.php')) {
+            const filename = url.split('/').pop().split('?')[0].toLowerCase();
+            // Exact mappings for official broadcast files
+            if (filename === 'reservv3.php' || filename === 'reserv-3.php' || filename === 'reserv3.php') {
+                return 'https://t6.ultrastream.vip/reserv-3/index.m3u8';
+            }
+            if (filename === 'reservv2.php' || filename === 'reserv-2.php') {
+                return 'https://t6.ultrastream.vip/reserv-2/index.m3u8';
+            }
+            if (filename === 'reservv1.php' || filename === 'reserv-1.php') {
+                return 'https://t6.ultrastream.vip/reserv-1/index.m3u8';
+            }
+            if (filename === 'reserv1.php') return 'https://t6.ultrastream.vip/reserv1/index.m3u8';
+            if (filename === 'reserv2.php') return 'https://t6.ultrastream.vip/reserv2/index.m3u8';
+            if (filename === 'reserv4.php') return 'https://t6.ultrastream.vip/reserv4/index.m3u8';
+            if (filename === 'reserv5.php') return 'https://t6.ultrastream.vip/reserv5/index.m3u8';
+            if (filename === 'reserv6.php') return 'https://t6.ultrastream.vip/reserv6/index.m3u8';
+            if (filename === 'reserv7.php') return 'https://t6.ultrastream.vip/reserv7/index.m3u8';
+            if (filename === 'reserv8.php') return 'https://t6.ultrastream.vip/reserv8/index.m3u8';
+            if (filename === 'footballokko.php') return 'https://t6.ultrastream.vip/footbolokko/index.m3u8';
+            if (filename === 'start.php') return 'https://t5.ultrastream.vip/Start/index.m3u8';
+            if (filename === 'b5.php') return 'https://t7.ultrastream.vip/b5/index.m3u8';
+            if (filename === 'khl.php') return 'https://t5.ultrastream.vip/KHL/index.m3u8';
+            if (filename === 'mp.php') return 'https://stream.mcquack.net/193/index.m3u8';
+            if (filename === 'r6.php') return 'https://t6.ultrastream.vip/test/index.m3u8';
+            if (filename.startsWith('reserv') && filename.endsWith('.php')) {
+                const base = filename.replace('.php', '');
+                return `https://t6.ultrastream.vip/${base}/index.m3u8`;
+            }
+        }
+        return url;
+    }
+
+    // Extracts real manifest URL directly from player HTML
+    function extractStreamFromHtml(html) {
+        if (!html || typeof html !== 'string') return null;
+        const m = html.match(/file:\s*["']([^"']+)["']/i);
+        if (m && m[1]) return m[1];
+        const m2 = html.match(/["'](https?:\/\/[^"']+\.m3u8[^"']*)["']/i);
+        if (m2 && m2[1]) return m2[1];
+        return null;
+    }
+
+    // High quality alternative broadcast fallbacks by competition
+    function getFallbackMirrorsForTournament(groupKey) {
+        if (groupKey === 'uefa') {
+            return [
+                { url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' },
+                { url: 'https://stream.mcquack.net/33/index.m3u8' },
+                { url: 'https://stream.mcquack.net/234/index.m3u8' }
+            ];
+        } else if (groupKey === 'russia') {
+            return [
+                { url: 'https://stream.mcquack.net/193/index.m3u8' },
+                { url: 'https://stream.mcquack.net/169/index.m3u8' }
+            ];
+        } else if (groupKey === 'england') {
+            return [
+                { url: 'http://45.228.234.9:8000/play/a06b/index.m3u8' },
+                { url: 'https://stream.mcquack.net/234/index.m3u8' }
+            ];
+        } else if (groupKey === 'spain' || groupKey === 'italy') {
+            return [
+                { url: 'https://stream.mcquack.net/142/index.m3u8' },
+                { url: 'https://stream.mcquack.net/234/index.m3u8' }
+            ];
+        } else if (groupKey === 'germany') {
+            return [
+                { url: 'https://stream.mcquack.net/185/index.m3u8' },
+                { url: 'https://stream.mcquack.net/235/index.m3u8' }
+            ];
+        }
+        return [
+            { url: 'https://stream.mcquack.net/234/index.m3u8' }
+        ];
+    }
+
+    let allMatchesCache = null;
+    let lastCacheTime = 0;
+    const CACHE_TTL_MS = 60 * 1000;
+
+    function pad2(num) {
+        return String(num).padStart(2, '0');
+    }
+
+    function formatHHMM(d) {
+        if (!d || isNaN(d.getTime())) return '';
+        return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+    }
+
+    function formatShortDate(d) {
+        if (!d || isNaN(d.getTime())) return '';
+        const months = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+        const days = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
+        return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]}`;
+    }
+
+    function formatDateHeader(d) {
+        if (!d || isNaN(d.getTime())) return '';
+        const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+        const days = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+        return `${days[d.getDay()]}, ${d.getDate()} ${months[d.getMonth()]}`;
+    }
+
+    // Parse Official Matchlist (Strictly Football Only, Real Streams & Working Fallbacks)
+    function parseRawMatchlist(rawList) {
         if (!Array.isArray(rawList)) return [];
 
+        const now = new Date();
+        const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+        const oneDayMs = 24 * 60 * 60 * 1000;
+
         const parsed = [];
-        rawList.forEach(e => {
-            const sportStr = (e.sport || '').toLowerCase();
-            if (targetSport === 'football') {
-                if (!sportStr.includes('футбол') && !sportStr.includes('football')) return;
-            } else if (targetSport === 'hockey') {
-                if (!sportStr.includes('хоккей') && !sportStr.includes('hockey')) return;
-            } else if (targetSport === 'basketball') {
-                if (!sportStr.includes('баскетбол') && !sportStr.includes('basketball')) return;
+
+        rawList.forEach(m => {
+            const homeName = (m.home || m.home_en || '').trim();
+            const awayName = (m.away || m.away_en || '').trim();
+            if (!homeName || !awayName) return;
+
+            // Keep ONLY Football Matches!
+            const sportStr = (m.sport || '').toLowerCase();
+            const isFootball = sportStr.includes('футбол') || sportStr.includes('football');
+            if (!isFootball) return;
+
+            const leagueTitle = (m.league || m.league_en || 'Футбольный турнир').trim();
+            const leagueLower = leagueTitle.toLowerCase();
+            const countryLower = ((m.country || '') + ' ' + (m.country_en || '')).toLowerCase();
+
+            // Strict Filter: Completely exclude Ukrainian championship and domestic cup matches
+            if (
+                leagueLower.includes('украин') || 
+                leagueLower.includes('ukrain') || 
+                leagueLower.includes('упл') || 
+                leagueLower.includes('upl') || 
+                countryLower.includes('украин') || 
+                countryLower.includes('ukrain')
+            ) {
+                return; // Exclude Ukrainian domestic championships and cups completely
             }
 
-            const homeName = (e.home || e.home_team || '').trim();
-            const awayName = (e.away || e.away_team || '').trim();
-            const leagueTitle = (e.league || e.league_en || e.title || 'Спортивный турнир').trim();
+            const tournament = classifyTournament(leagueTitle, homeName, awayName);
 
-            if (!homeName || !awayName) return;
-            if (homeName.toLowerCase() === awayName.toLowerCase()) return;
+            // Parse Start Date & Kickoff
+            let startDate = null;
+            let diffDays = 0;
+            let dayCategory = 'today';
+            if (m.start) {
+                try {
+                    startDate = new Date(m.start);
+                    if (!isNaN(startDate.getTime())) {
+                        const matchMidnight = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()).getTime();
+                        diffDays = Math.round((matchMidnight - todayMidnight) / oneDayMs);
+                        if (diffDays === 0) dayCategory = 'today';
+                        else if (diffDays === 1) dayCategory = 'tomorrow';
+                        else if (diffDays > 1) dayCategory = 'upcoming';
+                        else dayCategory = 'past';
+                    }
+                } catch (_) {}
+            }
 
-            if (targetSportId === 1) {
-                const combined = (leagueTitle + ' ' + homeName + ' ' + awayName).toLowerCase();
-                if (combined.includes('tennis') || combined.includes('atp') || combined.includes('wta') || combined.includes('теннис') || combined.includes('хоккей') || combined.includes('баскетбол')) {
-                    return;
+            // Live vs Scheduled vs Finished
+            const statusRaw = (m.status || '').toLowerCase();
+            const liveStatusRaw = (m.live_status || '').toLowerCase();
+            const isLive = statusRaw === 'live' || liveStatusRaw.includes('live') || 
+                           liveStatusRaw.includes('тайм') || liveStatusRaw.includes('перерыв');
+            const isFinished = statusRaw === 'finished' || liveStatusRaw.includes('завершен') || 
+                               liveStatusRaw.includes('fin') || liveStatusRaw.includes('ft');
+            const isScheduled = !isLive && !isFinished;
+
+            // Strict Filter: Eliminate corrupt / stuck / ghost matches (e.g. invalid minute > 140, or 'live' match from days/months ago)
+            if (isLive) {
+                if (m.minute && (Number(m.minute) > 140 || Number(m.minute) < 0)) {
+                    return; // Corrupt minute data (e.g. 1256')
+                }
+                if (startDate && (now.getTime() - startDate.getTime() > 6 * 60 * 60 * 1000)) {
+                    return; // Zombie match stuck in database from previous days/months
+                }
+                if (startDate && (startDate.getTime() - now.getTime() > 60 * 60 * 1000)) {
+                    return; // Falsely tagged as live long before start
                 }
             }
 
             let statusText = '';
-            let isLive = false;
-            const liveStatus = (e.live_status || e.status || '').toLowerCase();
+            let badgeClass = '';
+            const timeStr = startDate ? formatHHMM(startDate) : '';
 
-            if (liveStatus.includes('live') || liveStatus.includes('тайм') || liveStatus.includes('период') || liveStatus.includes('четверть') || liveStatus.includes('перерыв') || liveStatus.includes('сет')) {
-                isLive = true;
-                statusText = e.live_status || 'Идет игра';
-            } else if (liveStatus.includes('завершен') || liveStatus.includes('fin') || liveStatus.includes('ft')) {
+            if (isLive) {
+                badgeClass = 'badge-live';
+                statusText = m.minute ? `${m.minute}' • ${m.live_status || 'Идет игра'}` : (m.live_status || 'Идет игра');
+            } else if (isFinished) {
+                badgeClass = 'badge-finished';
                 statusText = 'Завершен';
+            } else if (diffDays === 0) {
+                badgeClass = 'badge-today';
+                statusText = `Сегодня, ${timeStr}`;
+            } else if (diffDays === 1) {
+                badgeClass = 'badge-tomorrow';
+                statusText = `Завтра, ${timeStr}`;
+            } else if (diffDays > 1) {
+                badgeClass = 'badge-upcoming';
+                statusText = `${formatShortDate(startDate)}, ${timeStr}`;
             } else {
-                let startRaw = e.start || e.status || 'Скоро';
-                if (startRaw.includes('T')) {
-                    try {
-                        const d = new Date(startRaw);
-                        if (!isNaN(d.getTime())) {
-                            const hours = String(d.getHours()).padStart(2, '0');
-                            const mins = String(d.getMinutes()).padStart(2, '0');
-                            startRaw = `Сегодня, ${hours}:${mins}`;
-                        }
-                    } catch (_) {}
-                }
-                statusText = startRaw;
+                badgeClass = 'badge-finished';
+                statusText = 'Матч окончен';
             }
 
-            let streams = [];
-            if (targetSport === 'hockey' || sportStr.includes('хоккей')) {
-                streams = getStreamsForHockey();
-            } else if (targetSport === 'basketball' || sportStr.includes('баскетбол')) {
-                streams = getStreamsForBasketball();
-            } else {
-                streams = getStreamsForFootball(leagueTitle, homeName, awayName);
+            // Scores
+            const scoreHome = (m.score_home !== null && m.score_home !== undefined) ? String(m.score_home) : (isLive ? '0' : '-');
+            const scoreAway = (m.score_away !== null && m.score_away !== undefined) ? String(m.score_away) : (isLive ? '0' : '-');
+
+            // Club Logos
+            const homeLogo = m.home_logo || getTeamLogo(homeName);
+            const awayLogo = m.away_logo || getTeamLogo(awayName);
+
+            // Stream Mirrors Discovery & Automatic Fallbacks
+            const streams = [];
+
+            // 1. Primary match stream
+            if (m.stream && typeof m.stream === 'string' && m.stream.startsWith('http')) {
+                const resolvedMain = resolveCdn3Fast(m.stream);
+                streams.push({
+                    name: '⚡ Основной поток',
+                    url: resolvedMain,
+                    rawUrl: m.stream
+                });
+
+                // Auto-discover alternative edge CDNs (t5, t7) for ultrastream sources
+                if (resolvedMain.includes('.ultrastream.vip/')) {
+                    const edge5 = resolvedMain.replace(/t\d+\.ultrastream\.vip/, 't5.ultrastream.vip');
+                    const edge7 = resolvedMain.replace(/t\d+\.ultrastream\.vip/, 't7.ultrastream.vip');
+                    if (!streams.some(s => s.url === edge5)) {
+                        streams.push({ name: `⚡ Резерв ${streams.length}`, url: edge5 });
+                    }
+                    if (!streams.some(s => s.url === edge7)) {
+                        streams.push({ name: `⚡ Резерв ${streams.length}`, url: edge7 });
+                    }
+                }
             }
+
+            // 2. Alternative player variants from API
+            if (Array.isArray(m.player_variants)) {
+                m.player_variants.forEach(v => {
+                    if (typeof v === 'string' && v.startsWith('http') && v !== m.stream && !v.includes('vkvideo.ru')) {
+                        const resolvedVar = resolveCdn3Fast(v);
+                        if (!streams.some(s => s.url === resolvedVar)) {
+                            streams.push({
+                                name: `⚡ Резерв ${streams.length}`,
+                                url: resolvedVar,
+                                rawUrl: v
+                            });
+                        }
+                    }
+                });
+            }
+
+            // 3. Guaranteed tournament broadcast fallbacks (if primary stream is dead or blocked)
+            const fallbacks = getFallbackMirrorsForTournament(tournament.groupKey);
+            fallbacks.forEach(fb => {
+                if (!streams.some(s => s.url === fb.url)) {
+                    streams.push({
+                        name: `⚡ Резерв ${streams.length}`,
+                        url: fb.url
+                    });
+                }
+            });
 
             parsed.push({
-                id: `var-${e.id || Math.random()}`,
-                sportId: e.sport_id || targetSportId || 1,
+                id: `var-${m.id || Math.random().toString(36).substring(2)}`,
+                rawId: m.id,
+                sport: 'Футбол',
+                sportType: 'football',
                 league: leagueTitle,
-                leagueIcon: e.league_img || '',
+                leagueIcon: m.league_img || '',
+                tournament: tournament,
                 team1: {
                     name: homeName,
-                    logo: e.home_logo || getTeamLogo(homeName, e.sport_id),
-                    score: e.score_home !== undefined && e.score_home !== null ? String(e.score_home) : '0'
+                    logo: homeLogo,
+                    score: scoreHome
                 },
                 team2: {
                     name: awayName,
-                    logo: e.away_logo || getTeamLogo(awayName, e.sport_id),
-                    score: e.score_away !== undefined && e.score_away !== null ? String(e.score_away) : '0'
+                    logo: awayLogo,
+                    score: scoreAway
                 },
-                status: statusText,
+                startDate: startDate,
+                diffDays: diffDays,
+                dayCategory: dayCategory,
+                statusText: statusText,
+                badgeClass: badgeClass,
                 isLive: isLive,
-                quality: 'Full HD 1080p',
+                isFinished: isFinished,
+                isScheduled: isScheduled,
                 streams: streams
             });
         });
@@ -768,71 +674,54 @@
         return parsed;
     }
 
-    // Direct fetch from VAR.TV endpoints
-    async function getVarlineMatchlist() {
+    // Fetch Football Matches from VAR TV API (500 matches for the full upcoming week)
+    async function fetchAllVarlineMatches(forceRefresh = false) {
+        const now = Date.now();
+        if (!forceRefresh && allMatchesCache && (now - lastCacheTime < CACHE_TTL_MS)) {
+            return allMatchesCache;
+        }
+
         const endpoints = [
-            'https://varline.store/api/matchlist',
-            'https://lsport.vip/api/matchlist',
-            'https://msport.vip/api/matchlist'
+            'https://varline.store/api/matchlist?limit=500',
+            'https://lsport.vip/api/matchlist?limit=500',
+            'https://msport.vip/api/matchlist?limit=500'
         ];
 
+        let rawMatches = null;
         for (const url of endpoints) {
             try {
-                const res = await fetch(url, { headers: { 'User-Agent': 'okhttp/4.9.0' } });
+                const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
                 if (res.ok) {
                     const data = await res.json();
-                    if (data && (Array.isArray(data) || Array.isArray(data.data))) {
-                        return data;
+                    if (Array.isArray(data) && data.length > 0) {
+                        rawMatches = data;
+                        break;
                     }
                 }
             } catch (err) {
                 console.warn(`Endpoint ${url} failed:`, err);
             }
         }
-        return null;
-    }
 
-    async function fetchFootballData() {
-        try {
-            const apiData = await getVarlineMatchlist();
-            const parsed = parseVarlineMatchlist(apiData, 'football');
-            if (parsed && parsed.length > 0) return parsed;
-        } catch (e) {
-            console.warn('Varline football error:', e);
+        if (!rawMatches) {
+            return allMatchesCache || [];
         }
-        return [];
+
+        const parsed = parseRawMatchlist(rawMatches);
+        allMatchesCache = parsed;
+        lastCacheTime = now;
+        return parsed;
     }
 
-    async function fetchHockeyData() {
-        try {
-            const apiData = await getVarlineMatchlist();
-            const parsed = parseVarlineMatchlist(apiData, 'hockey');
-            if (parsed && parsed.length > 0) return parsed;
-        } catch (e) {
-            console.warn('Varline hockey error:', e);
-        }
-        return [];
-    }
-
-    async function fetchBasketballData() {
-        try {
-            const apiData = await getVarlineMatchlist();
-            const parsed = parseVarlineMatchlist(apiData, 'basketball');
-            if (parsed && parsed.length > 0) return parsed;
-        } catch (e) {
-            console.warn('Varline basketball error:', e);
-        }
-        return [];
-    }
-
-    // UI State & DOM Elements
+    // UI Elements
     const categoriesNav = document.getElementById('categoriesNav');
+    const filterPills = document.getElementById('filterPills');
     const cardsGrid = document.getElementById('cardsGrid');
     const sectionTitle = document.getElementById('sectionTitle');
     const matchCounter = document.getElementById('matchCounter');
     const clockEl = document.getElementById('clock');
 
-    // Fullscreen Player Elements
+    // Player Elements
     const playerModal = document.getElementById('playerModal');
     const tvVideo = document.getElementById('tvVideo');
     const playerOverlay = document.getElementById('playerOverlay');
@@ -843,18 +732,26 @@
     const playerLoader = document.getElementById('playerLoader');
     const loaderText = document.getElementById('loaderText');
 
+    // Prematch Dialog Elements
+    const prematchModal = document.getElementById('prematchModal');
+    const prematchLeague = document.getElementById('prematchLeague');
+    const prematchTime = document.getElementById('prematchTime');
+    const prematchLogo1 = document.getElementById('prematchLogo1');
+    const prematchLogo2 = document.getElementById('prematchLogo2');
+    const prematchName1 = document.getElementById('prematchName1');
+    const prematchName2 = document.getElementById('prematchName2');
+    const prematchBroadcastText = document.getElementById('prematchBroadcastText');
+    const btnWatchChannel = document.getElementById('btnWatchChannel');
+    const btnClosePrematch = document.getElementById('btnClosePrematch');
+
     let currentCategory = 'live';
+    let currentFilter = 'all';
     let currentMatch = null;
     let currentStreamIndex = 0;
+    let prematchItem = null;
     let hls = null;
     let overlayTimeout = null;
     let focusedElement = null;
-
-    const loadedData = {
-        football: null,
-        hockey: null,
-        basketball: null
-    };
 
     function updateClock() {
         const now = new Date();
@@ -873,123 +770,172 @@
         focusedElement = el;
         el.classList.add('focused');
         el.focus();
-        el.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' });
+        if (el.classList.contains('server-btn') || el.classList.contains('nav-btn') || el.classList.contains('pill-btn')) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else {
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+        }
     }
 
+    // Card Component Factory: Displays Full Championship Name across full card width (NO quality indicators on tiles)
     function createCardElement(item) {
         const card = document.createElement('div');
         card.className = `match-card focusable ${item.isChannel ? 'channel-card' : ''}`;
         card.tabIndex = 0;
         card.dataset.id = item.id;
 
-        const defaultChannelLogo = 'img/channels/match-tv.svg';
-
         if (item.isChannel) {
+            // TV Channel Tile: Original logo on clean white container, channel name, short description
             card.innerHTML = `
                 <div class="channel-card-top">
                     <div class="channel-logo-container">
-                        <img src="${item.logo || defaultChannelLogo}" alt="${item.name}" class="channel-logo-img" onerror="this.src='${defaultChannelLogo}'">
+                        <img src="${item.logo}" alt="${item.name}" class="channel-logo-img">
                     </div>
-                    <div class="channel-badge" style="background: ${item.badgeBg || '#e11d48'}">${item.badge || '24/7'}</div>
                 </div>
                 <div class="channel-card-body">
                     <h3 class="channel-name">${item.name}</h3>
-                    <p class="channel-desc">${item.desc || 'Круглосуточный прямой эфир в Full HD'}</p>
-                </div>
-                <div class="card-footer">
-                    <span class="channel-live-status">
-                        <span class="live-dot"></span> ПРЯМОЙ ЭФИР 24/7
-                    </span>
-                    <span class="quality-tag">⚡ ${item.quality || 'Full HD 1080p'}</span>
+                    <p class="channel-desc">${item.desc}</p>
                 </div>
             `;
         } else {
             const isLive = item.isLive;
-            let statusBadge = '';
+            let statusBadgeHtml = '';
+
             if (isLive) {
-                statusBadge = `<span class="badge-live"><span class="live-dot"></span> ${item.status}</span>`;
-            } else if (item.status && item.status.includes('Завершен')) {
-                statusBadge = `<span class="badge-finished">Завершен</span>`;
+                statusBadgeHtml = `<span class="badge-live"><span class="live-indicator"></span> ${item.statusText || 'В ЭФИРЕ'}</span>`;
+            } else if (item.isFinished) {
+                statusBadgeHtml = `<span class="badge-finished">Завершен</span>`;
+            } else if (item.diffDays === 0) {
+                statusBadgeHtml = `<span class="badge-today">${item.statusText || 'Сегодня'}</span>`;
+            } else if (item.diffDays === 1) {
+                statusBadgeHtml = `<span class="badge-tomorrow">${item.statusText || 'Завтра'}</span>`;
             } else {
-                statusBadge = `<span class="badge-time">⏰ ${item.status}</span>`;
+                statusBadgeHtml = `<span class="badge-upcoming">${item.statusText || 'Скоро'}</span>`;
             }
 
             const team1LogoHtml = item.team1.logo 
-                ? `<img src="${item.team1.logo}" alt="${item.team1.name}" class="team-emblem-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="team-emblem-fallback" style="display:none;">⚽</span>` 
-                : `<span class="team-emblem-fallback">⚽</span>`;
+                ? `<img src="${item.team1.logo}" alt="${item.team1.name}" class="team-crest-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="team-crest-fallback" style="display:none;">⚽</span>` 
+                : `<span class="team-crest-fallback">⚽</span>`;
             
             const team2LogoHtml = item.team2.logo 
-                ? `<img src="${item.team2.logo}" alt="${item.team2.name}" class="team-emblem-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="team-emblem-fallback" style="display:none;">⚽</span>` 
-                : `<span class="team-emblem-fallback">⚽</span>`;
+                ? `<img src="${item.team2.logo}" alt="${item.team2.name}" class="team-crest-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><span class="team-crest-fallback" style="display:none;">⚽</span>` 
+                : `<span class="team-crest-fallback">⚽</span>`;
 
-            const primaryStreamName = (item.streams && item.streams[0]) ? item.streams[0].name : 'Full HD 1080p';
+            const leagueIconHtml = item.leagueIcon
+                ? `<img src="${item.leagueIcon}" alt="" class="league-icon-img" onerror="this.style.display='none';">`
+                : '';
 
             card.innerHTML = `
-                <div class="card-header">
-                    <span class="league-name">${item.league}</span>
-                    <span class="quality-tag">⚡ Full HD</span>
+                <div class="card-top">
+                    <span class="league-badge" title="${item.league}">
+                        ${leagueIconHtml}
+                        ${item.league}
+                    </span>
                 </div>
                 <div class="teams-container">
                     <div class="team-row">
                         <div class="team-info">
-                            <div class="team-logo-wrapper">${team1LogoHtml}</div>
-                            <span class="team-title">${item.team1.name}</span>
+                            ${team1LogoHtml}
+                            <span class="team-name">${item.team1.name}</span>
                         </div>
-                        <span class="team-score ${isLive ? 'score-live' : ''}">${item.team1.score}</span>
+                        <span class="team-score ${isLive ? 'winning' : ''}">${item.team1.score}</span>
                     </div>
                     <div class="team-row">
                         <div class="team-info">
-                            <div class="team-logo-wrapper">${team2LogoHtml}</div>
-                            <span class="team-title">${item.team2.name}</span>
+                            ${team2LogoHtml}
+                            <span class="team-name">${item.team2.name}</span>
                         </div>
-                        <span class="team-score ${isLive ? 'score-live' : ''}">${item.team2.score}</span>
+                        <span class="team-score ${isLive ? 'winning' : ''}">${item.team2.score}</span>
                     </div>
                 </div>
-                <div class="card-footer">
-                    ${statusBadge}
-                    <span class="stream-channel-tag">📺 ${primaryStreamName}</span>
+                <div class="card-bottom">
+                    ${statusBadgeHtml}
+                    ${isLive ? '<span class="time-badge">📺 Прямой эфир</span>' : ''}
                 </div>
             `;
         }
 
-        card.addEventListener('click', () => openPlayer(item));
+        card.addEventListener('click', () => {
+            if (item.isChannel || item.isLive || (item.streams && item.streams.length > 0)) {
+                openPlayer(item);
+            } else {
+                openPrematch(item);
+            }
+        });
         card.addEventListener('focus', () => setFocus(card));
 
         return card;
     }
 
-    function renderCards(items) {
-        cardsGrid.innerHTML = '';
-        if (!items || items.length === 0) {
-            matchCounter.textContent = '0 событий';
-            cardsGrid.innerHTML = `
-                <div class="empty-state">
-                    <span class="empty-icon">📺</span>
-                    <p class="empty-text">Нет доступных событий в этом разделе</p>
-                </div>
-            `;
-            return;
-        }
+    function createSectionHeader(title, countText) {
+        const header = document.createElement('div');
+        header.className = 'date-section-header';
+        header.innerHTML = `
+            <span class="date-section-title">${title}</span>
+            ${countText ? `<span class="date-section-badge">${countText}</span>` : ''}
+        `;
+        return header;
+    }
 
-        if (items && items[0] && items[0].isChannel) {
-            matchCounter.textContent = `${items.length} каналов`;
-        } else {
-            matchCounter.textContent = `${items.length} матчей`;
-        }
-        items.forEach(item => {
-            const cardEl = createCardElement(item);
-            cardsGrid.appendChild(cardEl);
+    function renderSections(sections) {
+        cardsGrid.innerHTML = '';
+        let totalCount = 0;
+
+        sections.forEach(sec => {
+            if (!sec.items || sec.items.length === 0) return;
+            totalCount += sec.items.length;
+
+            if (sec.title) {
+                const h = createSectionHeader(sec.title, `${sec.items.length} матчей`);
+                cardsGrid.appendChild(h);
+            }
+
+            sec.items.forEach(item => {
+                const card = createCardElement(item);
+                cardsGrid.appendChild(card);
+            });
         });
 
-        if (!focusedElement) {
+        matchCounter.textContent = `${totalCount} событий`;
+
+        if (totalCount === 0) {
+            cardsGrid.innerHTML = `
+                <div class="live-empty-banner">
+                    <div class="live-empty-icon">⚽</div>
+                    <div class="live-empty-info">
+                        <h2 class="live-empty-title">Нет запланированных матчей в этом разделе</h2>
+                        <p class="live-empty-desc">Выберите другой раздел меню или переключите фильтр лиги.</p>
+                    </div>
+                </div>
+            `;
+        }
+
+        if (!focusedElement || !cardsGrid.contains(focusedElement)) {
             const firstCard = cardsGrid.querySelector('.focusable');
             if (firstCard) setFocus(firstCard);
         }
     }
 
+    function switchFilter(filterKey) {
+        currentFilter = filterKey;
+        const pillButtons = filterPills.querySelectorAll('.pill-btn');
+        pillButtons.forEach(btn => {
+            if (btn.dataset.filter === filterKey) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        renderCurrentCategory();
+    }
+
+    // Master Navigation Category Switcher
     async function switchCategory(cat) {
         currentCategory = cat;
+        currentFilter = 'all';
         focusedElement = null;
+
         const viewport = document.getElementById('contentViewport');
         if (viewport) viewport.scrollTop = 0;
 
@@ -1003,160 +949,206 @@
             }
         });
 
+        // Setup filter pills dynamically
+        if (cat === 'live' || cat === 'channels') {
+            filterPills.style.display = 'none';
+        } else if (cat === 'today') {
+            filterPills.style.display = 'flex';
+            filterPills.innerHTML = `
+                <button class="pill-btn active focusable" data-filter="all" tabindex="0">Все матчи</button>
+                <button class="pill-btn focusable" data-filter="live" tabindex="0">🔴 В эфире</button>
+            `;
+        } else if (cat === 'future') {
+            filterPills.style.display = 'flex';
+            filterPills.innerHTML = `
+                <button class="pill-btn active focusable" data-filter="all" tabindex="0">Все турниры</button>
+                <button class="pill-btn focusable" data-filter="uefa" tabindex="0">🇪🇺 Еврокубки</button>
+                <button class="pill-btn focusable" data-filter="russia" tabindex="0">🇷🇺 Россия</button>
+                <button class="pill-btn focusable" data-filter="england" tabindex="0">🏴󠁧󠁢󠁥󠁮󠁧󠁿 Англия</button>
+                <button class="pill-btn focusable" data-filter="spain" tabindex="0">🇪🇸 Испания</button>
+                <button class="pill-btn focusable" data-filter="italy" tabindex="0">🇮🇹 Италия</button>
+                <button class="pill-btn focusable" data-filter="germany" tabindex="0">🇩🇪 Германия</button>
+                <button class="pill-btn focusable" data-filter="france" tabindex="0">🇫🇷 Франция</button>
+                <button class="pill-btn focusable" data-filter="other" tabindex="0">🌍 Другие</button>
+            `;
+        }
+
         const titles = {
-            live: '🔴 Прямые трансляции в эфире',
-            football: '⚽ Футбольные матчи и чемпионаты',
-            hockey: '🏒 КХЛ, НХЛ и хоккейные турниры',
-            basketball: '🏀 НБА и европейский баскетбол',
-            mma: '🥊 Единоборства UFC, MMA и Бокс',
-            channels: '📺 Спортивные телеканалы 24/7'
+            live: '🔴 Футбольные матчи в прямом эфире',
+            today: '⏰ Футбол: Расписание матчей на Сегодня',
+            channels: '📺 Спортивные телеканалы Full HD',
+            future: '📅 Будущие трансляции футбола на неделю'
         };
-        sectionTitle.textContent = titles[cat] || 'Спортивные трансляции';
+        sectionTitle.textContent = titles[cat] || 'Футбольные трансляции';
 
-        // 1. CHANNELS TAB
-        if (cat === 'channels') {
-            matchCounter.textContent = `${tvChannels.length} каналов`;
-            renderCards(tvChannels);
-            return;
-        }
-
-        // 2. MMA TAB: Show top 24/7 fight channels + UFC tournament cards
-        if (cat === 'mma') {
-            cardsGrid.innerHTML = '';
-            matchCounter.textContent = `${mmaMatches.length} событий / каналов`;
-            
-            // Top fight channels divider
-            const fightChannelsDivider = document.createElement('div');
-            fightChannelsDivider.className = 'section-divider-banner';
-            fightChannelsDivider.textContent = '🥊 Телеканалы единоборств в прямом эфире 24/7 (Full HD):';
-            cardsGrid.appendChild(fightChannelsDivider);
-
-            // Render fight channels
-            const fightChannelIds = ['ch-udar', 'ch-boets', 'ch-boxtv', 'ch-mmatv'];
-            fightChannelIds.forEach(cid => {
-                const ch = tvChannels.find(c => c.id === cid);
-                if (ch) {
-                    cardsGrid.appendChild(createCardElement(ch));
-                }
-            });
-
-            // Upcoming UFC / MMA Tournaments
-            const ufcDivider = document.createElement('div');
-            ufcDivider.className = 'section-divider-banner';
-            ufcDivider.textContent = '🔥 Главные турниры UFC / ACA / Bellator:';
-            cardsGrid.appendChild(ufcDivider);
-
-            mmaMatches.forEach(m => {
-                cardsGrid.appendChild(createCardElement(m));
-            });
-
-            if (!focusedElement) {
-                const firstCard = cardsGrid.querySelector('.focusable');
-                if (firstCard) setFocus(firstCard);
-            }
-            return;
-        }
-
-        // 3. LIVE TAB
-        if (cat === 'live') {
-            await ensureSportDataLoaded();
-            renderLiveOnly();
-            return;
-        }
-
-        // 4. SPORT TABS (football, hockey, basketball)
-        if (loadedData[cat] && loadedData[cat].length > 0) {
-            renderCards(loadedData[cat]);
-        }
-
-        try {
-            let matches = [];
-            if (cat === 'football') {
-                matches = await fetchFootballData();
-            } else if (cat === 'hockey') {
-                matches = await fetchHockeyData();
-            } else if (cat === 'basketball') {
-                matches = await fetchBasketballData();
-            }
-
-            if (matches && matches.length > 0) {
-                loadedData[cat] = matches;
-                renderCards(matches);
-            } else {
-                if (cat === 'hockey') {
-                    cardsGrid.innerHTML = '';
-                    matchCounter.textContent = '2 канала КХЛ';
-                    const hB = document.createElement('div');
-                    hB.className = 'section-divider-banner';
-                    hB.textContent = '🏒 Сейчас нет запланированных матчей. Круглосуточный хоккей в прямом эфире 24/7:';
-                    cardsGrid.appendChild(hB);
-                    const khl = tvChannels.find(c => c.id === 'ch-khl');
-                    const bt5 = tvChannels.find(c => c.id === 'ch-bt5');
-                    if (khl) cardsGrid.appendChild(createCardElement(khl));
-                    if (bt5) cardsGrid.appendChild(createCardElement(bt5));
-                } else if (cat === 'basketball') {
-                    cardsGrid.innerHTML = '';
-                    matchCounter.textContent = '1 канал НБА';
-                    const bB = document.createElement('div');
-                    bB.className = 'section-divider-banner';
-                    bB.textContent = '🏀 Сейчас нет запланированных матчей. Круглосуточный баскетбол в прямом эфире 24/7:';
-                    cardsGrid.appendChild(bB);
-                    const viju = tvChannels.find(c => c.id === 'ch-viju');
-                    if (viju) cardsGrid.appendChild(createCardElement(viju));
-                } else {
-                    renderCards(loadedData[cat] || []);
-                }
-            }
-        } catch (e) {
-            console.error('Data load error:', e);
-            renderCards(loadedData[cat] || []);
-        }
-    }
-
-    async function ensureSportDataLoaded() {
-        const tasks = [];
-        if (!loadedData.football) {
-            tasks.push(fetchFootballData().then(m => { loadedData.football = m; }));
-        }
-        if (!loadedData.hockey) {
-            tasks.push(fetchHockeyData().then(m => { loadedData.hockey = m; }));
-        }
-        if (!loadedData.basketball) {
-            tasks.push(fetchBasketballData().then(m => { loadedData.basketball = m; }));
-        }
-        await Promise.all(tasks);
-    }
-
-    // Render verified live 24/7 channels directly without fake match placeholders
-    function renderLiveOnly() {
-        cardsGrid.innerHTML = '';
-        matchCounter.textContent = `${tvChannels.length} каналов в эфире`;
-
-        const banner = document.createElement('div');
-        banner.className = 'live-empty-banner';
-        banner.innerHTML = `
-            <div class="live-empty-icon">🔴</div>
-            <div class="live-empty-info">
-                <h2 class="live-empty-title">Прямой эфир спортивных телеканалов 24/7 (Full HD 1080p)</h2>
-                <p class="live-empty-desc">Все каналы транслируются непрерывно в максимальном качестве с рабочими проверенными зеркалами.<br>Календарь, счет и расписание игр доступны в разделах <strong>«ФУТБОЛ»</strong>, <strong>«ХОККЕЙ»</strong>, <strong>«БАСКЕТБОЛ»</strong> и <strong>«UFC / MMA»</strong>.</p>
+        cardsGrid.innerHTML = `
+            <div class="player-loader" style="position: static; transform: none; margin: 40px auto; grid-column: 1 / -1;">
+                <div class="spinner"></div>
+                <div class="loader-text">Загрузка футбольного расписания...</div>
             </div>
         `;
-        cardsGrid.appendChild(banner);
 
-        tvChannels.forEach(ch => {
-            const card = createCardElement(ch);
-            cardsGrid.appendChild(card);
-        });
+        await renderCurrentCategory();
+    }
 
-        if (!focusedElement) {
-            const firstCard = cardsGrid.querySelector('.focusable');
-            if (firstCard) setFocus(firstCard);
+    // Render contents for current category and filter
+    async function renderCurrentCategory() {
+        const now = new Date();
+
+        // 1. TV CHANNELS TAB
+        if (currentCategory === 'channels') {
+            renderSections([
+                {
+                    title: '📺 СПОРТИВНЫЕ ТЕЛЕКАНАЛЫ (FULL HD 1080P)',
+                    items: tvChannels
+                }
+            ]);
+            return;
+        }
+
+        // Fetch football matches from VAR TV API
+        const allMatches = await fetchAllVarlineMatches();
+
+        // 2. LIVE TAB (Strictly Live Football Matches)
+        if (currentCategory === 'live') {
+            const liveMatches = allMatches.filter(m => m.isLive);
+            const sections = [];
+
+            if (liveMatches.length > 0) {
+                sections.push({
+                    title: '🔴 МАТЧИ В ПРЯМОМ ЭФИРЕ (ИДЕТ ИГРА)',
+                    items: liveMatches
+                });
+            } else {
+                cardsGrid.innerHTML = `
+                    <div class="live-empty-banner">
+                        <div class="live-empty-icon">⚽</div>
+                        <div class="live-empty-info">
+                            <h2 class="live-empty-title">Сейчас нет футбольных матчей в прямом эфире</h2>
+                            <p class="live-empty-desc">Ближайшие трансляции смотрите в разделах «Сегодня» и «Будущие трансляции», либо включите спортивные «ТВ каналы».</p>
+                        </div>
+                    </div>
+                `;
+                matchCounter.textContent = '0 матчей';
+                return;
+            }
+
+            renderSections(sections);
+            return;
+        }
+
+        // 3. TODAY TAB (Today's Football Matches)
+        if (currentCategory === 'today') {
+            let todayMatches = allMatches.filter(m => m.diffDays === 0 || (m.isLive && m.diffDays <= 0));
+
+            if (currentFilter === 'live') {
+                todayMatches = todayMatches.filter(m => m.isLive);
+            }
+
+            const livePart = todayMatches.filter(m => m.isLive);
+            const scheduledPart = todayMatches.filter(m => !m.isLive && !m.isFinished).sort((a, b) => {
+                return (a.startDate?.getTime() || 0) - (b.startDate?.getTime() || 0);
+            });
+            const finishedPart = todayMatches.filter(m => m.isFinished);
+
+            const sections = [];
+            if (livePart.length > 0) {
+                sections.push({
+                    title: '🔴 СЕЙЧАС В ЭФИРЕ',
+                    items: livePart
+                });
+            }
+
+            if (scheduledPart.length > 0) {
+                sections.push({
+                    title: `⏰ ВСЕ МАТЧИ СЕГОДНЯ (${formatDateHeader(now).toUpperCase()})`,
+                    items: scheduledPart
+                });
+            }
+
+            if (finishedPart.length > 0 && currentFilter === 'all') {
+                sections.push({
+                    title: '🏁 ЗАВЕРШЕННЫЕ МАТЧИ',
+                    items: finishedPart
+                });
+            }
+
+            renderSections(sections);
+            return;
+        }
+
+        // 4. FUTURE TAB: Matches for the week, distributed by country and championship!
+        if (currentCategory === 'future') {
+            let futureMatches = allMatches.filter(m => m.diffDays >= 1 && m.diffDays <= 8 && !m.isFinished);
+
+            if (currentFilter !== 'all') {
+                futureMatches = futureMatches.filter(m => m.tournament && m.tournament.groupKey === currentFilter);
+            }
+
+            const groupsMap = {};
+            futureMatches.forEach(m => {
+                const key = m.tournament ? m.tournament.groupKey : 'other';
+                const title = m.tournament ? m.tournament.groupTitle : '🌍 ДРУГИЕ ЧЕМПИОНАТЫ И КУБКИ';
+                const order = m.tournament ? m.tournament.order : 99;
+
+                if (!groupsMap[key]) {
+                    groupsMap[key] = {
+                        title: title,
+                        order: order,
+                        items: []
+                    };
+                }
+                groupsMap[key].items.push(m);
+            });
+
+            Object.values(groupsMap).forEach(g => {
+                g.items.sort((a, b) => (a.startDate?.getTime() || 0) - (b.startDate?.getTime() || 0));
+            });
+
+            const sortedSections = Object.values(groupsMap).sort((a, b) => a.order - b.order);
+
+            renderSections(sortedSections);
+            return;
         }
     }
 
-    // ==========================================
+    // Prematch Dialog
+    function openPrematch(item) {
+        prematchItem = item;
+        prematchLeague.textContent = item.league || 'ФУТБОЛЬНЫЙ МАТЧ';
+        prematchTime.textContent = item.statusText || 'Скоро';
+
+        prematchName1.textContent = item.team1.name;
+        prematchName2.textContent = item.team2.name;
+        prematchLogo1.src = item.team1.logo || 'img/channels/match-tv.png';
+        prematchLogo2.src = item.team2.logo || 'img/channels/match-tv.png';
+
+        prematchBroadcastText.innerHTML = `📺 Прямая трансляция матча в <strong>1080p Full HD</strong> начнется за 15 минут до стартового свистка.`;
+        btnWatchChannel.textContent = `📺 Смотреть спортивные ТВ каналы`;
+
+        prematchModal.classList.remove('hidden');
+        setFocus(btnWatchChannel);
+    }
+
+    function closePrematch() {
+        prematchModal.classList.add('hidden');
+        if (prematchItem) {
+            const card = document.querySelector(`.match-card[data-id="${prematchItem.id}"]`);
+            if (card) setFocus(card);
+        }
+        prematchItem = null;
+    }
+
+    btnWatchChannel.addEventListener('click', () => {
+        closePrematch();
+        switchCategory('channels');
+    });
+
+    btnClosePrematch.addEventListener('click', () => {
+        closePrematch();
+    });
+
     // Fullscreen TV Video Player Engine
-    // ==========================================
     function openPlayer(item) {
         currentMatch = {
             ...item,
@@ -1168,20 +1160,20 @@
         playerLoader.classList.remove('hidden');
         loaderText.textContent = 'Подключение к трансляции Full HD...';
 
-        playerLeague.textContent = item.league || (item.isChannel ? 'ТЕЛЕКАНАЛ 24/7' : 'ПРЯМОЙ ЭФИР');
+        playerLeague.textContent = item.league || (item.isChannel ? 'ТЕЛЕКАНАЛ' : 'ПРЯМОЙ ЭФИР');
         playerTitle.textContent = item.isChannel ? item.name : `${item.team1.name} — ${item.team2.name}`;
         playerQualityBadge.textContent = '⚡ Full HD 1080p';
 
         const metaEl = document.getElementById('playerMatchMeta');
         if (metaEl) {
             if (item.isChannel) {
-                metaEl.innerHTML = `<span class="player-meta-info">${item.desc || 'Круглосуточный спортивный телеканал 24/7'}</span>`;
+                metaEl.innerHTML = `<span class="player-meta-info">${item.desc}</span>`;
             } else if (item.isLive) {
-                metaEl.innerHTML = `<span class="player-live-badge"><span class="live-dot"></span> ПРЯМОЙ ЭФИР: ${item.status}</span> <span class="player-score-highlight">СЧЕТ: ${item.team1.score} : ${item.team2.score}</span>`;
-            } else if (item.status && item.status.includes('Завершен')) {
-                metaEl.innerHTML = `<span class="player-finished-badge">Матч завершен (Итоговый счет: ${item.team1.score} : ${item.team2.score}). В эфире трансляция канала.</span>`;
+                metaEl.innerHTML = `<span class="player-live-badge"><span class="live-dot"></span> ПРЯМОЙ ЭФИР: ${item.statusText || 'Идет игра'}</span> <span class="player-score-highlight">СЧЕТ: ${item.team1.score} : ${item.team2.score}</span>`;
+            } else if (item.isFinished) {
+                metaEl.innerHTML = `<span class="player-finished-badge">Матч завершен (Счет: ${item.team1.score} : ${item.team2.score})</span>`;
             } else {
-                metaEl.innerHTML = `<span class="player-upcoming-badge">⏰ Начало матча: ${item.status}. Сейчас в эфире: подготовка к трансляции.</span>`;
+                metaEl.innerHTML = `<span class="player-upcoming-badge">⏰ Начало матча: ${item.statusText}. Подготовка к эфиру.</span>`;
             }
         }
 
@@ -1189,7 +1181,7 @@
         if (liveIndicatorBadge) {
             if (item.isChannel || item.isLive) {
                 liveIndicatorBadge.innerHTML = '<span class="live-indicator"></span> ПРЯМОЙ ЭФИР';
-            } else if (item.status && item.status.includes('Завершен')) {
+            } else if (item.isFinished) {
                 liveIndicatorBadge.innerHTML = 'МАТЧ ЗАВЕРШЕН';
             } else {
                 liveIndicatorBadge.innerHTML = 'ОЖИДАНИЕ НАЧАЛА';
@@ -1200,7 +1192,7 @@
 
         renderServerButtons();
         playStream(currentStreamIndex);
-        showOverlayBriefly();
+        showOverlay(3800);
         startStallDetector();
 
         setTimeout(() => {
@@ -1211,6 +1203,7 @@
         }, 100);
     }
 
+    // Mirror / Stream Selector Buttons (Clean, Compact TV Buttons in a Single Row)
     function renderServerButtons() {
         serverButtons.innerHTML = '';
         if (!currentMatch.streams || currentMatch.streams.length === 0) return;
@@ -1218,19 +1211,7 @@
         currentMatch.streams.forEach((stream, idx) => {
             const btn = document.createElement('button');
             btn.className = `server-btn focusable ${idx === currentStreamIndex ? 'active' : ''}`;
-
-            let btnLabel = stream.name;
-            if (currentMatch.isChannel) {
-                if (currentMatch.streams.length === 1) {
-                    btnLabel = 'Full HD 1080p (Основной поток)';
-                } else {
-                    btnLabel = `Зеркало ${idx + 1} (${idx === 0 ? 'Full HD' : 'HD Резерв'})`;
-                }
-            } else {
-                btnLabel = stream.name || `Сервер ${idx + 1}`;
-            }
-
-            btn.textContent = btnLabel;
+            btn.textContent = stream.name || (idx === 0 ? '⚡ Основной поток' : `⚡ Резерв ${idx}`);
             btn.tabIndex = 0;
             btn.addEventListener('click', () => {
                 currentStreamIndex = idx;
@@ -1242,19 +1223,67 @@
         });
     }
 
+    // Intelligent Automatic Failover to Next Available Mirror
+    let failoverTimer = null;
+    let isFailingOver = false;
+
+    function triggerFailoverNow(reason) {
+        if (!currentMatch || !currentMatch.streams || currentMatch.streams.length <= 1) {
+            loaderText.textContent = 'Трансляция временно недоступна. Попробуйте позже.';
+            return;
+        }
+
+        if (isFailingOver) return;
+        isFailingOver = true;
+
+        const nextIndex = (currentStreamIndex + 1) % currentMatch.streams.length;
+        console.warn(`[Auto-Failover] ${reason}. Automatically switching from stream ${currentStreamIndex + 1} to stream ${nextIndex + 1}...`);
+
+        currentStreamIndex = nextIndex;
+        playerLoader.classList.remove('hidden');
+        loaderText.textContent = `Поток ${nextIndex} не отвечает. Переключение на зеркало ${nextIndex + 1}...`;
+
+        renderServerButtons();
+        playStream(nextIndex);
+
+        setTimeout(() => {
+            isFailingOver = false;
+        }, 1000);
+    }
+
     function playStream(index) {
         if (!currentMatch.streams || !currentMatch.streams[index]) return;
         const stream = currentMatch.streams[index];
 
         playerLoader.classList.remove('hidden');
-        loaderText.textContent = `Загрузка: ${stream.name}...`;
+        loaderText.textContent = `Подключение: ${stream.name}...`;
 
         if (hls) {
             hls.destroy();
             hls = null;
         }
 
-        const videoSrc = stream.url;
+        let videoSrc = stream.url;
+
+        // If the stream is a .php or CDN wrapper, fetch the real manifest URL
+        if (videoSrc.includes('.php') || videoSrc.includes('/CDN3/')) {
+            if (window.AndroidBridge && typeof window.AndroidBridge.fetchNative === 'function') {
+                try {
+                    const html = window.AndroidBridge.fetchNative(videoSrc);
+                    const extracted = extractStreamFromHtml(html);
+                    if (extracted) {
+                        videoSrc = extracted;
+                        stream.url = videoSrc;
+                    }
+                } catch (err) {
+                    console.warn('[Player] fetchNative error:', err);
+                }
+            }
+            videoSrc = resolveCdn3Fast(videoSrc);
+            stream.url = videoSrc;
+        }
+
+        console.log(`[Player] Playing stream ${index} (${stream.name}):`, videoSrc);
 
         if (Hls.isSupported()) {
             hls = new Hls({
@@ -1265,9 +1294,9 @@
                 maxBufferLength: 30,
                 maxMaxBufferLength: 60,
                 maxBufferSize: 60 * 1000 * 1000,
-                manifestLoadingTimeOut: 10000,
-                manifestLoadingMaxRetry: 2,
-                fragLoadingTimeOut: 12000,
+                manifestLoadingTimeOut: 15000,
+                manifestLoadingMaxRetry: 3,
+                fragLoadingTimeOut: 20000,
                 fragLoadingMaxRetry: 3,
                 lowLatencyMode: false
             });
@@ -1298,154 +1327,86 @@
                         else if (h >= 1080) qText = '1080p Full HD';
                         else if (h >= 720) qText = '720p HD';
                         else qText = '1080p Full HD';
-                        playerQualityBadge.textContent = `⚡ ${qText}`;
+                        playerQualityBadge.textContent = `⚡ ${qText} / 50 FPS`;
                     }
-                } else {
-                    playerQualityBadge.textContent = '⚡ 1080p Full HD';
                 }
 
-                playerLoader.classList.add('hidden');
-                const promise = tvVideo.play();
-                if (promise !== undefined) {
-                    promise.then(() => {
-                        setTimeout(() => { tvVideo.muted = false; }, 150);
-                    }).catch(err => {
-                        console.warn('Initial play pending buffer:', err);
-                    });
-                }
-            });
-
-            hls.on(Hls.Events.FRAG_BUFFERED, function () {
-                playerLoader.classList.add('hidden');
-                if (tvVideo.paused) {
-                    tvVideo.play().then(() => {
-                        setTimeout(() => { tvVideo.muted = false; }, 150);
-                    }).catch(() => {});
-                }
+                tvVideo.play().then(() => {
+                    setTimeout(() => {
+                        tvVideo.muted = false;
+                    }, 400);
+                }).catch(err => {
+                    console.warn('Playback with sound blocked, trying muted:', err);
+                    tvVideo.muted = true;
+                    tvVideo.play();
+                });
             });
 
             hls.on(Hls.Events.ERROR, function (event, data) {
-                console.warn('HLS Event Error:', data.type, data.details, data.fatal);
+                console.warn('[HLS Event Error]', data.type, data.details, data.response ? data.response.code : '');
                 if (data.fatal) {
-                    switch (data.type) {
-                        case Hls.ErrorTypes.NETWORK_ERROR:
-                            triggerFailoverWithDelay('Сетевая ошибка зеркала', 1500);
-                            break;
-                        case Hls.ErrorTypes.MEDIA_ERROR:
-                            try {
-                                hls.recoverMediaError();
-                            } catch (e) {
-                                triggerFailoverNow('Ошибка декодирования видео');
-                            }
-                            break;
-                        default:
-                            triggerFailoverNow('Критический сбой зеркала');
-                            break;
+                    // Immediate Failover on HTTP 404, 403, 500 or manifest load failures
+                    if (data.details === Hls.ErrorDetails.MANIFEST_LOAD_ERROR || 
+                        data.details === Hls.ErrorDetails.MANIFEST_LOAD_TIMEOUT ||
+                        (data.response && (data.response.code === 404 || data.response.code === 403 || data.response.code >= 500))) {
+                        console.error('[HLS] Stream URL unavailable (HTTP error), immediate automatic failover...');
+                        triggerFailoverNow('Поток недоступен (HTTP 404/403)');
+                        return;
                     }
+
+                    if (data.type === Hls.ErrorTypes.NETWORK_ERROR) {
+                        if (!hls._networkRetried) {
+                            hls._networkRetried = true;
+                            hls.startLoad();
+                        } else {
+                            triggerFailoverNow('Сетевой сбой потока');
+                        }
+                        return;
+                    }
+
+                    if (data.type === Hls.ErrorTypes.MEDIA_ERROR) {
+                        if (!hls._mediaRetried) {
+                            hls._mediaRetried = true;
+                            hls.recoverMediaError();
+                        } else {
+                            triggerFailoverNow('Сбой медиа-декодера');
+                        }
+                        return;
+                    }
+
+                    triggerFailoverNow('Критическая ошибка HLS');
                 }
             });
         } else if (tvVideo.canPlayType('application/vnd.apple.mpegurl')) {
-            tvVideo.muted = true;
             tvVideo.src = videoSrc;
-            tvVideo.addEventListener('loadedmetadata', function () {
-                tvVideo.play().then(() => {
-                    setTimeout(() => { tvVideo.muted = false; }, 150);
-                }).catch(() => {});
-                playerLoader.classList.add('hidden');
-            });
-            tvVideo.addEventListener('error', function () {
-                triggerFailoverWithDelay('Ошибка воспроизведения', 1800);
-            });
+            tvVideo.play();
         }
-    }
 
-    tvVideo.addEventListener('playing', function () {
-        playerLoader.classList.add('hidden');
-        if (tvVideo.muted) {
-            setTimeout(() => {
-                tvVideo.muted = false;
-            }, 100);
-        }
-    });
-
-    tvVideo.addEventListener('timeupdate', function () {
-        if (tvVideo.currentTime > 0) {
+        tvVideo.onplaying = function () {
             playerLoader.classList.add('hidden');
-        }
-    });
+            if (failoverTimer) {
+                clearTimeout(failoverTimer);
+                failoverTimer = null;
+            }
+            showOverlay(3500);
+        };
 
-    tvVideo.addEventListener('canplay', function () {
-        playerLoader.classList.add('hidden');
-    });
-
-    tvVideo.addEventListener('loadeddata', function () {
-        playerLoader.classList.add('hidden');
-        if (tvVideo.paused) {
-            tvVideo.play().then(() => {
-                setTimeout(() => { tvVideo.muted = false; }, 150);
-            }).catch(() => {});
-        }
-    });
-
-    // Automatically remove dead mirror and switch to backup mirror!
-    function removeBrokenMirrorAndFailover(reason) {
-        if (!currentMatch || !currentMatch.streams || currentMatch.streams.length === 0) return;
-
-        // If channel has only 1 stream, do NOT delete it - retry connection!
-        if (currentMatch.streams.length <= 1) {
-            console.warn(`[Auto-Retry] Single stream stalled or errored (${reason}), reconnecting...`);
-            loaderText.textContent = 'Переподключение к трансляции...';
+        tvVideo.onwaiting = function () {
             playerLoader.classList.remove('hidden');
-            if (hls) {
-                hls.startLoad();
-                tvVideo.play().catch(() => {});
-            }
-            return;
-        }
+            loaderText.textContent = 'Буферизация Full HD...';
+        };
 
-        const brokenStream = currentMatch.streams[currentStreamIndex];
-        const brokenName = brokenStream ? brokenStream.name : `Зеркало ${currentStreamIndex + 1}`;
-        console.warn(`[Auto-Prune] Removing broken mirror "${brokenName}" due to: ${reason}`);
-
-        currentMatch.streams.splice(currentStreamIndex, 1);
-
-        if (currentMatch.id && brokenStream) {
-            const ch = tvChannels.find(c => c.id === currentMatch.id);
-            if (ch && Array.isArray(ch.streams) && ch.streams.length > 1) {
-                const bIdx = ch.streams.findIndex(s => s.url === brokenStream.url);
-                if (bIdx !== -1) {
-                    ch.streams.splice(bIdx, 1);
-                }
-            }
-        }
-
-        if (currentStreamIndex >= currentMatch.streams.length) {
-            currentStreamIndex = 0;
-        }
-        renderServerButtons();
-        loaderText.textContent = `Зеркало недоступно. Переключение на рабочее зеркало (${currentStreamIndex + 1}/${currentMatch.streams.length})...`;
-        playerLoader.classList.remove('hidden');
-        playStream(currentStreamIndex);
-    }
-
-    function triggerFailoverWithDelay(reason, delayMs) {
+        // Automatic failover watchdog timer: if stream hangs without response, automatically try next mirror
         if (failoverTimer) clearTimeout(failoverTimer);
         failoverTimer = setTimeout(() => {
-            failoverTimer = null;
-            removeBrokenMirrorAndFailover(reason);
-        }, delayMs || 1500);
-    }
-
-    function triggerFailoverNow(reason) {
-        if (failoverTimer) {
-            clearTimeout(failoverTimer);
-            failoverTimer = null;
-        }
-        removeBrokenMirrorAndFailover(reason);
+            if (playerLoader && !playerLoader.classList.contains('hidden')) {
+                console.warn('[Player] Connection timed out after 12s. Initiating automatic failover...');
+                triggerFailoverNow('Таймаут подключения (12 сек)');
+            }
+        }, 12000);
     }
 
     let stallCheckTimer = null;
-    let failoverTimer = null;
     let lastPlayheadPosition = -1;
     let stallCount = 0;
 
@@ -1465,7 +1426,7 @@
                 const currentPos = tvVideo.currentTime;
                 if (currentPos > 0 && Math.abs(currentPos - lastPlayheadPosition) < 0.1) {
                     stallCount++;
-                    if (stallCount >= 10) {
+                    if (stallCount >= 4) { // 3.5 seconds stall
                         stallCount = 0;
                         triggerFailoverNow('Поток завис');
                     }
@@ -1474,12 +1435,20 @@
                     stallCount = 0;
                 }
             }
-        }, 1200);
+        }, 900);
     }
 
     window.handleBack = function () {
         if (!playerModal.classList.contains('hidden')) {
+            if (isOverlayVisible()) {
+                hideOverlay();
+                return true;
+            }
             closePlayer();
+            return true;
+        }
+        if (!prematchModal.classList.contains('hidden')) {
+            closePrematch();
             return true;
         }
         if (currentCategory !== 'live') {
@@ -1500,6 +1469,10 @@
             clearTimeout(failoverTimer);
             failoverTimer = null;
         }
+        if (overlayTimeout) {
+            clearTimeout(overlayTimeout);
+            overlayTimeout = null;
+        }
         if (hls) {
             hls.destroy();
             hls = null;
@@ -1509,6 +1482,7 @@
         tvVideo.load();
         playerModal.classList.add('hidden');
         playerLoader.classList.add('hidden');
+        hideOverlay();
 
         if (currentMatch) {
             const card = document.querySelector(`.match-card[data-id="${currentMatch.id}"]`);
@@ -1522,12 +1496,28 @@
         currentMatch = null;
     }
 
-    function showOverlayBriefly() {
+    function isOverlayVisible() {
+        return !playerOverlay.classList.contains('hidden') && !playerOverlay.classList.contains('idle');
+    }
+
+    function showOverlay(duration = 4000) {
         playerOverlay.classList.remove('hidden');
+        playerOverlay.classList.remove('idle');
         if (overlayTimeout) clearTimeout(overlayTimeout);
-        overlayTimeout = setTimeout(() => {
-            playerOverlay.classList.add('hidden');
-        }, 5000);
+        if (duration > 0) {
+            overlayTimeout = setTimeout(() => {
+                hideOverlay();
+            }, duration);
+        }
+    }
+
+    function hideOverlay() {
+        if (overlayTimeout) {
+            clearTimeout(overlayTimeout);
+            overlayTimeout = null;
+        }
+        playerOverlay.classList.add('hidden');
+        playerOverlay.classList.add('idle');
     }
 
     function togglePlayPause() {
@@ -1536,12 +1526,26 @@
         } else {
             tvVideo.pause();
         }
-        showOverlayBriefly();
+        showOverlay(3500);
     }
 
-    // ==========================================
-    // Remote Control (D-PAD / Android Leanback)
-    // ==========================================
+    playerModal.addEventListener('click', (e) => {
+        if (e.target.closest('.server-btn') || e.target.closest('.player-action-btn')) {
+            showOverlay(4000);
+            return;
+        }
+        if (isOverlayVisible()) {
+            hideOverlay();
+        } else {
+            showOverlay(4000);
+        }
+    });
+
+    playerModal.addEventListener('mousemove', () => {
+        showOverlay(3500);
+    });
+
+    // Android TV Leanback D-Pad / Remote Control Navigation
     document.addEventListener('keydown', (e) => {
         const keyCode = e.keyCode;
         const key = e.key;
@@ -1553,12 +1557,31 @@
         const isEnter = keyCode === 23 || keyCode === 66 || keyCode === 13 || key === 'Enter';
         const isBack = keyCode === 4 || keyCode === 27 || keyCode === 8 || keyCode === 10009 || keyCode === 461 || key === 'Escape' || key === 'GoBack' || key === 'Back' || key === 'Backspace';
 
+        // 1. In Fullscreen Player
         if (!playerModal.classList.contains('hidden')) {
-            showOverlayBriefly();
-
             if (isBack) {
                 e.preventDefault();
-                closePlayer();
+                if (isOverlayVisible()) {
+                    hideOverlay();
+                } else {
+                    closePlayer();
+                }
+                return;
+            }
+
+            // If overlay is hidden, any navigation key wakes up the overlay on demand!
+            if (!isOverlayVisible()) {
+                e.preventDefault();
+                showOverlay(4000);
+                return;
+            }
+
+            // Overlay is already visible: refresh timeout on user action
+            showOverlay(4000);
+
+            if (isDown) {
+                e.preventDefault();
+                hideOverlay();
                 return;
             }
 
@@ -1573,6 +1596,7 @@
             }
 
             if (isRight) {
+                e.preventDefault();
                 if (currentMatch && currentMatch.streams && currentMatch.streams.length > 1) {
                     currentStreamIndex = (currentStreamIndex + 1) % currentMatch.streams.length;
                     renderServerButtons();
@@ -1584,6 +1608,7 @@
             }
 
             if (isLeft) {
+                e.preventDefault();
                 if (currentMatch && currentMatch.streams && currentMatch.streams.length > 1) {
                     currentStreamIndex = (currentStreamIndex - 1 + currentMatch.streams.length) % currentMatch.streams.length;
                     renderServerButtons();
@@ -1597,7 +1622,36 @@
             return;
         }
 
-        // Main Navigation (Categories & Cards Grid)
+        // 2. In Prematch Dialog
+        if (!prematchModal.classList.contains('hidden')) {
+            if (isBack) {
+                e.preventDefault();
+                closePrematch();
+                return;
+            }
+
+            if (isLeft || isUp) {
+                e.preventDefault();
+                setFocus(btnWatchChannel);
+                return;
+            }
+
+            if (isRight || isDown) {
+                e.preventDefault();
+                setFocus(btnClosePrematch);
+                return;
+            }
+
+            if (isEnter) {
+                e.preventDefault();
+                if (focusedElement) focusedElement.click();
+                return;
+            }
+
+            return;
+        }
+
+        // 3. Main Screen Navigation
         if (isBack) {
             if (currentCategory !== 'live') {
                 e.preventDefault();
@@ -1624,8 +1678,10 @@
 
     function handleDpadNavigation(isUp, isDown, isLeft, isRight) {
         const inNav = focusedElement && focusedElement.classList.contains('nav-btn');
+        const inPills = focusedElement && focusedElement.classList.contains('pill-btn');
         const inGrid = focusedElement && focusedElement.classList.contains('match-card');
 
+        // A. In Top Categories Navigation
         if (inNav) {
             const navButtons = Array.from(categoriesNav.querySelectorAll('.nav-btn'));
             const currentIdx = navButtons.indexOf(focusedElement);
@@ -1637,13 +1693,42 @@
                 setFocus(navButtons[currentIdx + 1]);
                 switchCategory(navButtons[currentIdx + 1].dataset.cat);
             } else if (isDown) {
+                if (filterPills.style.display !== 'none') {
+                    const activePill = filterPills.querySelector('.pill-btn.active') || filterPills.querySelector('.pill-btn');
+                    if (activePill) {
+                        setFocus(activePill);
+                        return;
+                    }
+                }
                 const firstCard = cardsGrid.querySelector('.focusable');
                 if (firstCard) setFocus(firstCard);
             }
             return;
         }
 
-        if (inGrid || (!inNav && cardsGrid.querySelector('.match-card'))) {
+        // B. In Filter Pills Bar
+        if (inPills) {
+            const pills = Array.from(filterPills.querySelectorAll('.pill-btn'));
+            const currentIdx = pills.indexOf(focusedElement);
+
+            if (isLeft && currentIdx > 0) {
+                setFocus(pills[currentIdx - 1]);
+                switchFilter(pills[currentIdx - 1].dataset.filter);
+            } else if (isRight && currentIdx < pills.length - 1) {
+                setFocus(pills[currentIdx + 1]);
+                switchFilter(pills[currentIdx + 1].dataset.filter);
+            } else if (isUp) {
+                const activeNav = categoriesNav.querySelector('.nav-btn.active') || categoriesNav.querySelector('.nav-btn');
+                if (activeNav) setFocus(activeNav);
+            } else if (isDown) {
+                const firstCard = cardsGrid.querySelector('.focusable');
+                if (firstCard) setFocus(firstCard);
+            }
+            return;
+        }
+
+        // C. In Cards Grid
+        if (inGrid || cardsGrid.querySelector('.match-card')) {
             const cards = Array.from(cardsGrid.querySelectorAll('.match-card'));
             let currentIdx = cards.indexOf(focusedElement);
             if (currentIdx === -1 && document.activeElement) {
@@ -1651,7 +1736,7 @@
             }
             if (currentIdx === -1) {
                 currentIdx = 0;
-                setFocus(cards[0]);
+                if (cards[0]) setFocus(cards[0]);
                 return;
             }
 
@@ -1665,6 +1750,13 @@
                 if (currentIdx - cols >= 0) {
                     setFocus(cards[currentIdx - cols]);
                 } else {
+                    if (filterPills.style.display !== 'none') {
+                        const activePill = filterPills.querySelector('.pill-btn.active') || filterPills.querySelector('.pill-btn');
+                        if (activePill) {
+                            setFocus(activePill);
+                            return;
+                        }
+                    }
                     const activeNav = categoriesNav.querySelector('.nav-btn.active') || categoriesNav.querySelector('.nav-btn');
                     if (activeNav) setFocus(activeNav);
                 }
@@ -1678,7 +1770,7 @@
         }
     }
 
-    // Category Buttons Click Listeners
+    // Top Navigation Click Listeners
     categoriesNav.addEventListener('click', (e) => {
         const btn = e.target.closest('.nav-btn');
         if (btn && btn.dataset.cat) {
@@ -1687,35 +1779,23 @@
         }
     });
 
+    // Sub-Filter Click Listeners
+    filterPills.addEventListener('click', (e) => {
+        const pill = e.target.closest('.pill-btn');
+        if (pill && pill.dataset.filter) {
+            setFocus(pill);
+            switchFilter(pill.dataset.filter);
+        }
+    });
+
     // Auto-refresh match live data every 60 seconds
     setInterval(async () => {
         if (!playerModal.classList.contains('hidden')) return;
-
-        if (currentCategory === 'live') {
-            await ensureSportDataLoaded();
-            renderLiveOnly();
-        } else if (currentCategory === 'football') {
-            const data = await fetchFootballData();
-            if (data && data.length > 0) {
-                loadedData.football = data;
-                renderCards(data);
-            }
-        } else if (currentCategory === 'hockey') {
-            const data = await fetchHockeyData();
-            if (data && data.length > 0) {
-                loadedData.hockey = data;
-                renderCards(data);
-            }
-        } else if (currentCategory === 'basketball') {
-            const data = await fetchBasketballData();
-            if (data && data.length > 0) {
-                loadedData.basketball = data;
-                renderCards(data);
-            }
-        }
+        await fetchAllVarlineMatches(true);
+        await renderCurrentCategory();
     }, 60000);
 
-    // Initial Application Startup
+    // Startup
     async function init() {
         const liveBtn = categoriesNav.querySelector('[data-cat="live"]');
         if (liveBtn) setFocus(liveBtn);
