@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with Authentic Official Logos)
+    // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with Authentic Official Logos & Redundant Mirrors)
     const tvChannels = [
         {
             id: 'ch-matchtv',
@@ -12,7 +12,9 @@
             desc: 'Главный федеральный спортивный телеканал России',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/169/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/169/index.m3u8' },
+                { name: '⚡ Резерв 1 (CDN)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
+                { name: '⚡ Резерв 2', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
             ]
         },
         {
@@ -23,7 +25,9 @@
             desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/193/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/193/index.m3u8' },
+                { name: '⚡ Резерв 1', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
+                { name: '⚡ Резерв 2 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -34,7 +38,9 @@
             desc: 'Флагманский европейский футбол и топ-чемпионаты',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/130/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/130/index.m3u8' },
+                { name: '⚡ Резерв 1 (Футбол 2)', url: 'https://stream.mcquack.net/142/index.m3u8' },
+                { name: '⚡ Резерв 2 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -45,7 +51,9 @@
             desc: 'Испанская Ла Лига и матчи Кубка Короля',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/142/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/142/index.m3u8' },
+                { name: '⚡ Резерв 1 (Футбол 1)', url: 'https://stream.mcquack.net/130/index.m3u8' },
+                { name: '⚡ Резерв 2 (Футбол 3)', url: 'https://stream.mcquack.net/185/index.m3u8' }
             ]
         },
         {
@@ -56,8 +64,9 @@
             desc: 'Немецкая Бундеслига и итальянская Серия А',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/185/index.m3u8' },
-                { name: '⚡ Резерв 1', url: 'http://185.57.68.33/110/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/185/index.m3u8' },
+                { name: '⚡ Резерв 1 (Футбол 2)', url: 'https://stream.mcquack.net/142/index.m3u8' },
+                { name: '⚡ Резерв 2 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -68,7 +77,9 @@
             desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/493/index.m3u8' },
+                { name: '⚡ Резерв 1 (Setanta)', url: 'https://stream.mcquack.net/234/index.m3u8' },
+                { name: '⚡ Резерв 2 (Матч Премьер)', url: 'https://stream.mcquack.net/193/index.m3u8' }
             ]
         },
         {
@@ -79,7 +90,9 @@
             desc: 'АПЛ, Серия А, Формула 1 и мировые лиги',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/234/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/234/index.m3u8' },
+                { name: '⚡ Резерв 1 (Setanta 2)', url: 'https://stream.mcquack.net/235/index.m3u8' },
+                { name: '⚡ Резерв 2 (Футбол 1)', url: 'https://stream.mcquack.net/130/index.m3u8' }
             ]
         },
         {
@@ -90,7 +103,9 @@
             desc: 'Бундеслига, теннис ATP/WTA и евробаскетбол',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/235/index.m3u8' }
+                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'https://stream.mcquack.net/235/index.m3u8' },
+                { name: '⚡ Резерв 1 (Setanta 1)', url: 'https://stream.mcquack.net/234/index.m3u8' },
+                { name: '⚡ Резерв 2 (Футбол 2)', url: 'https://stream.mcquack.net/142/index.m3u8' }
             ]
         },
         {
@@ -101,7 +116,8 @@
             desc: 'Еврокубки, мировой футбол, биатлон и спорт',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/33/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/33/index.m3u8' },
+                { name: '⚡ Резерв 1 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -109,10 +125,12 @@
             isChannel: true,
             name: 'Sky Sports Football HD',
             logo: 'img/channels/sky-football.png',
-            desc: 'Английская Премьер-лига (АПЛ) и британские кубки',
+            desc: 'Английская Премьер-лига (АПЛ) и европейский футбол',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'http://45.228.234.9:8000/play/a06b/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/234/index.m3u8' },
+                { name: '⚡ Резерв 1 (Футбол 1)', url: 'https://stream.mcquack.net/130/index.m3u8' },
+                { name: '⚡ Резерв 2 (Setanta 2)', url: 'https://stream.mcquack.net/235/index.m3u8' }
             ]
         },
         {
@@ -123,7 +141,8 @@
             desc: 'Российский спорт, региональный футбол и первенства',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/143/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/143/index.m3u8' },
+                { name: '⚡ Резерв 1 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -134,7 +153,8 @@
             desc: 'Игровые виды спорта, евролиги и кубки',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/188/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/188/index.m3u8' },
+                { name: '⚡ Резерв 1 (Арена)', url: 'https://stream.mcquack.net/163/index.m3u8' }
             ]
         },
         {
@@ -145,7 +165,8 @@
             desc: 'Престижные мировые первенства и турниры',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/163/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/163/index.m3u8' },
+                { name: '⚡ Резерв 1 (Игра)', url: 'https://stream.mcquack.net/188/index.m3u8' }
             ]
         },
         {
@@ -156,7 +177,9 @@
             desc: 'Единоборства, бои UFC, турниры ACA и бокс',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/112/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/112/index.m3u8' },
+                { name: '⚡ Резерв 1 (UDAR HD)', url: 'https://stream.mcquack.net/279/index.m3u8' },
+                { name: '⚡ Резерв 2 (MMA-TV)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
             ]
         },
         {
@@ -170,8 +193,7 @@
                 { name: '⚡ Full HD 1080p', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8' },
                 { name: '⚡ HD 720p (Быстрый)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' },
                 { name: '⚡ SD Резерв', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_404.m3u8' },
-                { name: '⚡ Зеркало 1 (Динамическое)', url: 'https://jmp2.uk/rok-ac0caef9123a35df3b884b139340a597.m3u8' },
-                { name: '⚡ Зеркало 2 (Superstar)', url: 'https://dpv6ceilvhyrw.cloudfront.net/playlist.m3u8' }
+                { name: '⚡ Зеркало 1 (Superstar)', url: 'https://dpv6ceilvhyrw.cloudfront.net/playlist.m3u8' }
             ]
         },
         {
@@ -182,7 +204,9 @@
             desc: 'Мировой спорт, теннис Большого шлема и велоспорт',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'http://90.183.52.46:4000/play/a06v/index.m3u8' },
+                { name: '⚡ Резерв 1 (Матч Страна)', url: 'https://stream.mcquack.net/143/index.m3u8' },
+                { name: '⚡ Резерв 2 (Спортивный)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
             ]
         },
         {
@@ -193,7 +217,9 @@
             desc: 'Зимние виды спорта, автогонки и мировые кубки',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/188/index.m3u8' },
+                { name: '⚡ Резерв 1 (Арена)', url: 'https://stream.mcquack.net/163/index.m3u8' },
+                { name: '⚡ Резерв 2 (Спортивный)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
             ]
         },
         {
@@ -204,7 +230,9 @@
             desc: 'Матчи Континентальной Хоккейной Лиги и Кубок Гагарина',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/178/index.m3u8' }
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/178/index.m3u8' },
+                { name: '⚡ Резерв 1 (Беларусь 5)', url: 'https://stream.mcquack.net/33/index.m3u8' },
+                { name: '⚡ Резерв 2 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -215,7 +243,57 @@
             desc: 'Мировой баскетбол, хоккей и автогонки',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/333/index.m3u8' }
+                { name: '⚡ Основной поток (HD)', url: 'https://stream.mcquack.net/333/index.m3u8' },
+                { name: '⚡ Резерв 1 (Спортивный)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' },
+                { name: '⚡ Резерв 2 (Матч ТВ)', url: 'https://stream.mcquack.net/169/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-udar',
+            isChannel: true,
+            name: 'Телеканал UDAR HD',
+            logo: 'img/channels/udar.svg',
+            desc: 'Top Dog, Hardcore FC, кулачные бои и турниры MMA',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток (1080p)', url: 'https://stream.mcquack.net/279/index.m3u8' },
+                { name: '⚡ Резерв 1 (Боец)', url: 'https://stream.mcquack.net/112/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-boxtv',
+            isChannel: true,
+            name: 'Бокс ТВ HD',
+            logo: 'img/channels/boxtv.svg',
+            desc: 'Профессиональный бокс и титульные поединки',
+            quality: 'HD',
+            streams: [
+                { name: '⚡ Основной поток', url: 'https://stream.mcquack.net/154/index.m3u8' },
+                { name: '⚡ Резерв 1 (Боец)', url: 'https://stream.mcquack.net/112/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-mmatv',
+            isChannel: true,
+            name: 'MMA-TV.com HD',
+            logo: 'img/channels/mmatv.svg',
+            desc: 'Мировые турниры MMA и боевые единоборства',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток (1080p)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' },
+                { name: '⚡ Резерв 1 (UDAR HD)', url: 'https://stream.mcquack.net/279/index.m3u8' }
+            ]
+        },
+        {
+            id: 'ch-sportivny',
+            isChannel: true,
+            name: 'Спортивный HD',
+            logo: 'img/channels/sportivny.svg',
+            desc: 'Российские чемпионаты, автоспорт и единоборства',
+            quality: 'Full HD 1080p',
+            streams: [
+                { name: '⚡ Основной поток (1080p)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' },
+                { name: '⚡ Резерв 1 (Астрахань Спорт)', url: 'https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8' }
             ]
         }
     ];
@@ -422,9 +500,10 @@
     function getFallbackMirrorsForTournament(groupKey) {
         if (groupKey === 'uefa') {
             return [
-                { url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' },
-                { url: 'https://stream.mcquack.net/33/index.m3u8' },
-                { url: 'https://stream.mcquack.net/234/index.m3u8' }
+                { url: 'https://stream.mcquack.net/493/index.m3u8' }, // Okko Sport 1080p
+                { url: 'https://stream.mcquack.net/130/index.m3u8' }, // Матч Футбол 1
+                { url: 'https://stream.mcquack.net/33/index.m3u8' },  // Беларусь 5
+                { url: 'https://stream.mcquack.net/234/index.m3u8' }  // Setanta Sports 1
             ];
         } else if (groupKey === 'russia') {
             return [
@@ -1226,37 +1305,65 @@
     // Intelligent Automatic Failover to Next Available Mirror
     let failoverTimer = null;
     let isFailingOver = false;
+    let failoverAttempts = 0;
+
+    function showPlaybackError(msg) {
+        if (hls) {
+            try { hls.destroy(); } catch (e) {}
+            hls = null;
+        }
+        playerLoader.classList.remove('hidden');
+        loaderText.innerHTML = `
+            <div style="font-size: 1.15rem; font-weight: 700; color: #f87171; margin-bottom: 8px;">⚠️ ${msg}</div>
+            <div style="font-size: 0.9rem; color: #94a3b8; line-height: 1.4;">
+                Нажмите <b>◄ ►</b> для выбора зеркала или <b>НАЗАД</b> для возврата
+            </div>
+        `;
+        showOverlay(); // Always show controls on error
+    }
 
     function triggerFailoverNow(reason) {
-        if (!currentMatch || !currentMatch.streams || currentMatch.streams.length <= 1) {
-            loaderText.textContent = 'Трансляция временно недоступна. Попробуйте позже.';
+        if (!currentMatch || !currentMatch.streams || currentMatch.streams.length === 0) {
+            showPlaybackError('Трансляция временно недоступна. Попробуйте позже.');
             return;
         }
 
         if (isFailingOver) return;
-        isFailingOver = true;
 
-        const nextIndex = (currentStreamIndex + 1) % currentMatch.streams.length;
-        console.warn(`[Auto-Failover] ${reason}. Automatically switching from stream ${currentStreamIndex + 1} to stream ${nextIndex + 1}...`);
+        // If there are multiple streams and we haven't exhausted them
+        if (currentMatch.streams.length > 1 && failoverAttempts < currentMatch.streams.length) {
+            isFailingOver = true;
+            failoverAttempts++;
+            const nextIndex = (currentStreamIndex + 1) % currentMatch.streams.length;
+            console.warn(`[Auto-Failover] ${reason}. Attempt ${failoverAttempts}/${currentMatch.streams.length}. Switching to mirror ${nextIndex + 1}...`);
 
-        currentStreamIndex = nextIndex;
-        playerLoader.classList.remove('hidden');
-        loaderText.textContent = `Поток ${nextIndex} не отвечает. Переключение на зеркало ${nextIndex + 1}...`;
+            currentStreamIndex = nextIndex;
+            playerLoader.classList.remove('hidden');
+            loaderText.innerHTML = `
+                <div style="font-size: 1.05rem; font-weight: 600; color: #38bdf8; margin-bottom: 4px;">⚡ Поток ${nextIndex} не отвечает</div>
+                <div style="font-size: 0.9rem; color: #94a3b8;">Авто-переключение на зеркало ${nextIndex + 1}...</div>
+            `;
 
-        renderServerButtons();
-        playStream(nextIndex);
+            renderServerButtons();
+            playStream(nextIndex, false);
 
-        setTimeout(() => {
-            isFailingOver = false;
-        }, 1000);
+            setTimeout(() => {
+                isFailingOver = false;
+            }, 1200);
+            return;
+        }
+
+        console.warn(`[Auto-Failover] All mirrors exhausted for ${currentMatch.name || currentMatch.title}`);
+        showPlaybackError('Трансляция временно недоступна. Попробуйте позже.');
     }
 
-    function playStream(index) {
+    function playStream(index, resetAttempts = true) {
         if (!currentMatch.streams || !currentMatch.streams[index]) return;
+        if (resetAttempts) failoverAttempts = 0;
         const stream = currentMatch.streams[index];
 
         playerLoader.classList.remove('hidden');
-        loaderText.textContent = `Подключение: ${stream.name}...`;
+        loaderText.innerHTML = `<div style="font-size:1.05rem; font-weight:600; color:#38bdf8;">Загрузка: ${stream.name}...</div>`;
 
         if (hls) {
             hls.destroy();
@@ -1422,20 +1529,23 @@
                 return;
             }
 
-            if (!tvVideo.paused && !tvVideo.ended) {
+            // Check stall only when video has begun active playback
+            if (!tvVideo.paused && !tvVideo.ended && !tvVideo.seeking && tvVideo.readyState >= 3) {
                 const currentPos = tvVideo.currentTime;
                 if (currentPos > 0 && Math.abs(currentPos - lastPlayheadPosition) < 0.1) {
                     stallCount++;
-                    if (stallCount >= 4) { // 3.5 seconds stall
+                    if (stallCount >= 8) { // 8 seconds stall
                         stallCount = 0;
-                        triggerFailoverNow('Поток завис');
+                        triggerFailoverNow('Поток завис при воспроизведении');
                     }
                 } else {
                     lastPlayheadPosition = currentPos;
                     stallCount = 0;
                 }
+            } else {
+                stallCount = 0;
             }
-        }, 900);
+        }, 1000);
     }
 
     window.handleBack = function () {
