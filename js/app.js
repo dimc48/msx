@@ -17,7 +17,7 @@
                 { name: '⚡ Резерв 2', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
             ]
         },
-        {
+                {
             id: 'ch-premier',
             isChannel: true,
             name: 'Матч Премьер HD',
@@ -25,9 +25,11 @@
             desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток (1080p 50 FPS)', url: 'http://stream.mcquack.net/193/index.m3u8' },
-                { name: '⚡ Резерв 1', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
-                { name: '⚡ Резерв 2 (Матч ТВ)', url: 'http://stream.mcquack.net/169/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'http://90.183.52.46:4000/play/a06m/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
+                { name: '⚡ Сервер 3 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/matchprem/index.m3u8' },
+                { name: '⚡ Сервер 4 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
+                { name: '⚡ Сервер 5 (Резерв 2)', url: 'http://stream.mcquack.net/193/index.m3u8' }
             ]
         },
         {
@@ -69,7 +71,7 @@
                 { name: '⚡ Резерв 2 (Матч ТВ)', url: 'http://stream.mcquack.net/169/index.m3u8' }
             ]
         },
-        {
+                {
             id: 'ch-okko',
             isChannel: true,
             name: 'Okko Спорт HD',
@@ -77,10 +79,11 @@
             desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Основной поток (1080p)', url: 'http://178.124.179.122:8080/Setanta1/index.m3u8' },
-                { name: '⚡ Резерв 1 (Setanta 1)', url: 'http://stream.mcquack.net/234/index.m3u8' },
-                { name: '⚡ Резерв 2 (Матч Премьер)', url: 'http://stream.mcquack.net/193/index.m3u8' },
-                { name: '⚡ Резерв 3 (Матч ТВ)', url: 'http://stream.mcquack.net/169/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'http://90.183.52.46:4000/play/a06s/index.m3u8' },
+                { name: '⚡ Сервер 2 (Okko Sport 1080p)', url: 'https://t6.ultrastream.vip/okkosport/index.m3u8' },
+                { name: '⚡ Сервер 3 (Okko Футбол)', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' },
+                { name: '⚡ Сервер 4 (Еврокубки)', url: 'http://178.124.179.122:8080/Setanta1/index.m3u8' },
+                { name: '⚡ Сервер 5 (Setanta HD)', url: 'http://stream.mcquack.net/234/index.m3u8' }
             ]
         },
         {
@@ -1229,11 +1232,240 @@
         closePrematch();
     });
 
+
+    // =========================================================================
+    // Dynamic Stream Harvester & Autonomous Self-Healing Resolver
+    // =========================================================================
+    const DYNAMIC_CACHE_KEY = 'footdroid_dynamic_streams_v5';
+    let dynamicStreamPool = {};
+
+    try {
+        const cached = localStorage.getItem(DYNAMIC_CACHE_KEY);
+        if (cached) dynamicStreamPool = JSON.parse(cached);
+    } catch(e) {}
+
+    const CLUSTER_FALLBACKS = {
+        'ch-premier': [
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://90.183.52.46:4000/play/a06m/index.m3u8' },
+            { name: '⚡ Сервер 2 (Резерв)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
+            { name: '⚡ Сервер 3 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/matchprem/index.m3u8' },
+            { name: '⚡ Сервер 4 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
+            { name: '⚡ Сервер 5 (Резерв 2)', url: 'http://stream.mcquack.net/193/index.m3u8' }
+        ],
+        'ch-okko': [
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://90.183.52.46:4000/play/a06s/index.m3u8' },
+            { name: '⚡ Сервер 2 (Okko Sport 1080p)', url: 'https://t6.ultrastream.vip/okkosport/index.m3u8' },
+            { name: '⚡ Сервер 3 (Okko Футбол)', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' },
+            { name: '⚡ Сервер 4 (Еврокубки)', url: 'http://178.124.179.122:8080/Setanta1/index.m3u8' },
+            { name: '⚡ Сервер 5 (Setanta HD)', url: 'http://stream.mcquack.net/234/index.m3u8' }
+        ],
+        'ch-matchtv': [
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/169/index.m3u8' },
+            { name: '⚡ Сервер 2 (CDN)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
+            { name: '⚡ Сервер 3 (Спортивный)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
+        ],
+        'ch-futbol1': [
+            { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://stream.mcquack.net/130/index.m3u8' },
+            { name: '⚡ Сервер 2 (Футбол 2)', url: 'http://stream.mcquack.net/142/index.m3u8' },
+            { name: '⚡ Сервер 3 (Матч ТВ)', url: 'http://stream.mcquack.net/169/index.m3u8' }
+        ],
+        'ch-futbol2': [
+            { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://stream.mcquack.net/142/index.m3u8' },
+            { name: '⚡ Сервер 2 (Футбол 1)', url: 'http://stream.mcquack.net/130/index.m3u8' },
+            { name: '⚡ Сервер 3 (Футбол 3)', url: 'http://stream.mcquack.net/185/index.m3u8' }
+        ],
+        'ch-futbol3': [
+            { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://stream.mcquack.net/185/index.m3u8' },
+            { name: '⚡ Сервер 2 (Футбол 2)', url: 'http://stream.mcquack.net/142/index.m3u8' }
+        ],
+        'ch-wwe': [
+            { name: '⚡ Сервер 1 (Roku Full HD)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8' },
+            { name: '⚡ Сервер 2 (Бокс ТВ)', url: 'http://stream.mcquack.net/154/index.m3u8' },
+            { name: '⚡ Сервер 3 (UDAR HD)', url: 'http://stream.mcquack.net/279/index.m3u8' }
+        ],
+        'ch-euro1': [
+            { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' },
+            { name: '⚡ Сервер 2 (CDN)', url: 'http://90.183.52.46:4000/play/a06v/index.m3u8' },
+            { name: '⚡ Сервер 3 (Резерв)', url: 'http://stream.mcquack.net/143/index.m3u8' }
+        ],
+        'ch-euro2': [
+            { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' },
+            { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/188/index.m3u8' },
+            { name: '⚡ Сервер 3 (Спортивный)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
+        ],
+        'ch-bt5': [
+            { name: '⚡ Сервер 1 (1080p)', url: 'http://178.124.179.122:8080/BT5/index.m3u8' },
+            { name: '⚡ Сервер 2 (Белтелеком)', url: 'https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8' },
+            { name: '⚡ Сервер 3 (Резерв)', url: 'http://stream.mcquack.net/33/index.m3u8' }
+        ],
+        'ch-viju': [
+            { name: '⚡ Сервер 1 (1080p)', url: 'http://46.53.200.153:7777/play/a01l/index.m3u8' },
+            { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/333/index.m3u8' }
+        ]
+    };
+
+    async function harvestOnlineStreams() {
+        console.log('[StreamHarvester] Automated online discovery started...');
+        const endpoints = [
+            'https://varline.store/api/matchlist?limit=500',
+            'https://lsport.vip/api/matchlist?limit=500',
+            'https://iptv-org.github.io/iptv/countries/ru.m3u'
+        ];
+
+        for (const ep of endpoints) {
+            try {
+                const res = await fetch(ep, { signal: AbortSignal.timeout ? AbortSignal.timeout(6000) : undefined });
+                if (!res.ok) continue;
+
+                if (ep.endsWith('.m3u')) {
+                    const text = await res.text();
+                    const lines = text.split('\n');
+                    for (let i = 0; i < lines.length; i++) {
+                        const line = lines[i];
+                        const nextLine = lines[i+1] ? lines[i+1].trim() : '';
+                        if (line.startsWith('#EXTINF') && nextLine.startsWith('http')) {
+                            if (line.includes('MatchPremier') || line.includes('Матч Премьер')) {
+                                addStreamToPool('ch-premier', nextLine, '⚡ Онлайн Резерв');
+                            } else if (line.includes('Okko') || line.includes('Окко')) {
+                                addStreamToPool('ch-okko', nextLine, '⚡ Онлайн Резерв');
+                            }
+                        }
+                    }
+                } else {
+                    const data = await res.json();
+                    if (Array.isArray(data)) {
+                        data.forEach(m => {
+                            if (m.stream && typeof m.stream === 'string') {
+                                if (m.stream.includes('mp.php')) {
+                                    addStreamToPool('ch-premier', 'https://t5.ultrastream.vip/matchprem/index.m3u8', '⚡ Matchtvlive CDN');
+                                } else if (m.stream.includes('okko-sport.php') || m.stream.includes('footballokko.php')) {
+                                    addStreamToPool('ch-okko', 'https://t6.ultrastream.vip/okkosport/index.m3u8', '⚡ Okko Live');
+                                }
+                            }
+                        });
+                    }
+                }
+            } catch (err) {
+                console.warn('[StreamHarvester] Query to ' + ep + ' skipped:', err.message);
+            }
+        }
+
+        try {
+            localStorage.setItem(DYNAMIC_CACHE_KEY, JSON.stringify(dynamicStreamPool));
+        } catch(e) {}
+    }
+
+    function addStreamToPool(channelId, url, name) {
+        if (!url || typeof url !== 'string') return;
+        if (!dynamicStreamPool[channelId]) dynamicStreamPool[channelId] = [];
+        if (!dynamicStreamPool[channelId].some(s => s.url === url)) {
+            dynamicStreamPool[channelId].push({ name: name || '⚡ Онлайн Резерв', url: url });
+        }
+    }
+
+    function buildUnifiedStreamPool(item) {
+        const pool = [];
+        const seenUrls = new Set();
+
+        const addCandidate = (url, name) => {
+            if (!url || typeof url !== 'string') return;
+            const cleanUrl = url.trim();
+            if (seenUrls.has(cleanUrl)) return;
+            seenUrls.add(cleanUrl);
+            pool.push({
+                name: name || `⚡ Источник ${pool.length + 1}`,
+                url: cleanUrl
+            });
+        };
+
+        // 1. Channel cluster streams
+        if (item.isChannel && CLUSTER_FALLBACKS[item.id]) {
+            CLUSTER_FALLBACKS[item.id].forEach(s => addCandidate(s.url, s.name));
+        }
+
+        // 2. Pre-defined item streams
+        if (Array.isArray(item.streams)) {
+            item.streams.forEach((s, idx) => addCandidate(s.url, s.name || `⚡ Сервер ${idx + 1}`));
+        }
+
+        // 3. Dynamically harvested streams
+        if (item.isChannel && dynamicStreamPool[item.id]) {
+            dynamicStreamPool[item.id].forEach(s => addCandidate(s.url, s.name));
+        }
+
+        // 4. Match tournament fallbacks
+        if (!item.isChannel && item.tournament && item.tournament.groupKey) {
+            const fallbacks = getFallbackMirrorsForTournament(item.tournament.groupKey);
+            fallbacks.forEach((fb, idx) => addCandidate(fb.url, `⚡ Резерв ${idx + 1}`));
+        }
+
+        return pool;
+    }
+
+    // Auto-search for new streams if current pool is failing
+    async function autoSearchStreamsForActiveMatch() {
+        if (!currentMatch) return false;
+        playerLoader.classList.remove('hidden');
+        loaderText.innerHTML = `
+            <div style="font-size: 1.15rem; font-weight: 700; color: #38bdf8; margin-bottom: 6px;">⚡ Автоматический поиск рабочего потока...</div>
+            <div style="font-size: 0.9rem; color: #94a3b8;">Поиск свежих онлайн-зеркал и альтернативных серверов...</div>
+        `;
+
+        // 1. If it's a channel, harvest streams
+        if (currentMatch.isChannel) {
+            await harvestOnlineStreams();
+            const updatedPool = buildUnifiedStreamPool(currentMatch);
+            if (updatedPool && updatedPool.length > currentMatch.streams.length) {
+                currentMatch.streams = updatedPool;
+                currentStreamIndex = Math.min(failoverAttempts, currentMatch.streams.length - 1);
+                renderServerButtons();
+                playStream(currentStreamIndex, false);
+                return true;
+            }
+        } else {
+            // 2. If it's a match, re-fetch matchlist to find live stream updates
+            try {
+                const res = await fetch('https://varline.store/api/matchlist?limit=500', {
+                    signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined
+                });
+                if (res.ok) {
+                    const freshMatches = await res.json();
+                    const homeTarget = (currentMatch.team1 ? currentMatch.team1.name : '').toLowerCase();
+                    const awayTarget = (currentMatch.team2 ? currentMatch.team2.name : '').toLowerCase();
+                    const matched = freshMatches.find(m => {
+                        const h = (m.home || m.home_en || '').toLowerCase();
+                        const a = (m.away || m.away_en || '').toLowerCase();
+                        return (m.id && m.id === currentMatch.id) || (h && homeTarget && h.includes(homeTarget)) || (a && awayTarget && a.includes(awayTarget));
+                    });
+
+                    if (matched && matched.stream) {
+                        const newUrl = resolveCdn3Fast(matched.stream);
+                        if (!currentMatch.streams.some(s => s.url === newUrl)) {
+                            currentMatch.streams.push({ name: '⚡ Свежий автопоток', url: newUrl });
+                            currentStreamIndex = currentMatch.streams.length - 1;
+                            renderServerButtons();
+                            playStream(currentStreamIndex, false);
+                            return true;
+                        }
+                    }
+                }
+            } catch (err) {
+                console.warn('[StreamEngine] Match re-fetch error:', err);
+            }
+        }
+        return false;
+    }
+
+    // Initialize background harvester
+    setTimeout(harvestOnlineStreams, 1500);
+    setInterval(harvestOnlineStreams, 15 * 60 * 1000);
+
     // Fullscreen TV Video Player Engine
     function openPlayer(item) {
+        const fullStreams = buildUnifiedStreamPool(item);
         currentMatch = {
             ...item,
-            streams: (item.streams || []).map(s => ({ ...s }))
+            streams: fullStreams.length > 0 ? fullStreams : (item.streams || []).map(s => ({ ...s }))
         };
         currentStreamIndex = 0;
 
@@ -1357,8 +1589,14 @@
             return;
         }
 
-        console.warn(`[Auto-Failover] All mirrors exhausted for ${currentMatch.name || currentMatch.title}`);
-        showPlaybackError('Трансляция временно недоступна. Попробуйте позже.');
+        console.warn(`[Auto-Failover] All mirrors exhausted for ${currentMatch.name || currentMatch.title}. Launching autonomous stream search...`);
+        autoSearchStreamsForActiveMatch().then(recovered => {
+            if (!recovered) {
+                showPlaybackError('Все источники временно недоступны. Попробуйте позже.');
+            }
+        }).catch(() => {
+            showPlaybackError('Трансляция временно недоступна. Попробуйте позже.');
+        });
     }
 
     function playStream(index, resetAttempts = true) {
