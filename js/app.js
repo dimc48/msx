@@ -1308,6 +1308,8 @@
     let failoverAttempts = 0;
 
     function showPlaybackError(msg) {
+        const spinner = playerLoader.querySelector('.spinner');
+        if (spinner) spinner.style.display = 'none';
         if (hls) {
             try { hls.destroy(); } catch (e) {}
             hls = null;
@@ -1358,6 +1360,8 @@
     }
 
     function playStream(index, resetAttempts = true) {
+        const spinner = playerLoader.querySelector('.spinner');
+        if (spinner) spinner.style.display = 'block';
         if (!currentMatch.streams || !currentMatch.streams[index]) return;
         if (resetAttempts) failoverAttempts = 0;
         const stream = currentMatch.streams[index];
