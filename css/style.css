@@ -252,23 +252,22 @@ body {
 .card-top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     margin-bottom: 12px;
-    gap: 8px;
+    width: 100%;
 }
 
 .league-badge {
-    font-size: 11px;
+    font-size: 11.5px;
     font-weight: 700;
     color: #a7f3d0;
     background: rgba(16, 185, 129, 0.15);
-    padding: 3px 8px;
+    padding: 4px 10px;
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
-    max-width: 58%;
+    width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -376,88 +375,81 @@ body {
 }
 
 .stream-quality {
-    color: #38bdf8;
-    font-weight: 700;
+    display: none;
 }
 
 /* Channel Card */
 .channel-card {
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.65), rgba(15, 23, 42, 0.85));
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.75), rgba(15, 23, 42, 0.95));
     border: 2px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
-    padding: 18px;
+    padding: 16px;
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 180px;
+    min-height: 175px;
+    box-sizing: border-box;
 }
 
 .channel-card:focus, .channel-card.focused {
-    border-color: #38bdf8;
-    box-shadow: 0 0 0 3px #38bdf8, 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.4);
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px #10b981, 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 30px rgba(16, 185, 129, 0.35);
     transform: translateY(-4px) scale(1.02);
-    background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(14, 116, 144, 0.4));
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(6, 78, 59, 0.45));
     z-index: 10;
 }
 
-.channel-header {
+.channel-logo-container {
+    width: 100%;
+    height: 72px;
+    background: #ffffff;
+    border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    padding: 8px 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
     margin-bottom: 12px;
+    box-sizing: border-box;
 }
 
 .channel-logo-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 14px;
+    max-width: 100%;
+    max-height: 56px;
     object-fit: contain;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 3px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-    flex-shrink: 0;
+    display: block;
 }
 
-.channel-meta {
+.channel-card-body {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    overflow: hidden;
-}
-
-.channel-pill-badge {
-    align-self: flex-start;
-    font-size: 10px;
-    font-weight: 900;
-    letter-spacing: 0.8px;
-    padding: 3px 8px;
-    border-radius: 6px;
-    color: #ffffff;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    white-space: nowrap;
-    text-transform: uppercase;
+    gap: 6px;
 }
 
 .channel-name {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 800;
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    letter-spacing: -0.2px;
 }
 
 .channel-desc {
-    font-size: 12.5px;
+    font-size: 13px;
     color: #94a3b8;
-    line-height: 1.4;
+    line-height: 1.35;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.channel-card-footer {
+    display: none;
 }
 
 /* Fullscreen Player Modal */
@@ -490,17 +482,23 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.88) 0%, transparent 20%, transparent 66%, rgba(0, 0, 0, 0.96) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.88) 0%, transparent 22%, transparent 64%, rgba(0, 0, 0, 0.96) 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 36px 54px;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+    z-index: 10;
 }
 
-.player-overlay.idle {
-    opacity: 0;
+.player-overlay.idle,
+.player-overlay.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
 }
 
 .player-header {
@@ -822,5 +820,293 @@ kbd {
     color: #94a3b8;
     font-size: 13px;
     font-weight: 500;
+}
+
+/* ==========================================
+   Filter Pills Bar (Day & Live Sub-Filters)
+   ========================================== */
+.filter-pills {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px 6px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.pill-btn {
+    background: transparent;
+    border: 1.5px solid transparent;
+    color: #94a3b8;
+    padding: 5px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.pill-btn.active {
+    background: rgba(16, 185, 129, 0.22);
+    border-color: rgba(16, 185, 129, 0.6);
+    color: #34d399;
+}
+
+.pill-btn:focus, .pill-btn.focused {
+    background: #10b981 !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3), 0 4px 16px rgba(16, 185, 129, 0.5);
+    z-index: 10;
+}
+
+/* Date / Section Group Headers */
+.date-section-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 4px 6px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 6px;
+}
+
+.date-section-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #f1f5f9;
+    letter-spacing: -0.2px;
+}
+
+.date-section-badge {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 10px;
+}
+
+/* Card Badges for Match Statuses */
+.badge-live {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid rgba(239, 68, 68, 0.5);
+    color: #fca5a5;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge-today {
+    background: rgba(245, 158, 11, 0.18);
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #fbbf24;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.badge-tomorrow {
+    background: rgba(14, 165, 233, 0.18);
+    border: 1px solid rgba(14, 165, 233, 0.45);
+    color: #38bdf8;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.badge-upcoming {
+    background: rgba(168, 85, 247, 0.18);
+    border: 1px solid rgba(168, 85, 247, 0.45);
+    color: #c084fc;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 700;
+}
+
+.badge-finished {
+    background: rgba(148, 163, 184, 0.15);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+    color: #94a3b8;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Match Announcement / Prematch Modal Dialog
+   ========================================== */
+.prematch-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prematch-modal.hidden {
+    display: none;
+}
+
+.prematch-card {
+    background: linear-gradient(145deg, #1e293b, #0f172a);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 36px 48px;
+    max-width: 720px;
+    width: 90%;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(16, 185, 129, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.prematch-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.prematch-league {
+    font-size: 15px;
+    font-weight: 800;
+    color: #34d399;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.prematch-time-badge {
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid rgba(245, 158, 11, 0.5);
+    color: #fbbf24;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.prematch-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 26px;
+    width: 100%;
+}
+
+.prematch-team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.prematch-logo-wrap {
+    width: 88px;
+    height: 88px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+}
+
+.prematch-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.prematch-name {
+    font-size: 19px;
+    font-weight: 700;
+    color: #ffffff;
+    max-width: 220px;
+}
+
+.prematch-vs {
+    font-size: 24px;
+    font-weight: 900;
+    color: #64748b;
+    letter-spacing: 2px;
+}
+
+.prematch-info {
+    margin-bottom: 28px;
+}
+
+.prematch-desc {
+    font-size: 15px;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+.prematch-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+}
+
+.prematch-btn {
+    padding: 12px 24px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s;
+}
+
+.btn-watch {
+    background: #10b981;
+    border: 2px solid #34d399;
+    color: #ffffff;
+    box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+}
+
+.btn-watch:focus, .btn-watch.focused {
+    background: #059669 !important;
+    border-color: #ffffff !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 3px #ffffff, 0 8px 25px rgba(16, 185, 129, 0.7);
+}
+
+.btn-close {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    color: #94a3b8;
+}
+
+.btn-close:focus, .btn-close.focused {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
+    transform: scale(1.05);
 }
 

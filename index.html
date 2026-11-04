@@ -22,11 +22,9 @@
                 <button class="nav-btn active focusable" data-cat="live" tabindex="0">
                     <span class="live-indicator"></span>В ЭФИРЕ
                 </button>
-                <button class="nav-btn focusable" data-cat="football" tabindex="0">ФУТБОЛ</button>
-                <button class="nav-btn focusable" data-cat="hockey" tabindex="0">ХОККЕЙ</button>
-                <button class="nav-btn focusable" data-cat="basketball" tabindex="0">БАСКЕТБОЛ</button>
-                <button class="nav-btn focusable" data-cat="mma" tabindex="0">UFC / MMA</button>
-                <button class="nav-btn focusable" data-cat="channels" tabindex="0">СПОРТ ТВ 24/7</button>
+                <button class="nav-btn focusable" data-cat="today" tabindex="0">СЕГОДНЯ</button>
+                <button class="nav-btn focusable" data-cat="channels" tabindex="0">ТВ КАНАЛЫ</button>
+                <button class="nav-btn focusable" data-cat="future" tabindex="0">БУДУЩИЕ ТРАНСЛЯЦИИ</button>
             </nav>
 
             <div class="header-info">
@@ -40,6 +38,12 @@
                 <div class="title-left">
                     <h2 id="sectionTitle">🔴 Прямые трансляции в эфире</h2>
                     <span id="matchCounter" class="match-count-badge">Загрузка...</span>
+                </div>
+                <div class="filter-pills" id="filterPills">
+                    <button class="pill-btn active focusable" data-filter="all" tabindex="0">Все события</button>
+                    <button class="pill-btn focusable" data-filter="live" tabindex="0">🔴 В эфире</button>
+                    <button class="pill-btn focusable" data-filter="today" tabindex="0">⏰ Сегодня</button>
+                    <button class="pill-btn focusable" data-filter="tomorrow" tabindex="0">📅 Завтра</button>
                 </div>
                 <div id="refreshHint" class="refresh-hint">Автообновление потоков Full HD</div>
             </div>
@@ -78,7 +82,7 @@
                     <div class="player-hints">
                         <span class="hint-item"><kbd>OK</kbd> Пауза / Пуск</span>
                         <span class="hint-item"><kbd>◀ ▶</kbd> Сменить зеркало</span>
-                        <span class="hint-item"><kbd>НАЗАД</kbd> Закрыть плеер</span>
+                        <span class="hint-item"><kbd>▼ / НАЗАД</kbd> Скрыть инфо</span>
                     </div>
                 </div>
             </div>
@@ -87,6 +91,44 @@
             <div id="playerLoader" class="player-loader hidden">
                 <div class="spinner"></div>
                 <div id="loaderText" class="loader-text">Подключение к трансляции Full HD...</div>
+            </div>
+        </div>
+
+        <!-- Match Announcement / Prematch Modal Dialog -->
+        <div id="prematchModal" class="prematch-modal hidden">
+            <div class="prematch-card">
+                <div class="prematch-header">
+                    <span id="prematchLeague" class="prematch-league">ЛИГА ЧЕМПИОНОВ УЕФА</span>
+                    <span id="prematchTime" class="prematch-time-badge">⏰ Сегодня в 21:00</span>
+                </div>
+                <div class="prematch-teams">
+                    <div class="prematch-team">
+                        <div class="prematch-logo-wrap">
+                            <img id="prematchLogo1" class="prematch-logo" src="" alt="">
+                        </div>
+                        <span id="prematchName1" class="prematch-name">Команда 1</span>
+                    </div>
+                    <div class="prematch-vs">VS</div>
+                    <div class="prematch-team">
+                        <div class="prematch-logo-wrap">
+                            <img id="prematchLogo2" class="prematch-logo" src="" alt="">
+                        </div>
+                        <span id="prematchName2" class="prematch-name">Команда 2</span>
+                    </div>
+                </div>
+                <div class="prematch-info">
+                    <p id="prematchBroadcastText" class="prematch-desc">
+                        📺 Прямой эфир будет доступен в высоком качестве 1080p Full HD на канале.
+                    </p>
+                </div>
+                <div class="prematch-buttons" id="prematchButtons">
+                    <button class="prematch-btn btn-watch focusable" id="btnWatchChannel" tabindex="0">
+                        📺 Смотреть эфирный канал прямо сейчас
+                    </button>
+                    <button class="prematch-btn btn-close focusable" id="btnClosePrematch" tabindex="0">
+                        Закрыть (Назад)
+                    </button>
+                </div>
             </div>
         </div>
     </div>
