@@ -147,7 +147,7 @@
                 "color": "#4338ca",
                 "image": "https://dimc48.github.io/msx/img/channels/okko-sport.png",
                 "imageFiller": "fit",
-                "action": "video:http://178.124.179.122:8080/Setanta1/index.m3u8"
+                "action": "video:http://90.183.52.46:4000/play/a06s/index.m3u8"
               },
               {
                 "type": "default",
