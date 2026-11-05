@@ -806,12 +806,15 @@
 
     function setFocus(el) {
         if (!el) return;
-        if (focusedElement && focusedElement !== el) {
-            focusedElement.classList.remove('focused');
-        }
+        document.querySelectorAll('.focused').forEach(node => {
+            if (node !== el) {
+                node.classList.remove('focused');
+                try { node.blur(); } catch(e) {}
+            }
+        });
         focusedElement = el;
         el.classList.add('focused');
-        el.focus();
+        try { el.focus(); } catch(e) {}
         if (el.classList.contains('server-btn') || el.classList.contains('nav-btn') || el.classList.contains('pill-btn')) {
             el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         } else {
@@ -1866,7 +1869,7 @@
         isSettingsModalOpen = true;
         settingsModal.classList.remove('hidden');
 
-        const curVerBadge = document.getElementById('settingsCurrentVersionBadge');
+        const curVerBadge = document.getElementById('settingsCurrentVersion') || document.getElementById('settingsCurrentVersionBadge');
         const installedVer = document.getElementById('settingsInstalledVer');
         const statusEl = document.getElementById('settingsUpdateStatus');
 
@@ -1880,7 +1883,7 @@
         }
         if (curVerBadge) curVerBadge.textContent = 'v' + verText;
         if (installedVer) installedVer.textContent = verText + ' (Сборка ' + codeText + ')';
-        if (statusEl) statusEl.innerHTML = '<span style="color:#94a3b8;">Готов к проверке</span>';
+        if (statusEl) statusEl.innerHTML = '<span style="color:#94a3b8;">Нажмите «Проверить обновления» для поиска новой версии</span>';
 
         if (btnCheckUpdateManual) setFocus(btnCheckUpdateManual);
     }
@@ -1978,7 +1981,7 @@
         const statusEl = document.getElementById('settingsUpdateStatus');
         if (statusEl) {
             if (!hasUpdate) {
-                statusEl.innerHTML = '<span style="color:#4ade80;">✅ Установлена актуальная версия! Обновлений нет.</span>';
+                statusEl.innerHTML = '<span style="color:#4ade80;">✅ У вас установлена актуальная версия (v1.2.1)! Обновлений не требуется.</span>';
             }
         }
     };
@@ -2207,6 +2210,64 @@
             if (isRight || isDown) {
                 e.preventDefault();
                 setFocus(btnClosePrematch);
+                return;
+            }
+
+            if (isEnter) {
+                e.preventDefault();
+                if (focusedElement) focusedElement.click();
+                return;
+            }
+
+            return;
+        }
+
+        // 2.5 In Settings Modal Dialog
+        if (isSettingsModalOpen) {
+            if (isBack) {
+                e.preventDefault();
+                closeSettingsModal();
+                return;
+            }
+
+            if (isLeft || isUp) {
+                e.preventDefault();
+                if (btnCheckUpdateManual) setFocus(btnCheckUpdateManual);
+                return;
+            }
+
+            if (isRight || isDown) {
+                e.preventDefault();
+                if (btnCloseSettings) setFocus(btnCloseSettings);
+                return;
+            }
+
+            if (isEnter) {
+                e.preventDefault();
+                if (focusedElement) focusedElement.click();
+                return;
+            }
+
+            return;
+        }
+
+        // 2.7 In OTA Update Dialog
+        if (typeof isOtaModalOpen !== 'undefined' && isOtaModalOpen) {
+            if (isBack) {
+                e.preventDefault();
+                closeOtaModal();
+                return;
+            }
+
+            if (isLeft || isUp) {
+                e.preventDefault();
+                if (btnOtaInstall) setFocus(btnOtaInstall);
+                return;
+            }
+
+            if (isRight || isDown) {
+                e.preventDefault();
+                if (btnOtaLater) setFocus(btnOtaLater);
                 return;
             }
 
