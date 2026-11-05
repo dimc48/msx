@@ -12,8 +12,8 @@
             desc: 'Главный федеральный спортивный телеканал России',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/169/index.m3u8' },
-                { name: '⚡ Сервер 2 (CDN)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/169/index.m3u8' }
             ]
         },
         {
@@ -26,9 +26,8 @@
             streams: [
                 { name: '⚡ Сервер 1 (Full HD)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
                 { name: '⚡ Сервер 2 (Full HD 50 FPS)', url: 'http://90.183.52.46:4000/play/a06m/index.m3u8' },
-                { name: '⚡ Сервер 3 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/matchprem/index.m3u8' },
-                { name: '⚡ Сервер 4 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
-                { name: '⚡ Сервер 5 (Резерв)', url: 'http://stream.mcquack.net/193/index.m3u8' }
+                { name: '⚡ Сервер 3 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
+                { name: '⚡ Сервер 4 (Резерв)', url: 'http://stream.mcquack.net/193/index.m3u8' }
             ]
         },
         {
@@ -38,11 +37,7 @@
             logo: 'img/channels/okko-sport.png',
             desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
             quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Okko Sport HD)', url: 'http://90.183.52.46:4000/play/a06s/index.m3u8' },
-                { name: '⚡ Сервер 2 (Okko Sport 1080p)', url: 'https://t6.ultrastream.vip/okkosport/index.m3u8' },
-                { name: '⚡ Сервер 3 (Okko Футбол)', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' }
-            ]
+            streams: []
         },
         {
             id: 'ch-futbol1',
@@ -105,12 +100,11 @@
             isChannel: true,
             name: 'Беларусь 5 HD',
             logo: 'img/channels/belarus5.png',
-            desc: 'Спортивные трансляции, футбол и хоккей',
+            desc: 'Главный спортивный телеканал Республики Беларусь',
             quality: 'Full HD 1080p',
             streams: [
                 { name: '⚡ Сервер 1 (1080p)', url: 'http://178.124.179.122:8080/BT5/index.m3u8' },
-                { name: '⚡ Сервер 2 (Белтелеком)', url: 'https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8' },
-                { name: '⚡ Сервер 3 (Резерв)', url: 'http://stream.mcquack.net/33/index.m3u8' }
+                { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/33/index.m3u8' }
             ]
         },
         {
@@ -118,12 +112,11 @@
             isChannel: true,
             name: 'WWE TV HD',
             logo: 'img/channels/wwe.svg',
-            desc: 'Мировой рестлинг, суперзвезды WWE, Raw, SmackDown и турниры',
-            quality: 'Full HD 1080p',
+            desc: 'WWE Network 24/7 - Raw, SmackDown, WrestleMania & NXT',
+            quality: 'Full HD 1080p / 60 FPS',
             streams: [
                 { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8' },
-                { name: '⚡ Сервер 2 (HD 720p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' },
-                { name: '⚡ Сервер 3 (Резерв Cloudfront)', url: 'https://dpv6ceilvhyrw.cloudfront.net/playlist.m3u8' }
+                { name: '⚡ Сервер 2 (HD 720p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' }
             ]
         },
         {
@@ -131,11 +124,10 @@
             isChannel: true,
             name: 'Eurosport 1 HD',
             logo: 'img/channels/eurosport1.png',
-            desc: 'Мировой спорт, теннис Большого шлема и велоспорт',
+            desc: 'Теннис, снукер, биатлон, автоспорт и мировые турниры',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' },
-                { name: '⚡ Сервер 2 (CDN)', url: 'http://90.183.52.46:4000/play/a06v/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' }
             ]
         },
         {
@@ -188,11 +180,10 @@
             isChannel: true,
             name: 'Бокс ТВ HD',
             logo: 'img/channels/boxtv.svg',
-            desc: 'Профессиональный бокс и титульные поединки',
-            quality: 'HD',
+            desc: 'Мировой бокс, титульные бои и прямые включения',
+            quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/154/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв)', url: 'http://31.148.48.15/Boks_TV/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/154/index.m3u8' }
             ]
         },
         {
@@ -1196,7 +1187,7 @@
     // =========================================================================
     // Dynamic Stream Harvester & Autonomous Self-Healing Resolver
     // =========================================================================
-    const DYNAMIC_CACHE_KEY = 'footdroid_dynamic_streams_v6';
+    const DYNAMIC_CACHE_KEY = 'footdroid_dynamic_streams_v7';
     let dynamicStreamPool = {};
 
     try {
@@ -1206,21 +1197,16 @@
 
     const CLUSTER_FALLBACKS = {
         'ch-matchtv': [
-            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/169/index.m3u8' },
-            { name: '⚡ Сервер 2 (CDN)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' }
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
+            { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/169/index.m3u8' }
         ],
         'ch-premier': [
             { name: '⚡ Сервер 1 (Full HD)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
             { name: '⚡ Сервер 2 (Full HD 50 FPS)', url: 'http://90.183.52.46:4000/play/a06m/index.m3u8' },
-            { name: '⚡ Сервер 3 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/matchprem/index.m3u8' },
-            { name: '⚡ Сервер 4 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
-            { name: '⚡ Сервер 5 (Резерв)', url: 'http://stream.mcquack.net/193/index.m3u8' }
+            { name: '⚡ Сервер 3 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
+            { name: '⚡ Сервер 4 (Резерв)', url: 'http://stream.mcquack.net/193/index.m3u8' }
         ],
-        'ch-okko': [
-            { name: '⚡ Сервер 1 (Okko Sport HD)', url: 'http://90.183.52.46:4000/play/a06s/index.m3u8' },
-            { name: '⚡ Сервер 2 (Okko Sport 1080p)', url: 'https://t6.ultrastream.vip/okkosport/index.m3u8' },
-            { name: '⚡ Сервер 3 (Okko Футбол)', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' }
-        ],
+        'ch-okko': [],
         'ch-futbol1': [
             { name: '⚡ Сервер 1 (Full HD 50 FPS)', url: 'http://stream.mcquack.net/130/index.m3u8' }
         ],
@@ -1239,17 +1225,14 @@
         ],
         'ch-bt5': [
             { name: '⚡ Сервер 1 (1080p)', url: 'http://178.124.179.122:8080/BT5/index.m3u8' },
-            { name: '⚡ Сервер 2 (Белтелеком)', url: 'https://ngtrk.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8' },
-            { name: '⚡ Сервер 3 (Резерв)', url: 'http://stream.mcquack.net/33/index.m3u8' }
+            { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/33/index.m3u8' }
         ],
         'ch-wwe': [
             { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8' },
-            { name: '⚡ Сервер 2 (HD 720p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' },
-            { name: '⚡ Сервер 3 (Резерв Cloudfront)', url: 'https://dpv6ceilvhyrw.cloudfront.net/playlist.m3u8' }
+            { name: '⚡ Сервер 2 (HD 720p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' }
         ],
         'ch-euro1': [
-            { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' },
-            { name: '⚡ Сервер 2 (CDN)', url: 'http://90.183.52.46:4000/play/a06v/index.m3u8' }
+            { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' }
         ],
         'ch-euro2': [
             { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
@@ -1265,8 +1248,7 @@
             { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' }
         ],
         'ch-boxtv': [
-            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/154/index.m3u8' },
-            { name: '⚡ Сервер 2 (Резерв)', url: 'http://31.148.48.15/Boks_TV/index.m3u8' }
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/154/index.m3u8' }
         ],
         'ch-mmatv': [
             { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
@@ -1586,7 +1568,10 @@
     function playStream(index, resetAttempts = true) {
         const spinner = playerLoader.querySelector('.spinner');
         if (spinner) spinner.style.display = 'block';
-        if (!currentMatch.streams || !currentMatch.streams[index]) return;
+        if (!currentMatch.streams || currentMatch.streams.length === 0 || !currentMatch.streams[index]) {
+            showPlaybackError(currentMatch.isChannel ? 'Прямой эфир появится во время трансляций матчей' : 'Трансляция временно недоступна. Попробуйте позже.');
+            return;
+        }
         if (resetAttempts) failoverAttempts = 0;
         const stream = currentMatch.streams[index];
 
