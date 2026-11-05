@@ -16,7 +16,7 @@
                 "title": "FootDroid Web",
                 "headline": "Футбол и ТВ онлайн",
                 "text": "Прямые эфиры матчей, расписание игр недели и каналы",
-                "icon": "sports-soccer",
+                "image": "https://dimc48.github.io/msx/img/logo.png", "imageFiller": "fit",
                 "color": "#10b981",
                 "action": "link:https://dimc48.github.io/msx/index.html"
               },

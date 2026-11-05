@@ -61,6 +61,14 @@ body {
     flex-shrink: 0;
 }
 
+.logo-icon-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+}
+
 .logo-icon {
     font-size: 26px;
 }
