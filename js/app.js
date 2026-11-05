@@ -1761,7 +1761,142 @@
         }, 1000);
     }
 
+    
+    // ==========================================
+    // OTA Auto-Update Subsystem
+    // ==========================================
+    let isOtaModalOpen = false;
+    let currentOtaInfo = null;
+
+    const otaModal = document.getElementById('otaModal');
+    const otaVersionTitle = document.getElementById('otaVersionTitle');
+    const otaChangelog = document.getElementById('otaChangelog');
+    const otaProgressContainer = document.getElementById('otaProgressContainer');
+    const otaProgressBarFill = document.getElementById('otaProgressBarFill');
+    const otaProgressText = document.getElementById('otaProgressText');
+    const otaButtons = document.getElementById('otaButtons');
+    const btnOtaInstall = document.getElementById('btnOtaInstall');
+    const btnOtaLater = document.getElementById('btnOtaLater');
+
+    function formatBytes(bytes) {
+        if (!bytes || bytes <= 0) return '0 Б';
+        const k = 1024;
+        const sizes = ['Б', 'КБ', 'МБ', 'ГБ'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + ' ' + sizes[i];
+    }
+
+    function openOtaModal(info) {
+        if (!otaModal) return;
+        currentOtaInfo = info;
+        isOtaModalOpen = true;
+
+        if (otaVersionTitle) {
+            otaVersionTitle.textContent = `Новая версия FootDroid TV ${info.versionName || ''}`;
+        }
+        if (otaChangelog) {
+            otaChangelog.textContent = info.changelog || 'Доступны важные улучшения стабильности и обновлённые спортивные каналы.';
+        }
+        if (otaProgressContainer) {
+            otaProgressContainer.classList.add('hidden');
+        }
+        if (otaButtons) {
+            otaButtons.classList.remove('hidden');
+        }
+
+        otaModal.classList.remove('hidden');
+        if (btnOtaInstall) {
+            setFocus(btnOtaInstall);
+        }
+    }
+
+    function closeOtaModal() {
+        if (!otaModal) return;
+        isOtaModalOpen = false;
+        otaModal.classList.add('hidden');
+        focusGridItem(0);
+    }
+
+    if (btnOtaLater) {
+        btnOtaLater.addEventListener('click', () => {
+            closeOtaModal();
+        });
+    }
+
+    if (btnOtaInstall) {
+        btnOtaInstall.addEventListener('click', () => {
+            if (!currentOtaInfo) return;
+            if (otaButtons) otaButtons.classList.add('hidden');
+            if (otaProgressContainer) otaProgressContainer.classList.remove('hidden');
+            if (otaProgressBarFill) otaProgressBarFill.style.width = '0%';
+            if (otaProgressText) otaProgressText.textContent = 'Инициализация загрузки...';
+
+            const apkDownloadUrl = currentOtaInfo.apkUrl || currentOtaInfo.fallbackUrl;
+            const targetVer = currentOtaInfo.versionName || 'update';
+
+            if (window.AndroidBridge && typeof window.AndroidBridge.downloadAndInstallApk === 'function') {
+                console.log('[OTA] Starting native download and install:', apkDownloadUrl);
+                window.AndroidBridge.downloadAndInstallApk(apkDownloadUrl, targetVer);
+            } else {
+                console.log('[OTA] Web fallback download:', apkDownloadUrl);
+                window.location.href = apkDownloadUrl;
+            }
+        });
+    }
+
+    window.showUpdatePrompt = function(info) {
+        console.log('[OTA] showUpdatePrompt received:', info);
+        openOtaModal(info);
+    };
+
+    window.onUpdateDownloadProgress = function(percent, curBytes, totBytes) {
+        if (otaProgressBarFill) otaProgressBarFill.style.width = percent + '%';
+        if (otaProgressText) {
+            otaProgressText.textContent = `Загрузка: ${percent}% (${formatBytes(curBytes)} из ${formatBytes(totBytes)})`;
+        }
+    };
+
+    window.onUpdateDownloadComplete = function() {
+        if (otaProgressBarFill) otaProgressBarFill.style.width = '100%';
+        if (otaProgressText) {
+            otaProgressText.innerHTML = '<span style="color:#4ade80;">✅ Загрузка завершена! Открытие установщика Android...</span>';
+        }
+    };
+
+    window.onUpdateDownloadError = function(errMsg) {
+        if (otaProgressText) {
+            otaProgressText.innerHTML = `<span style="color:#f87171;">⚠️ Ошибка: ${errMsg || 'Сбой сети'}. Попробуйте позже.</span>`;
+        }
+        if (otaButtons) {
+            otaButtons.classList.remove('hidden');
+            if (btnOtaInstall) setFocus(btnOtaInstall);
+        }
+    };
+
+    window.onUpdateCheckComplete = function(hasUpdate) {
+        console.log('[OTA] Update check finished. Has update:', hasUpdate);
+    };
+
+    window.triggerAutoUpdateCheck = function() {
+        console.log('[OTA] Triggering automatic update check...');
+        if (window.AndroidBridge && typeof window.AndroidBridge.checkForUpdates === 'function') {
+            window.AndroidBridge.checkForUpdates();
+        } else {
+            // Web / MSX Fallback check
+            fetch('version.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    console.log('[OTA Web] Remote version.json:', data);
+                })
+                .catch(e => console.warn('[OTA Web] Check failed:', e.message));
+        }
+    };
+
     window.handleBack = function () {
+        if (isOtaModalOpen) {
+            closeOtaModal();
+            return true;
+        }
         if (!playerModal.classList.contains('hidden')) {
             if (isOverlayVisible()) {
                 hideOverlay();

@@ -132,6 +132,32 @@
             </div>
         </div>
     </div>
+        <!-- OTA Auto-Update Modal -->
+        <div id="otaModal" class="ota-modal-overlay hidden">
+            <div class="ota-modal-card">
+                <div class="ota-badge">🚀 ДОСТУПНО ОБНОВЛЕНИЕ</div>
+                <h2 id="otaVersionTitle" class="ota-title">Новая версия FootDroid TV 1.1.0</h2>
+                <div id="otaChangelog" class="ota-changelog">
+                    Автоматическое обновление по воздуху, обновлённые трансляции и улучшенная стабильность.
+                </div>
+
+                <div id="otaProgressContainer" class="ota-progress-container hidden">
+                    <div class="ota-progress-bar">
+                        <div id="otaProgressBarFill" class="ota-progress-fill" style="width: 0%;"></div>
+                    </div>
+                    <div id="otaProgressText" class="ota-progress-text">Загрузка: 0%</div>
+                </div>
+
+                <div class="ota-buttons" id="otaButtons">
+                    <button id="btnOtaInstall" class="ota-btn ota-btn-install focusable" tabindex="0">
+                        ⚡ ОБНОВИТЬ СЕЙЧАС
+                    </button>
+                    <button id="btnOtaLater" class="ota-btn ota-btn-later focusable" tabindex="0">
+                        ПОЗЖЕ
+                    </button>
+                </div>
+            </div>
+        </div>
 
     <script src="js/app.js"></script>
 </body>
