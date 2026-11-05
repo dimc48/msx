@@ -1,8 +1,8 @@
 {
-  "versionCode": 3,
-  "versionName": "1.2.0",
+  "versionCode": 4,
+  "versionName": "1.2.1",
   "apkUrl": "https://dimc48.github.io/msx/FootDroid.apk",
   "fallbackUrl": "https://raw.githubusercontent.com/dimc48/msx/main/FootDroid.apk",
-  "changelog": "✨ Новый фирменный неоновый логотип FootDroid TV\n🚀 Обновлённый лаунчер-баннер для Android TV\n📺 Подлинные спортивные телеканалы и OTA обновления",
+  "changelog": "⚙️ Кнопка настроек и сведений о приложении\n🖥️ Исправлено вылезание фокуса за границы экрана на ТВ\n🎮 Улучшенная D-Pad навигация меню (листание влево-вправо)",
   "releasedAt": "2026-11-05"
 }

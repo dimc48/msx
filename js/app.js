@@ -756,6 +756,13 @@
     const matchCounter = document.getElementById('matchCounter');
     const clockEl = document.getElementById('clock');
 
+    // Settings Modal Elements
+    const settingsModal = document.getElementById('settingsModal');
+    const btnSettingsNav = document.getElementById('btnSettingsNav');
+    const btnCheckUpdateManual = document.getElementById('btnCheckUpdateManual');
+    const btnCloseSettings = document.getElementById('btnCloseSettings');
+    let isSettingsModalOpen = false;
+
     // Player Elements
     const playerModal = document.getElementById('playerModal');
     const tvVideo = document.getElementById('tvVideo');
@@ -945,9 +952,13 @@
             `;
         }
 
-        if (!focusedElement || !cardsGrid.contains(focusedElement)) {
+        // Keep focus on nav-btn if user is navigating the top menu
+        if (focusedElement && cardsGrid.contains(focusedElement)) {
             const firstCard = cardsGrid.querySelector('.focusable');
             if (firstCard) setFocus(firstCard);
+        } else if (!focusedElement) {
+            const activeNav = categoriesNav.querySelector('.nav-btn.active') || categoriesNav.querySelector('.nav-btn');
+            if (activeNav) setFocus(activeNav);
         }
     }
 
@@ -966,23 +977,27 @@
     }
 
     // Master Navigation Category Switcher
-    async function switchCategory(cat) {
+    async function switchCategory(cat, keepNavFocus = true) {
         currentCategory = cat;
         currentFilter = 'all';
-        focusedElement = null;
 
         const viewport = document.getElementById('contentViewport');
         if (viewport) viewport.scrollTop = 0;
 
         const navButtons = categoriesNav.querySelectorAll('.nav-btn');
+        let activeNavBtn = null;
         navButtons.forEach(btn => {
             if (btn.dataset.cat === cat) {
                 btn.classList.add('active');
-                setFocus(btn);
+                activeNavBtn = btn;
             } else {
                 btn.classList.remove('active');
             }
         });
+
+        if (keepNavFocus && activeNavBtn) {
+            setFocus(activeNavBtn);
+        }
 
         // Setup filter pills dynamically
         if (cat === 'live' || cat === 'channels') {
@@ -1844,8 +1859,93 @@
         });
     }
 
+
+    // Settings Modal Logic
+    function openSettingsModal() {
+        if (!settingsModal) return;
+        isSettingsModalOpen = true;
+        settingsModal.classList.remove('hidden');
+
+        const curVerBadge = document.getElementById('settingsCurrentVersionBadge');
+        const installedVer = document.getElementById('settingsInstalledVer');
+        const statusEl = document.getElementById('settingsUpdateStatus');
+
+        let verText = '1.2.1';
+        let codeText = '4';
+        if (window.AndroidBridge && typeof window.AndroidBridge.getVersionCode === 'function') {
+            try {
+                verText = window.AndroidBridge.getVersionName();
+                codeText = window.AndroidBridge.getVersionCode();
+            } catch(e) {}
+        }
+        if (curVerBadge) curVerBadge.textContent = 'v' + verText;
+        if (installedVer) installedVer.textContent = verText + ' (Сборка ' + codeText + ')';
+        if (statusEl) statusEl.innerHTML = '<span style="color:#94a3b8;">Готов к проверке</span>';
+
+        if (btnCheckUpdateManual) setFocus(btnCheckUpdateManual);
+    }
+
+    function closeSettingsModal() {
+        if (!settingsModal) return;
+        isSettingsModalOpen = false;
+        settingsModal.classList.add('hidden');
+        if (btnSettingsNav) setFocus(btnSettingsNav);
+    }
+
+    function triggerManualUpdateCheck() {
+        const statusEl = document.getElementById('settingsUpdateStatus');
+        if (statusEl) {
+            statusEl.innerHTML = '<span style="color:#38bdf8;">⏳ Проверка сервера обновлений...</span>';
+        }
+
+        if (window.AndroidBridge && typeof window.AndroidBridge.checkForUpdates === 'function') {
+            window.AndroidBridge.checkForUpdates();
+        } else {
+            // Web / MSX Fallback
+            fetch('https://raw.githubusercontent.com/dimc48/msx/main/version.json?t=' + Date.now())
+                .then(r => r.json())
+                .then(data => {
+                    const localVerCode = 4;
+                    if (data && data.versionCode > localVerCode) {
+                        closeSettingsModal();
+                        window.showUpdatePrompt(data);
+                    } else {
+                        if (statusEl) {
+                            statusEl.innerHTML = '<span style="color:#4ade80;">✅ Установлена самая последняя версия (v' + (data.versionName || '1.2.1') + ')!</span>';
+                        }
+                    }
+                })
+                .catch(err => {
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span style="color:#f87171;">⚠️ Ошибка соединения с сервером</span>';
+                    }
+                });
+        }
+    }
+
+    if (btnSettingsNav) {
+        btnSettingsNav.addEventListener('click', () => {
+            openSettingsModal();
+        });
+    }
+
+    if (btnCloseSettings) {
+        btnCloseSettings.addEventListener('click', () => {
+            closeSettingsModal();
+        });
+    }
+
+    if (btnCheckUpdateManual) {
+        btnCheckUpdateManual.addEventListener('click', () => {
+            triggerManualUpdateCheck();
+        });
+    }
+
     window.showUpdatePrompt = function(info) {
         console.log('[OTA] showUpdatePrompt received:', info);
+        if (isSettingsModalOpen) {
+            closeSettingsModal();
+        }
         openOtaModal(info);
     };
 
@@ -1875,6 +1975,12 @@
 
     window.onUpdateCheckComplete = function(hasUpdate) {
         console.log('[OTA] Update check finished. Has update:', hasUpdate);
+        const statusEl = document.getElementById('settingsUpdateStatus');
+        if (statusEl) {
+            if (!hasUpdate) {
+                statusEl.innerHTML = '<span style="color:#4ade80;">✅ Установлена актуальная версия! Обновлений нет.</span>';
+            }
+        }
     };
 
     window.triggerAutoUpdateCheck = function() {
@@ -1893,6 +1999,10 @@
     };
 
     window.handleBack = function () {
+        if (isSettingsModalOpen) {
+            closeSettingsModal();
+            return true;
+        }
         if (isOtaModalOpen) {
             closeOtaModal();
             return true;
@@ -2123,6 +2233,10 @@
         if (isEnter) {
             e.preventDefault();
             if (focusedElement) {
+                if (focusedElement.dataset && focusedElement.dataset.cat === 'settings') {
+                    openSettingsModal();
+                    return;
+                }
                 focusedElement.click();
             }
             return;
@@ -2137,20 +2251,40 @@
     function handleDpadNavigation(isUp, isDown, isLeft, isRight) {
         const inNav = focusedElement && focusedElement.classList.contains('nav-btn');
         const inPills = focusedElement && focusedElement.classList.contains('pill-btn');
-        const inGrid = focusedElement && focusedElement.classList.contains('match-card');
+        const inGrid = focusedElement && (focusedElement.classList.contains('match-card') || focusedElement.classList.contains('channel-card'));
 
-        // A. In Top Categories Navigation
+        // Settings Modal Navigation
+        if (isSettingsModalOpen) {
+            if (isUp || isLeft) {
+                if (btnCheckUpdateManual) setFocus(btnCheckUpdateManual);
+            } else if (isDown || isRight) {
+                if (btnCloseSettings) setFocus(btnCloseSettings);
+            }
+            return;
+        }
+
+        // A. In Top Categories Navigation (Allows free Left/Right browsing without stealing focus!)
         if (inNav) {
             const navButtons = Array.from(categoriesNav.querySelectorAll('.nav-btn'));
             const currentIdx = navButtons.indexOf(focusedElement);
 
             if (isLeft && currentIdx > 0) {
-                setFocus(navButtons[currentIdx - 1]);
-                switchCategory(navButtons[currentIdx - 1].dataset.cat);
+                const prevBtn = navButtons[currentIdx - 1];
+                setFocus(prevBtn);
+                if (prevBtn.dataset.cat && prevBtn.dataset.cat !== 'settings') {
+                    switchCategory(prevBtn.dataset.cat, true);
+                }
             } else if (isRight && currentIdx < navButtons.length - 1) {
-                setFocus(navButtons[currentIdx + 1]);
-                switchCategory(navButtons[currentIdx + 1].dataset.cat);
+                const nextBtn = navButtons[currentIdx + 1];
+                setFocus(nextBtn);
+                if (nextBtn.dataset.cat && nextBtn.dataset.cat !== 'settings') {
+                    switchCategory(nextBtn.dataset.cat, true);
+                }
             } else if (isDown) {
+                if (focusedElement.dataset.cat === 'settings') {
+                    openSettingsModal();
+                    return;
+                }
                 if (filterPills.style.display !== 'none') {
                     const activePill = filterPills.querySelector('.pill-btn.active') || filterPills.querySelector('.pill-btn');
                     if (activePill) {
@@ -2185,12 +2319,12 @@
             return;
         }
 
-        // C. In Cards Grid
-        if (inGrid || cardsGrid.querySelector('.match-card')) {
-            const cards = Array.from(cardsGrid.querySelectorAll('.match-card'));
+        // C. In Cards Grid (Both match-card and channel-card)
+        if (inGrid || cardsGrid.querySelector('.match-card, .channel-card')) {
+            const cards = Array.from(cardsGrid.querySelectorAll('.match-card, .channel-card'));
             let currentIdx = cards.indexOf(focusedElement);
             if (currentIdx === -1 && document.activeElement) {
-                currentIdx = cards.indexOf(document.activeElement.closest('.match-card'));
+                currentIdx = cards.indexOf(document.activeElement.closest('.match-card, .channel-card'));
             }
             if (currentIdx === -1) {
                 currentIdx = 0;
@@ -2258,7 +2392,7 @@
         const liveBtn = categoriesNav.querySelector('[data-cat="live"]');
         if (liveBtn) setFocus(liveBtn);
 
-        await switchCategory('live');
+        await switchCategory('live', true);
     }
 
     if (document.readyState === 'loading') {
