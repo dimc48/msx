@@ -1,7 +1,8 @@
 {
   "name": "FootDroid & Media Portal",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "parameter": "menu:https://dimc48.github.io/msx/start.json",
+  "action": "[settings:validate_links:0|home]",
   "menu": [
     {
       "label": "КИНО И ПРИЛОЖЕНИЯ",
@@ -14,9 +15,10 @@
                 "type": "default",
                 "layout": "0,0,4,3",
                 "title": "FootDroid Web",
-                "headline": "Футбол и ТВ онлайн",
-                "text": "Прямые эфиры матчей, расписание игр недели и каналы",
-                "image": "https://dimc48.github.io/msx/img/logo.png", "imageFiller": "fit",
+                "headline": "Спорт и ТВ онлайн",
+                "text": "Прямые эфиры матчей, расписание игр и телеканалы Full HD",
+                "image": "https://dimc48.github.io/msx/img/logo.png",
+                "imageFiller": "fit",
                 "color": "#10b981",
                 "action": "link:https://dimc48.github.io/msx/index.html"
               },
@@ -24,85 +26,51 @@
                 "type": "default",
                 "layout": "4,0,4,3",
                 "title": "Lampa (Лампа)",
-                "headline": "Онлайн-кинотеатр #1",
-                "text": "Фильмы, сериалы, аниме, 4K HDR через торренты и онлайн-балансеры",
+                "headline": "ТВ Онлайн-кинотеатр #1",
+                "text": "Фильмы, сериалы, 4K HDR. Полная поддержка пульта ТВ",
                 "icon": "movie",
                 "color": "#e11d48",
-                "action": "link:http://lampa.mx"
+                "action": "link:https://lampa.stream"
               },
               {
                 "type": "default",
                 "layout": "8,0,4,3",
-                "title": "Zona (Зона)",
-                "headline": "Фильмы и сериалы",
-                "text": "Огромный каталог фильмов с мгновенным онлайн-просмотром",
-                "icon": "play-circle",
-                "color": "#0284c7",
-                "action": "link:https://w1.zona.plus"
+                "title": "VoKino TV",
+                "headline": "Каталог кино для Smart TV",
+                "text": "Онлайн-кинотеатр с навигацией стрелками пульта для ТВ",
+                "icon": "video-library",
+                "color": "#7c3aed",
+                "action": "content:http://vokino.tv/msx/start.json"
               },
               {
                 "type": "default",
                 "layout": "0,3,4,3",
-                "title": "VoKino (ВоКино)",
-                "headline": "Медиа-каталог",
-                "text": "Популярный онлайн-кинотеатр с новинками кино и сериалов",
-                "icon": "video-library",
-                "color": "#7c3aed",
-                "action": "link:http://web.vokino.tv"
+                "title": "Lampa Mirror",
+                "headline": "Официальное зеркало Лампы",
+                "text": "Резервный вход в онлайн-кинотеатр Лампа (lampa.mx)",
+                "icon": "theaters",
+                "color": "#b91c1c",
+                "action": "link:https://lampa.mx"
               },
               {
                 "type": "default",
                 "layout": "4,3,4,3",
-                "title": "ForkPlayer",
-                "headline": "Медиа-агрегатор",
-                "text": "Браузер плейлистов, кинотеатров и сторонних порталов для Smart TV",
-                "icon": "language",
-                "color": "#ea580c",
-                "action": "link:http://operatv.obovse.ru/2.5/"
+                "title": "DRM-Play",
+                "headline": "Медиа-портал для ТВ",
+                "text": "Каталог каналов, архивов и фильмов с поддержкой пульта",
+                "icon": "live-tv",
+                "color": "#0284c7",
+                "action": "content:http://drm-play.com/msx/start.json"
               },
               {
                 "type": "default",
                 "layout": "8,3,4,3",
-                "title": "Deeplex",
-                "headline": "Кино и сериалы",
-                "text": "Современный удобный клиент для просмотра медиа-контента",
-                "icon": "tv",
-                "color": "#059669",
-                "action": "link:https://deeplex.ru"
-              }
-            ]
-          },
-          {
-            "items": [
-              {
-                "type": "default",
-                "layout": "0,0,4,3",
-                "title": "HDRezka",
-                "headline": "Онлайн-кинотеатр",
-                "text": "Фильмы и сериалы с фирменными переводами студии Rezka",
-                "icon": "theaters",
-                "color": "#b45309",
-                "action": "link:https://rezka.ag"
-              },
-              {
-                "type": "default",
-                "layout": "4,0,4,3",
-                "title": "KinoPub (Кинопаб)",
-                "headline": "Премиум кинотеатр",
-                "text": "Фильмы и сериалы в оригинале и дубляже до 4K Dolby Vision",
-                "icon": "star",
-                "color": "#0f766e",
-                "action": "link:https://kino.pub"
-              },
-              {
-                "type": "default",
-                "layout": "8,0,4,3",
-                "title": "TorrServe Web",
-                "headline": "Торрент-сервер",
-                "text": "Веб-интерфейс локального сервера для просмотра торрентов",
-                "icon": "cloud-download",
-                "color": "#4f46e5",
-                "action": "link:http://127.0.0.1:8090"
+                "title": "Lampa MSX Portal",
+                "headline": "Портал Media Station X",
+                "text": "Меню онлайн-кинотеатра Лампа в интерфейсе MSX",
+                "icon": "play-circle",
+                "color": "#f59e0b",
+                "action": "content:https://lampa.stream/msx/start.json"
               }
             ]
           }
@@ -147,7 +115,7 @@
                 "color": "#4338ca",
                 "image": "https://dimc48.github.io/msx/img/channels/okko-sport.png",
                 "imageFiller": "fit",
-                "action": "message:Канал Okko Спорт вещает во время прямых эфиров матчей (Лига Чемпионов и еврокубки). Откройте раздел 'В эфире' или FootDroid Web для просмотра расписания и трансляций."
+                "action": "message:Канал Okko Спорт вещает во время прямых эфиров матчей. Откройте раздел 'В эфире' или FootDroid Web для просмотра расписания и трансляций."
               },
               {
                 "type": "default",
@@ -206,7 +174,7 @@
                 "color": "#b45309",
                 "image": "https://dimc48.github.io/msx/img/channels/setanta1.png",
                 "imageFiller": "fit",
-                "action": "message:Канал Okko Спорт вещает во время прямых эфиров матчей (Лига Чемпионов и еврокубки). Откройте раздел 'В эфире' или FootDroid Web для просмотра расписания и трансляций."
+                "action": "message:Канал Setanta Sports вещает во время прямых эфиров. Откройте FootDroid Web для просмотра расписания и трансляций."
               },
               {
                 "type": "default",
