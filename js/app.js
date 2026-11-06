@@ -941,7 +941,7 @@
             });
         });
 
-        matchCounter.textContent = `${totalCount} событий`;
+        matchCounter.textContent = currentCategory === 'channels' ? `${totalCount} каналов` : `${totalCount} событий`;
 
         if (totalCount === 0) {
             cardsGrid.innerHTML = `
@@ -1052,7 +1052,7 @@
         if (currentCategory === 'channels') {
             renderSections([
                 {
-                    title: '📺 СПОРТИВНЫЕ ТЕЛЕКАНАЛЫ (FULL HD 1080P)',
+                    title: null,
                     items: tvChannels
                 }
             ]);
@@ -1873,8 +1873,8 @@
         const installedVer = document.getElementById('settingsInstalledVer');
         const statusEl = document.getElementById('settingsUpdateStatus');
 
-        let verText = '1.2.1';
-        let codeText = '4';
+        let verText = '1.0.0';
+        let codeText = '5';
         if (window.AndroidBridge && typeof window.AndroidBridge.getVersionCode === 'function') {
             try {
                 verText = window.AndroidBridge.getVersionName();
@@ -1908,13 +1908,13 @@
             fetch('https://raw.githubusercontent.com/dimc48/msx/main/version.json?t=' + Date.now())
                 .then(r => r.json())
                 .then(data => {
-                    const localVerCode = 4;
+                    const localVerCode = 5;
                     if (data && data.versionCode > localVerCode) {
                         closeSettingsModal();
                         window.showUpdatePrompt(data);
                     } else {
                         if (statusEl) {
-                            statusEl.innerHTML = '<span style="color:#4ade80;">✅ Установлена самая последняя версия (v' + (data.versionName || '1.2.1') + ')!</span>';
+                            statusEl.innerHTML = '<span style="color:#4ade80;">✅ У вас установлена актуальная версия (v' + (data.versionName || '1.0.0') + ')! Обновлений не требуется.</span>';
                         }
                     }
                 })
@@ -1981,7 +1981,7 @@
         const statusEl = document.getElementById('settingsUpdateStatus');
         if (statusEl) {
             if (!hasUpdate) {
-                statusEl.innerHTML = '<span style="color:#4ade80;">✅ У вас установлена актуальная версия (v1.2.1)! Обновлений не требуется.</span>';
+                statusEl.innerHTML = '<span style="color:#4ade80;">✅ У вас установлена актуальная версия (v1.0.0)! Обновлений не требуется.</span>';
             }
         }
     };
