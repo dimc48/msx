@@ -1,8 +1,12 @@
 {
-  "versionCode": 4,
-  "versionName": "1.2.1",
-  "apkUrl": "https://dimc48.github.io/msx/FootDroid.apk",
-  "fallbackUrl": "https://raw.githubusercontent.com/dimc48/msx/main/FootDroid.apk",
-  "changelog": "⚙️ Кнопка настроек и сведений о приложении\n🖥️ Исправлено вылезание фокуса за границы экрана на ТВ\n🎮 Улучшенная D-Pad навигация меню (листание влево-вправо)",
-  "releasedAt": "2026-11-05"
+  "versionCode": 2,
+  "versionName": "1.0.1",
+  "apkUrl": "https://github.com/dimc48/msx/releases/download/v1.0.1/FootDroid.apk",
+  "fallbackUrl": "https://github.com/dimc48/msx/releases/download/v1.0.1/FootDroid.apk",
+  "changelog": "• Обновление интерфейса футбольного ТВ-портала\n• Улучшенная поддержка пультов Android TV\n• Оптимизация стабильности стримов и буферизации",
+  "releaseNotes": "• Обновление интерфейса футбольного ТВ-портала\n• Улучшенная поддержка пультов Android TV\n• Оптимизация стабильности стримов и буферизации",
+  "minVersionCode": 1,
+  "sizeBytes": 1611901,
+  "forceUpdate": false,
+  "releasedAt": "2026-11-06"
 }
