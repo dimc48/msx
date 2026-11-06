@@ -26,10 +26,10 @@
                 "layout": "4,0,4,3",
                 "title": "Lampa (Лампа)",
                 "headline": "ТВ Онлайн-кинотеатр #1",
-                "text": "Фильмы, сериалы, 4K HDR. Полная поддержка пульта ТВ",
+                "text": "Фильмы, сериалы, 4K HDR. Онлайн балансеры и торренты настроены",
                 "icon": "movie",
                 "color": "#e11d48",
-                "action": "link:http://lampa.mx"
+                "action": "link:https://dimc48.github.io/msx/lampa/index.html"
               },
               {
                 "type": "default",

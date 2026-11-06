@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Lampa TV - Фильмы, Сериалы и Торренты</title>
+    <meta name="referrer" content="never">
+
+    <link rel="stylesheet" href="./vender/scrollbar/jquery.scrollbar.css">
+    <link rel="stylesheet" href="./vender/keypad/style.css">
+    <link rel="stylesheet" href="./css/app.css">
+
+    <style>
+        body {
+            background-color: #121212;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Предустановленные настройки Лампы для Android TV и пультов
+        window.lampa_settings = {
+            torrents_use: true,
+            plugins_use: true,
+            plugins_store: true,
+            account_use: true,
+            demo: false,
+            read_only: false,
+            lang_use: true,
+            developer: true
+        };
+
+        // Авто-конфигурация хранилища: Русский язык, локальный TorrServer и плагины
+        try {
+            localStorage.setItem('language', '"ru"');
+            localStorage.setItem('torrserver_url', '"127.0.0.1:8090"');
+            localStorage.setItem('torrserver_use_link', '"one"');
+            localStorage.setItem('torrserver_preload', 'true');
+            localStorage.setItem('parser_use', 'true');
+            localStorage.setItem('parser_torrent_type', '"jackett"');
+            localStorage.setItem('parser_jackett_url', '"http://127.0.0.1:8090"');
+            localStorage.setItem('parser_jackett_key', '""');
+
+            // Автоматическая установка рабочих плагинов онлайн-балансеров и торрентов
+            var base = window.location.href.substring(0, window.location.href.lastIndexOf('/') + 1);
+            var plugins = [
+                {
+                    url: base + 'plugins/online_mod.js',
+                    status: 1,
+                    name: 'Онлайн фильмы и сериалы (Rezka, Filmix, Voidboost, Collaps)',
+                    author: 'nb557'
+                },
+                {
+                    url: base + 'plugins/etor.js',
+                    status: 1,
+                    name: 'Торренты (TorrServer)',
+                    author: 'nb557'
+                }
+            ];
+            localStorage.setItem('plugins', JSON.stringify(plugins));
+        } catch (e) {
+            console.error('Lampa storage init error:', e);
+        }
+    </script>
+
+    <div class="welcome"></div>
+    <div id="app"></div>
+
+    <div class="no-network hide">
+        <div class="no-network__title">Ошибка</div>
+        <div class="no-network__desc">Не удалось загрузить файл: <span class="no-network__file"></span></div>
+    </div>
+
+    <!-- Вендорные библиотеки Лампы -->
+    <script src="./vender/jquery/jquery.js"></script>
+    <script src="./vender/notify/notify.js"></script>
+    <script src="./vender/scrollbar/jquery.scrollbar.js"></script>
+    <script src="./vender/navigator/navigator.js"></script>
+    <script src="./vender/keypad/keypad.js"></script>
+
+    <!-- Основное ядро Лампы -->
+    <script src="./app.min.js"></script>
+</body>
+</html>
