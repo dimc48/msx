@@ -1,8 +1,7 @@
 {
   "name": "FootDroid & Media Portal",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "parameter": "menu:https://dimc48.github.io/msx/start.json",
-  "action": "[settings:validate_links:0|home]",
   "menu": [
     {
       "label": "КИНО И ПРИЛОЖЕНИЯ",
@@ -30,27 +29,27 @@
                 "text": "Фильмы, сериалы, 4K HDR. Полная поддержка пульта ТВ",
                 "icon": "movie",
                 "color": "#e11d48",
-                "action": "link:https://lampa.stream"
+                "action": "link:http://lampa.mx"
               },
               {
                 "type": "default",
                 "layout": "8,0,4,3",
+                "title": "Zona (Зона ТВ)",
+                "headline": "Фильмы и сериалы онлайн",
+                "text": "Официальное ТВ-приложение: каталог кино, сериалов и торрентов с пульта",
+                "icon": "play-circle",
+                "color": "#0284c7",
+                "action": "system:tvx:launch:mobi.zona"
+              },
+              {
+                "type": "default",
+                "layout": "0,3,4,3",
                 "title": "VoKino TV",
                 "headline": "Каталог кино для Smart TV",
                 "text": "Онлайн-кинотеатр с навигацией стрелками пульта для ТВ",
                 "icon": "video-library",
                 "color": "#7c3aed",
                 "action": "content:http://vokino.tv/msx/start.json"
-              },
-              {
-                "type": "default",
-                "layout": "0,3,4,3",
-                "title": "Lampa Mirror",
-                "headline": "Официальное зеркало Лампы",
-                "text": "Резервный вход в онлайн-кинотеатр Лампа (lampa.mx)",
-                "icon": "theaters",
-                "color": "#b91c1c",
-                "action": "link:https://lampa.mx"
               },
               {
                 "type": "default",
@@ -65,12 +64,12 @@
               {
                 "type": "default",
                 "layout": "8,3,4,3",
-                "title": "Lampa MSX Portal",
-                "headline": "Портал Media Station X",
-                "text": "Меню онлайн-кинотеатра Лампа в интерфейсе MSX",
-                "icon": "play-circle",
-                "color": "#f59e0b",
-                "action": "content:https://lampa.stream/msx/start.json"
+                "title": "Lampa Stream",
+                "headline": "Резервный вход в Лампу",
+                "text": "Альтернативный сервер онлайн-кинотеатра Лампа",
+                "icon": "theaters",
+                "color": "#b91c1c",
+                "action": "link:https://lampa.stream"
               }
             ]
           }
