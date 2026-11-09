@@ -2581,7 +2581,17 @@
                 return;
             }
 
-            const cols = 3;
+            let cols = 3;
+            if (cards.length >= 2) {
+                const firstTop = cards[0].offsetTop;
+                let c = 1;
+                while (c < cards.length && cards[c].offsetTop === firstTop) {
+                    c++;
+                }
+                if (c >= 1 && c <= 6) {
+                    cols = c;
+                }
+            }
 
             if (isLeft && currentIdx > 0) {
                 setFocus(cards[currentIdx - 1]);
@@ -2642,9 +2652,42 @@
         } catch (_) {}
     }, 60000);
 
+    // Dynamic Layout Adaptation across Screen Resolutions (4K, 1080p, 720p, Mobile)
+    function adaptScreenLayout() {
+        try {
+            var root = document.documentElement;
+            var w = window.innerWidth || root.clientWidth || (window.screen ? window.screen.width : 1920);
+            var h = window.innerHeight || root.clientHeight || (window.screen ? window.screen.height : 1080);
+
+            root.classList.remove('tv-screen-4k', 'tv-screen-fhd', 'tv-screen-hd', 'tv-screen-compact', 'tv-screen-mobile', 'tv-screen-short');
+
+            if (w >= 2400 || h >= 1350) {
+                root.classList.add('tv-screen-4k');
+            } else if (w <= 640) {
+                root.classList.add('tv-screen-mobile');
+            } else if (w <= 1024) {
+                root.classList.add('tv-screen-compact');
+            } else if (w <= 1440 || h <= 820) {
+                root.classList.add('tv-screen-hd');
+            } else {
+                root.classList.add('tv-screen-fhd');
+            }
+
+            if (h <= 640) {
+                root.classList.add('tv-screen-short');
+            }
+        } catch (e) {
+            console.warn('[Layout] adaptScreenLayout error:', e);
+        }
+    }
+
+    window.addEventListener('resize', adaptScreenLayout);
+    adaptScreenLayout();
+
     // Startup
     async function init() {
         try {
+            adaptScreenLayout();
             syncAppVersion();
             const liveBtn = categoriesNav ? categoriesNav.querySelector('[data-cat="live"]') : null;
             if (liveBtn) setFocus(liveBtn);

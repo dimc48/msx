@@ -1532,3 +1532,976 @@ kbd {
     transform: scale(1.03);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
 }
+
+
+/* ==========================================================================
+   Universal Responsive Typography & Asset Crispness (All Displays)
+   ========================================================================== */
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+img, svg {
+    -webkit-user-drag: none;
+}
+
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+svg {
+    shape-rendering: geometricPrecision;
+}
+
+/* ==========================================================================
+   1. 4K Ultra HD / Large Screen Optimization (>= 2400px width OR >= 1350px height)
+   ========================================================================== */
+@media (min-width: 2400px), (min-height: 1350px) {
+    .tv-container {
+        padding: 38px 80px;
+    }
+
+    .tv-header {
+        height: 84px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        gap: 24px;
+    }
+
+    .logo-icon-img {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+    }
+
+    .logo-text {
+        font-size: 34px;
+    }
+
+    .tv-badge {
+        font-size: 14px;
+        padding: 3px 9px;
+        border-radius: 6px;
+    }
+
+    .categories-nav {
+        gap: 12px;
+    }
+
+    .nav-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+        border-radius: 26px;
+        gap: 8px;
+    }
+
+    .live-indicator {
+        width: 12px;
+        height: 12px;
+    }
+
+    .digital-clock {
+        font-size: 24px;
+        padding: 8px 18px;
+        border-radius: 20px;
+    }
+
+    .section-title-bar {
+        margin-bottom: 24px;
+    }
+
+    .section-title-bar h2 {
+        font-size: 28px;
+    }
+
+    .match-count-badge {
+        font-size: 16px;
+        padding: 5px 14px;
+        border-radius: 16px;
+    }
+
+    .refresh-hint {
+        font-size: 17px;
+    }
+
+    .filter-pills {
+        gap: 12px;
+        padding: 5px 10px;
+        border-radius: 26px;
+    }
+
+    .pill-btn {
+        font-size: 17px;
+        padding: 8px 20px;
+        border-radius: 22px;
+    }
+
+    .cards-grid {
+        gap: 28px;
+        padding: 12px 14px 60px 14px;
+    }
+
+    .match-card {
+        padding: 26px;
+        border-radius: 22px;
+    }
+
+    .card-top {
+        margin-bottom: 16px;
+    }
+
+    .league-badge {
+        font-size: 15px;
+        padding: 6px 14px;
+        border-radius: 8px;
+    }
+
+    .league-icon, .league-icon-img {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+    }
+
+    .time-badge {
+        font-size: 16px;
+    }
+
+    .teams-container {
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .team-crest-img, .team-crest-fallback {
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
+    }
+
+    .team-name {
+        font-size: 22px;
+    }
+
+    .team-score {
+        font-size: 26px;
+        padding-left: 14px;
+    }
+
+    .card-bottom {
+        font-size: 16px;
+        padding-top: 14px;
+    }
+
+    .badge-live, .badge-today, .badge-tomorrow, .badge-upcoming, .badge-finished {
+        font-size: 15px;
+        padding: 4px 12px;
+        border-radius: 10px;
+    }
+
+    .channel-card {
+        padding: 24px;
+        border-radius: 22px;
+        min-height: 230px;
+    }
+
+    .channel-logo-container {
+        height: 100px;
+        padding: 12px 24px;
+        margin-bottom: 16px;
+        border-radius: 16px;
+    }
+
+    .channel-logo-img {
+        max-height: 78px;
+    }
+
+    .channel-name {
+        font-size: 24px;
+    }
+
+    .channel-desc {
+        font-size: 17px;
+    }
+
+    .date-section-title {
+        font-size: 24px;
+    }
+
+    .date-section-badge {
+        font-size: 16px;
+        padding: 4px 14px;
+    }
+
+    .live-empty-banner {
+        padding: 30px 40px;
+        border-radius: 22px;
+    }
+
+    .live-empty-icon {
+        font-size: 52px;
+    }
+
+    .live-empty-title {
+        font-size: 24px;
+    }
+
+    .live-empty-subtitle {
+        font-size: 17px;
+    }
+
+    /* Player Overlay 4K */
+    .player-overlay {
+        padding: 50px 80px;
+    }
+
+    .player-league-badge {
+        font-size: 18px;
+    }
+
+    .player-title {
+        font-size: 40px;
+    }
+
+    .player-quality-pill, .player-status-badge {
+        font-size: 16px;
+        padding: 7px 18px;
+        border-radius: 22px;
+    }
+
+    .servers-label {
+        font-size: 15px;
+    }
+
+    .server-btn {
+        font-size: 18px;
+        padding: 13px 24px;
+        border-radius: 16px;
+    }
+
+    .player-action-btn {
+        font-size: 18px;
+        padding: 12px 24px;
+        border-radius: 16px;
+    }
+
+    .player-hints {
+        font-size: 17px;
+        gap: 30px;
+    }
+
+    kbd {
+        font-size: 16px;
+        padding: 4px 10px;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border-width: 6px;
+    }
+
+    .loader-text {
+        font-size: 19px;
+    }
+
+    /* Prematch Modal 4K */
+    .prematch-card {
+        max-width: 960px;
+        padding: 50px 64px;
+        border-radius: 32px;
+    }
+
+    .prematch-league {
+        font-size: 20px;
+    }
+
+    .prematch-time-badge {
+        font-size: 20px;
+        padding: 8px 26px;
+        border-radius: 26px;
+    }
+
+    .prematch-logo-wrap {
+        width: 120px;
+        height: 120px;
+        border-radius: 26px;
+    }
+
+    .prematch-name {
+        font-size: 26px;
+        max-width: 300px;
+    }
+
+    .prematch-vs {
+        font-size: 32px;
+    }
+
+    .prematch-desc {
+        font-size: 20px;
+    }
+
+    .prematch-btn {
+        font-size: 20px;
+        padding: 16px 36px;
+        border-radius: 18px;
+    }
+
+    /* Settings Modal 4K */
+    .settings-modal-card {
+        width: 980px;
+        padding: 40px 54px;
+        border-radius: 26px;
+    }
+
+    .settings-logo-img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .settings-title {
+        font-size: 1.8rem;
+    }
+
+    .settings-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .settings-version-pill {
+        font-size: 1.1rem;
+        padding: 6px 18px;
+    }
+
+    .settings-section-title {
+        font-size: 1.25rem;
+    }
+
+    .settings-info-row {
+        font-size: 1.15rem;
+    }
+
+    .settings-btn {
+        font-size: 1.2rem;
+        padding: 16px 32px;
+    }
+}
+
+/* Also apply 4K rules via root class for TV browsers with atypical DPI/zoom */
+html.tv-screen-4k .tv-container { padding: 38px 80px; }
+html.tv-screen-4k .tv-header { height: 84px; margin-bottom: 24px; padding-bottom: 16px; gap: 24px; }
+html.tv-screen-4k .logo-icon-img { width: 56px; height: 56px; border-radius: 12px; }
+html.tv-screen-4k .logo-text { font-size: 34px; }
+html.tv-screen-4k .tv-badge { font-size: 14px; padding: 3px 9px; }
+html.tv-screen-4k .nav-btn { font-size: 18px; padding: 10px 20px; border-radius: 26px; gap: 8px; }
+html.tv-screen-4k .live-indicator { width: 12px; height: 12px; }
+html.tv-screen-4k .digital-clock { font-size: 24px; padding: 8px 18px; border-radius: 20px; }
+html.tv-screen-4k .section-title-bar h2 { font-size: 28px; }
+html.tv-screen-4k .match-count-badge { font-size: 16px; padding: 5px 14px; }
+html.tv-screen-4k .pill-btn { font-size: 17px; padding: 8px 20px; border-radius: 22px; }
+html.tv-screen-4k .cards-grid { gap: 28px; }
+html.tv-screen-4k .match-card { padding: 26px; border-radius: 22px; }
+html.tv-screen-4k .league-badge { font-size: 15px; padding: 6px 14px; }
+html.tv-screen-4k .league-icon, html.tv-screen-4k .league-icon-img { width: 24px; height: 24px; }
+html.tv-screen-4k .time-badge { font-size: 16px; }
+html.tv-screen-4k .team-crest-img, html.tv-screen-4k .team-crest-fallback { width: 44px; height: 44px; }
+html.tv-screen-4k .team-name { font-size: 22px; }
+html.tv-screen-4k .team-score { font-size: 26px; }
+html.tv-screen-4k .card-bottom { font-size: 16px; }
+html.tv-screen-4k .channel-card { padding: 24px; min-height: 230px; }
+html.tv-screen-4k .channel-logo-container { height: 100px; }
+html.tv-screen-4k .channel-logo-img { max-height: 78px; }
+html.tv-screen-4k .channel-name { font-size: 24px; }
+html.tv-screen-4k .channel-desc { font-size: 17px; }
+html.tv-screen-4k .player-title { font-size: 40px; }
+html.tv-screen-4k .server-btn, html.tv-screen-4k .player-action-btn { font-size: 18px; padding: 13px 24px; }
+html.tv-screen-4k .prematch-card { max-width: 960px; padding: 50px 64px; }
+
+
+/* ==========================================================================
+   2. 720p / HD Ready / Compact TV Optimization (<= 1440px width OR <= 820px height)
+   ========================================================================== */
+@media (max-width: 1440px), (max-height: 820px) {
+    .tv-container {
+        padding: 14px 28px;
+    }
+
+    .tv-header {
+        height: 48px;
+        margin-bottom: 12px;
+        padding-bottom: 8px;
+        gap: 12px;
+    }
+
+    .logo-icon-img {
+        width: 30px;
+        height: 30px;
+        border-radius: 6px;
+    }
+
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .tv-badge {
+        font-size: 9px;
+        padding: 2px 5px;
+    }
+
+    .categories-nav {
+        gap: 5px;
+    }
+
+    .nav-btn {
+        font-size: 11.5px;
+        padding: 5px 10px;
+        border-radius: 14px;
+        gap: 4px;
+    }
+
+    .live-indicator {
+        width: 7px;
+        height: 7px;
+    }
+
+    .digital-clock {
+        font-size: 14px;
+        padding: 4px 10px;
+        border-radius: 10px;
+    }
+
+    .section-title-bar {
+        margin-bottom: 12px;
+    }
+
+    .section-title-bar h2 {
+        font-size: 17px;
+    }
+
+    .match-count-badge {
+        font-size: 11px;
+        padding: 2px 8px;
+    }
+
+    .refresh-hint {
+        font-size: 11.5px;
+    }
+
+    .filter-pills {
+        gap: 6px;
+        padding: 2px 5px;
+        border-radius: 16px;
+    }
+
+    .pill-btn {
+        font-size: 11.5px;
+        padding: 4px 11px;
+        border-radius: 14px;
+    }
+
+    .cards-grid {
+        gap: 14px;
+        padding: 4px 6px 28px 6px;
+    }
+
+    .match-card {
+        padding: 14px;
+        border-radius: 13px;
+    }
+
+    .card-top {
+        margin-bottom: 10px;
+    }
+
+    .league-badge {
+        font-size: 10.5px;
+        padding: 3px 8px;
+    }
+
+    .league-icon, .league-icon-img {
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+    }
+
+    .time-badge {
+        font-size: 11px;
+    }
+
+    .teams-container {
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+
+    .team-crest-img, .team-crest-fallback {
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+    }
+
+    .team-name {
+        font-size: 14px;
+    }
+
+    .team-score {
+        font-size: 16px;
+        padding-left: 8px;
+    }
+
+    .card-bottom {
+        font-size: 11px;
+        padding-top: 8px;
+    }
+
+    .badge-live, .badge-today, .badge-tomorrow, .badge-upcoming, .badge-finished {
+        font-size: 10.5px;
+        padding: 2px 7px;
+    }
+
+    .channel-card {
+        padding: 13px;
+        min-height: 150px;
+        border-radius: 13px;
+    }
+
+    .channel-logo-container {
+        height: 58px;
+        padding: 6px 12px;
+        margin-bottom: 8px;
+        border-radius: 10px;
+    }
+
+    .channel-logo-img {
+        max-height: 44px;
+    }
+
+    .channel-name {
+        font-size: 15.5px;
+    }
+
+    .channel-desc {
+        font-size: 11.5px;
+        line-height: 1.3;
+    }
+
+    .date-section-title {
+        font-size: 15px;
+    }
+
+    .date-section-badge {
+        font-size: 11px;
+    }
+
+    .live-empty-banner {
+        padding: 16px 20px;
+        gap: 14px;
+    }
+
+    .live-empty-icon {
+        font-size: 30px;
+    }
+
+    .live-empty-title {
+        font-size: 16px;
+    }
+
+    .live-empty-subtitle {
+        font-size: 12px;
+    }
+
+    /* Player Overlay 720p */
+    .player-overlay {
+        padding: 24px 36px;
+    }
+
+    .player-league-badge {
+        font-size: 11.5px;
+    }
+
+    .player-title {
+        font-size: 22px;
+    }
+
+    .player-quality-pill, .player-status-badge {
+        font-size: 11px;
+        padding: 4px 10px;
+    }
+
+    .servers-label {
+        font-size: 10px;
+    }
+
+    .server-btn {
+        font-size: 12px;
+        padding: 7px 12px;
+        border-radius: 10px;
+    }
+
+    .player-action-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+        border-radius: 10px;
+    }
+
+    .player-hints {
+        font-size: 11px;
+        gap: 14px;
+    }
+
+    kbd {
+        font-size: 10.5px;
+        padding: 2px 5px;
+    }
+
+    /* Prematch Modal 720p */
+    .prematch-card {
+        max-width: 580px;
+        padding: 24px 30px;
+        border-radius: 18px;
+    }
+
+    .prematch-header {
+        margin-bottom: 16px;
+        gap: 6px;
+    }
+
+    .prematch-league {
+        font-size: 13px;
+    }
+
+    .prematch-time-badge {
+        font-size: 13px;
+        padding: 4px 14px;
+    }
+
+    .prematch-teams {
+        gap: 22px;
+        margin-bottom: 18px;
+    }
+
+    .prematch-logo-wrap {
+        width: 68px;
+        height: 68px;
+        border-radius: 14px;
+    }
+
+    .prematch-name {
+        font-size: 16px;
+        max-width: 170px;
+    }
+
+    .prematch-vs {
+        font-size: 20px;
+    }
+
+    .prematch-info {
+        margin-bottom: 18px;
+    }
+
+    .prematch-desc {
+        font-size: 13px;
+    }
+
+    .prematch-btn {
+        font-size: 13.5px;
+        padding: 10px 18px;
+        border-radius: 11px;
+    }
+
+    /* Settings Modal 720p */
+    .settings-modal-card {
+        width: 600px;
+        padding: 22px 28px;
+        border-radius: 16px;
+        gap: 14px;
+    }
+
+    .settings-header {
+        padding-bottom: 12px;
+    }
+
+    .settings-logo-img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .settings-title {
+        font-size: 1.15rem;
+    }
+
+    .settings-subtitle {
+        font-size: 0.78rem;
+    }
+
+    .settings-version-pill {
+        font-size: 0.75rem;
+        padding: 3px 10px;
+    }
+
+    .settings-body {
+        gap: 12px;
+    }
+
+    .settings-section {
+        padding: 12px 14px;
+        border-radius: 10px;
+    }
+
+    .settings-section-title {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .settings-info-row {
+        font-size: 0.82rem;
+    }
+
+    .settings-about-text {
+        font-size: 0.82rem;
+        padding: 9px 12px;
+    }
+
+    .settings-btn {
+        font-size: 0.85rem;
+        padding: 10px 18px;
+    }
+}
+
+/* Also apply HD rules via root class */
+html.tv-screen-hd .tv-container { padding: 14px 28px; }
+html.tv-screen-hd .tv-header { height: 48px; margin-bottom: 12px; gap: 12px; }
+html.tv-screen-hd .logo-icon-img { width: 30px; height: 30px; }
+html.tv-screen-hd .logo-text { font-size: 20px; }
+html.tv-screen-hd .nav-btn { font-size: 11.5px; padding: 5px 10px; }
+html.tv-screen-hd .digital-clock { font-size: 14px; padding: 4px 10px; }
+html.tv-screen-hd .section-title-bar h2 { font-size: 17px; }
+html.tv-screen-hd .pill-btn { font-size: 11.5px; padding: 4px 11px; }
+html.tv-screen-hd .cards-grid { gap: 14px; }
+html.tv-screen-hd .match-card { padding: 14px; }
+html.tv-screen-hd .team-crest-img, html.tv-screen-hd .team-crest-fallback { width: 26px; height: 26px; }
+html.tv-screen-hd .team-name { font-size: 14px; }
+html.tv-screen-hd .team-score { font-size: 16px; }
+html.tv-screen-hd .channel-card { padding: 13px; min-height: 150px; }
+html.tv-screen-hd .channel-logo-container { height: 58px; }
+html.tv-screen-hd .channel-logo-img { max-height: 44px; }
+html.tv-screen-hd .channel-name { font-size: 15.5px; }
+
+
+/* ==========================================================================
+   3. Medium Screens / Tablets / Narrow TV Viewports (<= 1024px width)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .tv-container {
+        padding: 12px 20px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 14px;
+    }
+
+    .categories-nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .categories-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .filter-pills {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .filter-pills::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+html.tv-screen-compact .cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+}
+
+
+/* ==========================================================================
+   4. Mobile / Ultra-Compact Screen Optimization (<= 640px width)
+   ========================================================================== */
+@media (max-width: 640px) {
+    .tv-container {
+        padding: 10px 12px;
+    }
+
+    .tv-header {
+        height: auto;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
+    .digital-clock {
+        display: none;
+    }
+
+    .categories-nav {
+        width: 100%;
+        overflow-x: auto;
+        order: 3;
+        padding-top: 4px;
+    }
+
+    .section-title-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .filter-pills {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px;
+        padding: 4px 2px 24px 2px;
+    }
+
+    .prematch-card {
+        width: 95%;
+        padding: 20px 16px;
+    }
+
+    .prematch-teams {
+        gap: 12px;
+    }
+
+    .prematch-logo-wrap {
+        width: 52px;
+        height: 52px;
+    }
+
+    .prematch-name {
+        font-size: 13.5px;
+        max-width: 110px;
+    }
+
+    .prematch-vs {
+        font-size: 17px;
+    }
+
+    .settings-modal-card {
+        width: 96%;
+        padding: 18px 16px;
+    }
+
+    .settings-meta-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+html.tv-screen-mobile .cards-grid {
+    grid-template-columns: 1fr !important;
+}
+html.tv-screen-mobile .digital-clock {
+    display: none;
+}
+
+
+/* ==========================================================================
+   5. Short Viewports / Ultra-Wide 21:9 Aspect Ratio (<= 640px height)
+   ========================================================================== */
+@media (max-height: 640px) {
+    .tv-container {
+        padding: 8px 18px;
+    }
+
+    .tv-header {
+        height: 42px;
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+    }
+
+    .section-title-bar {
+        margin-bottom: 8px;
+    }
+
+    .cards-grid {
+        gap: 10px;
+        padding-bottom: 16px;
+    }
+
+    .match-card {
+        padding: 10px 12px;
+    }
+
+    .card-top {
+        margin-bottom: 6px;
+    }
+
+    .teams-container {
+        gap: 6px;
+        margin-bottom: 6px;
+    }
+
+    .card-bottom {
+        padding-top: 6px;
+    }
+
+    .channel-card {
+        min-height: 130px;
+        padding: 10px;
+    }
+
+    .channel-logo-container {
+        height: 46px;
+        margin-bottom: 6px;
+        padding: 4px 10px;
+    }
+
+    .channel-logo-img {
+        max-height: 36px;
+    }
+
+    .channel-name {
+        font-size: 14.5px;
+    }
+
+    .player-overlay {
+        padding: 18px 26px;
+    }
+
+    .player-controls-bottom {
+        gap: 8px;
+    }
+
+    .prematch-card {
+        padding: 16px 22px;
+    }
+
+    .prematch-teams {
+        margin-bottom: 10px;
+    }
+
+    .prematch-logo-wrap {
+        width: 52px;
+        height: 52px;
+    }
+
+    .prematch-info {
+        margin-bottom: 12px;
+    }
+}
+
+html.tv-screen-short .tv-container { padding: 8px 18px; }
+html.tv-screen-short .tv-header { height: 42px; margin-bottom: 8px; padding-bottom: 4px; }
+html.tv-screen-short .cards-grid { gap: 10px; padding-bottom: 16px; }
+html.tv-screen-short .match-card { padding: 10px 12px; }
+html.tv-screen-short .channel-card { min-height: 130px; padding: 10px; }
+html.tv-screen-short .channel-logo-container { height: 46px; margin-bottom: 6px; }
