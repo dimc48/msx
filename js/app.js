@@ -859,6 +859,16 @@
     const btnCloseSettings = document.getElementById('btnCloseSettings');
     let isSettingsModalOpen = false;
 
+    // Remove Settings button completely for WEB / Media Station X version
+    const isNativeAndroid = typeof window.AndroidBridge !== 'undefined';
+    if (btnSettingsNav) {
+        if (isNativeAndroid) {
+            btnSettingsNav.style.display = '';
+        } else {
+            btnSettingsNav.remove();
+        }
+    }
+
     // Player Elements
     const playerModal = document.getElementById('playerModal');
     const tvVideo = document.getElementById('tvVideo');
@@ -2065,7 +2075,12 @@
         if (!settingsModal) return;
         isSettingsModalOpen = false;
         settingsModal.classList.add('hidden');
-        if (btnSettingsNav) setFocus(btnSettingsNav);
+        if (btnSettingsNav && document.body.contains(btnSettingsNav)) {
+            setFocus(btnSettingsNav);
+        } else if (categoriesNav) {
+            const liveBtn = categoriesNav.querySelector('[data-cat="live"]');
+            if (liveBtn) setFocus(liveBtn);
+        }
     }
 
     function triggerManualUpdateCheck() {
@@ -2499,7 +2514,7 @@
 
         // A. In Top Categories Navigation (Allows free Left/Right browsing without stealing focus!)
         if (inNav) {
-            const navButtons = Array.from(categoriesNav.querySelectorAll('.nav-btn'));
+            const navButtons = Array.from(categoriesNav.querySelectorAll('.nav-btn')).filter(btn => btn.style.display !== 'none');
             const currentIdx = navButtons.indexOf(focusedElement);
 
             if (isLeft && currentIdx > 0) {
