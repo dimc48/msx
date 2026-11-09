@@ -2656,24 +2656,34 @@
     function adaptScreenLayout() {
         try {
             var root = document.documentElement;
+            var isAndroid = typeof window.AndroidBridge !== 'undefined';
+            if (isAndroid) {
+                root.classList.add('is-android-tv');
+            }
+
+            var dpr = window.devicePixelRatio || 1;
             var w = window.innerWidth || root.clientWidth || (window.screen ? window.screen.width : 1920);
             var h = window.innerHeight || root.clientHeight || (window.screen ? window.screen.height : 1080);
 
+            // In Android TV APK with high DPI, calculate effective resolution
+            var effW = (isAndroid && w < 1400 && dpr > 1) ? Math.round(w * dpr) : w;
+            var effH = (isAndroid && h < 800 && dpr > 1) ? Math.round(h * dpr) : h;
+
             root.classList.remove('tv-screen-4k', 'tv-screen-fhd', 'tv-screen-hd', 'tv-screen-compact', 'tv-screen-mobile', 'tv-screen-short');
 
-            if (w >= 2400 || h >= 1350) {
+            if (effW >= 2400 || effH >= 1350) {
                 root.classList.add('tv-screen-4k');
-            } else if (w <= 640) {
+            } else if (effW <= 640 && !isAndroid) {
                 root.classList.add('tv-screen-mobile');
-            } else if (w <= 1024) {
+            } else if (effW <= 1024 && !isAndroid) {
                 root.classList.add('tv-screen-compact');
-            } else if (w <= 1440 || h <= 820) {
+            } else if (effW <= 1440 || effH <= 820) {
                 root.classList.add('tv-screen-hd');
             } else {
                 root.classList.add('tv-screen-fhd');
             }
 
-            if (h <= 640) {
+            if (effH <= 640 && !isAndroid) {
                 root.classList.add('tv-screen-short');
             }
         } catch (e) {

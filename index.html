@@ -2,7 +2,20 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta id="appViewport" name="viewport" content="width=1920, user-scalable=no">
+    <script>
+        (function() {
+            try {
+                var isTV = typeof window.AndroidBridge !== 'undefined' ||
+                           /SmartTV|Tizen|Web0S|NetCast|MSX|Android.*TV|AppleTV|GoogleTV/i.test(navigator.userAgent) ||
+                           (window.screen && (window.screen.width >= 1280 || window.screen.height >= 1280));
+                var vp = document.getElementById('appViewport');
+                if (!isTV && window.screen && window.screen.width < 768 && !/Android/i.test(navigator.userAgent)) {
+                    vp.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+                }
+            } catch (_) {}
+        })();
+    </script>
     <meta name="referrer" content="no-referrer">
     <title>FootDroid TV</title>
     <link rel="stylesheet" href="css/style.css">

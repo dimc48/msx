@@ -2505,3 +2505,161 @@ html.tv-screen-short .cards-grid { gap: 10px; padding-bottom: 16px; }
 html.tv-screen-short .match-card { padding: 10px 12px; }
 html.tv-screen-short .channel-card { min-height: 130px; padding: 10px; }
 html.tv-screen-short .channel-logo-container { height: 46px; margin-bottom: 6px; }
+
+
+/* ==========================================================================
+   6. Android TV APK Dedicated Optimization (.is-android-tv)
+   Ensures authentic 3-column leanback layout, TV safe zone margins,
+   and calibrated typography when running natively in FootDroid.apk
+   ========================================================================== */
+html.is-android-tv .tv-container {
+    padding: 24px 44px;
+}
+
+html.is-android-tv .tv-header {
+    height: 56px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    gap: 12px;
+    flex-wrap: nowrap !important;
+}
+
+html.is-android-tv .logo-area {
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+html.is-android-tv .logo-icon-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+}
+
+html.is-android-tv .logo-text {
+    font-size: 22px;
+}
+
+html.is-android-tv .tv-badge {
+    font-size: 10px;
+    padding: 2px 6px;
+}
+
+html.is-android-tv .categories-nav {
+    gap: 6px;
+    flex-wrap: nowrap !important;
+    overflow-x: visible !important;
+}
+
+html.is-android-tv .nav-btn {
+    font-size: 12px !important;
+    padding: 6px 11px !important;
+    border-radius: 16px !important;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+html.is-android-tv .digital-clock {
+    display: block !important;
+    font-size: 15px !important;
+    padding: 5px 12px !important;
+    border-radius: 12px !important;
+}
+
+html.is-android-tv .cards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 18px !important;
+    padding: 8px 10px 40px 10px !important;
+}
+
+html.is-android-tv .match-card {
+    padding: 16px 18px !important;
+    border-radius: 16px !important;
+}
+
+html.is-android-tv .card-top {
+    margin-bottom: 12px;
+}
+
+html.is-android-tv .league-badge {
+    font-size: 11.5px;
+    padding: 4px 10px;
+}
+
+html.is-android-tv .time-badge {
+    font-size: 12px;
+}
+
+html.is-android-tv .team-crest-img,
+html.is-android-tv .team-crest-fallback {
+    width: 32px !important;
+    height: 32px !important;
+    flex-shrink: 0;
+}
+
+html.is-android-tv .team-name {
+    font-size: 15.5px !important;
+    font-weight: 600;
+}
+
+html.is-android-tv .team-score {
+    font-size: 18.5px !important;
+    font-weight: 800;
+    padding-left: 10px;
+}
+
+html.is-android-tv .card-bottom {
+    font-size: 12.5px;
+    padding-top: 10px;
+}
+
+html.is-android-tv .channel-card {
+    padding: 16px !important;
+    min-height: 175px !important;
+    border-radius: 16px !important;
+}
+
+html.is-android-tv .channel-logo-container {
+    height: 72px !important;
+    border-radius: 12px !important;
+    padding: 8px 16px !important;
+}
+
+html.is-android-tv .channel-logo-img {
+    max-height: 56px !important;
+}
+
+html.is-android-tv .channel-name {
+    font-size: 17.5px !important;
+}
+
+html.is-android-tv .channel-desc {
+    font-size: 12.5px !important;
+}
+
+html.is-android-tv .player-overlay {
+    padding: 36px 54px !important;
+}
+
+html.is-android-tv .player-title {
+    font-size: 28px !important;
+}
+
+html.is-android-tv .server-btn,
+html.is-android-tv .player-action-btn {
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+}
+
+html.is-android-tv .settings-modal-card {
+    width: 760px !important;
+    max-width: 92vw !important;
+    padding: 30px 40px !important;
+    border-radius: 20px !important;
+}
+
+html.is-android-tv .ota-modal-card {
+    width: 660px !important;
+    max-width: 92vw !important;
+    padding: 36px 44px !important;
+    border-radius: 20px !important;
+}
