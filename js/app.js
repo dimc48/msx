@@ -10,10 +10,12 @@
             name: 'Матч ТВ HD',
             logo: 'img/channels/match-tv.png',
             desc: 'Главный федеральный спортивный телеканал России',
-            quality: 'Full HD 1080p',
+            quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/169/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/mtv_laliga/index.m3u8' },
+                { name: '⚡ Сервер 2 (Зеркало T6)', url: 'https://t6.ultrastream.vip/mtv_laliga/index.m3u8' },
+                { name: '⚡ Сервер 3 (Зеркало T7)', url: 'https://t7.ultrastream.vip/mtv_laliga/index.m3u8' },
+                { name: '⚡ Сервер 4 (Резерв)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' }
             ]
         },
         {
@@ -24,10 +26,10 @@
             desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' },
-                { name: '⚡ Сервер 2 (Full HD 50 FPS)', url: 'http://90.183.52.46:4000/play/a06m/index.m3u8' },
-                { name: '⚡ Сервер 3 (CDN)', url: 'http://46.53.200.153:7777/play/a01k/index.m3u8' },
-                { name: '⚡ Сервер 4 (Резерв)', url: 'http://stream.mcquack.net/193/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/matchprem/index.m3u8' },
+                { name: '⚡ Сервер 2 (Зеркало T6)', url: 'https://t6.ultrastream.vip/matchprem/index.m3u8' },
+                { name: '⚡ Сервер 3 (Зеркало T7)', url: 'https://t7.ultrastream.vip/matchprem/index.m3u8' },
+                { name: '⚡ Сервер 4 (Резерв)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' }
             ]
         },
         {
@@ -37,7 +39,11 @@
             logo: 'img/channels/okko-sport.png',
             desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
             quality: 'Full HD 1080p / 50 FPS',
-            streams: []
+            streams: [
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' },
+                { name: '⚡ Сервер 2 (Зеркало T5)', url: 'https://t5.ultrastream.vip/footbolokko/index.m3u8' },
+                { name: '⚡ Сервер 3 (Зеркало T7)', url: 'https://t7.ultrastream.vip/footbolokko/index.m3u8' }
+            ]
         },
         {
             id: 'ch-futbol1',
@@ -149,7 +155,9 @@
             desc: 'Матчи Континентальной Хоккейной Лиги и Кубок Гагарина',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'http://stream.mcquack.net/178/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/KHL/index.m3u8' },
+                { name: '⚡ Сервер 2 (Зеркало T6)', url: 'https://t6.ultrastream.vip/KHL/index.m3u8' },
+                { name: '⚡ Сервер 3 (Зеркало T7)', url: 'https://t7.ultrastream.vip/KHL/index.m3u8' }
             ]
         },
         {
@@ -247,9 +255,11 @@
             name: 'Матч! Арена HD',
             logo: 'img/channels/match-arena.png',
             desc: 'Престижные мировые турниры по неигровым видам спорта',
-            quality: 'Full HD 1080p',
+            quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://31.148.48.15/Match_Arena_HD/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t7.ultrastream.vip/marena/index.m3u8' },
+                { name: '⚡ Сервер 2 (Зеркало T5)', url: 'https://t5.ultrastream.vip/marena/index.m3u8' },
+                { name: '⚡ Сервер 3 (Зеркало T6)', url: 'https://t6.ultrastream.vip/marena/index.m3u8' }
             ]
         }
     ];
@@ -406,37 +416,50 @@
     }
 
     // Resolves CDN3 / .php stream wrappers to valid direct HLS manifest URLs
+    const CDN3_STREAM_MAP = {
+        'mtv.php': 'https://t5.ultrastream.vip/mtv_laliga/index.m3u8',
+        'mp.php': 'https://t5.ultrastream.vip/matchprem/index.m3u8',
+        'marena.php': 'https://t7.ultrastream.vip/marena/index.m3u8',
+        'start.php': 'https://t5.ultrastream.vip/Start/index.m3u8',
+        'khl.php': 'https://t5.ultrastream.vip/KHL/index.m3u8',
+        'b5.php': 'https://t7.ultrastream.vip/b5/index.m3u8',
+        'footballokko.php': 'https://t6.ultrastream.vip/footbolokko/index.m3u8',
+        'okko-sport.php': 'https://t6.ultrastream.vip/footbolokko/index.m3u8',
+        'reserv1.php': 'https://t6.ultrastream.vip/reserv1/index.m3u8',
+        'reserv2.php': 'https://t6.ultrastream.vip/reserv2/index.m3u8',
+        'reserv4.php': 'https://t6.ultrastream.vip/reserv4/index.m3u8',
+        'reserv5.php': 'https://t6.ultrastream.vip/reserv5/index.m3u8',
+        'reserv6.php': 'https://t6.ultrastream.vip/test/index.m3u8',
+        'r6.php': 'https://t6.ultrastream.vip/test/index.m3u8',
+        'reserv7.php': 'https://t6.ultrastream.vip/reserv7/index.m3u8',
+        'reserv8.php': 'https://t6.ultrastream.vip/reserv8/index.m3u8',
+        'reserv9.php': 'https://t6.ultrastream.vip/reservs9/index.m3u8',
+        'reserv10.php': 'https://t6.ultrastream.vip/reserv10/index.m3u8',
+        'reserv11.php': 'https://t6.ultrastream.vip/reserv11/index.m3u8',
+        'reserv12.php': 'https://t6.ultrastream.vip/reserv12/index.m3u8',
+        'reserv13.php': 'https://t5.ultrastream.vip/reserv13/index.m3u8',
+        'reserv14.php': 'https://t5.ultrastream.vip/reserv14/index.m3u8',
+        'reserv15.php': 'https://t5.ultrastream.vip/reserv15/index.m3u8',
+        'reserv16.php': 'https://t5.ultrastream.vip/reserv16/index.m3u8',
+        'reserv17.php': 'https://t5.ultrastream.vip/reserv17/index.m3u8',
+        'reserv18.php': 'https://t5.ultrastream.vip/reserv18/index.m3u8',
+        'reserv19.php': 'https://t5.ultrastream.vip/reserv19/index.m3u8',
+        'reserv20.php': 'https://t5.ultrastream.vip/reserv20/index.m3u8'
+    };
+
     function resolveCdn3Fast(url) {
         if (!url || typeof url !== 'string') return url;
         if (url.includes('.m3u8') || url.includes('.mp4')) return url;
         if (url.includes('/CDN3/') || url.includes('.php')) {
             const filename = url.split('/').pop().split('?')[0].toLowerCase();
-            // Exact mappings for official broadcast files
-            if (filename === 'reservv3.php' || filename === 'reserv-3.php' || filename === 'reserv3.php') {
-                return 'https://t6.ultrastream.vip/reserv-3/index.m3u8';
+            if (CDN3_STREAM_MAP[filename]) {
+                return CDN3_STREAM_MAP[filename];
             }
-            if (filename === 'reservv2.php' || filename === 'reserv-2.php') {
-                return 'https://t6.ultrastream.vip/reserv-2/index.m3u8';
-            }
-            if (filename === 'reservv1.php' || filename === 'reserv-1.php') {
-                return 'https://t6.ultrastream.vip/reserv-1/index.m3u8';
-            }
-            if (filename === 'reserv1.php') return 'https://t6.ultrastream.vip/reserv1/index.m3u8';
-            if (filename === 'reserv2.php') return 'https://t6.ultrastream.vip/reserv2/index.m3u8';
-            if (filename === 'reserv4.php') return 'https://t6.ultrastream.vip/reserv4/index.m3u8';
-            if (filename === 'reserv5.php') return 'https://t6.ultrastream.vip/reserv5/index.m3u8';
-            if (filename === 'reserv6.php') return 'https://t6.ultrastream.vip/reserv6/index.m3u8';
-            if (filename === 'reserv7.php') return 'https://t6.ultrastream.vip/reserv7/index.m3u8';
-            if (filename === 'reserv8.php') return 'https://t6.ultrastream.vip/reserv8/index.m3u8';
-            if (filename === 'footballokko.php') return 'https://t6.ultrastream.vip/footbolokko/index.m3u8';
-            if (filename === 'start.php') return 'https://t5.ultrastream.vip/Start/index.m3u8';
-            if (filename === 'b5.php') return 'https://t7.ultrastream.vip/b5/index.m3u8';
-            if (filename === 'khl.php') return 'https://t5.ultrastream.vip/KHL/index.m3u8';
-            if (filename === 'mp.php') return 'http://stream.mcquack.net/193/index.m3u8';
-            if (filename === 'r6.php') return 'https://t6.ultrastream.vip/test/index.m3u8';
             if (filename.startsWith('reserv') && filename.endsWith('.php')) {
+                const num = parseInt(filename.replace(/\D/g, ''), 10);
+                const host = (num >= 13 && num <= 20) ? 't5.ultrastream.vip' : 't6.ultrastream.vip';
                 const base = filename.replace('.php', '');
-                return `https://t6.ultrastream.vip/${base}/index.m3u8`;
+                return `https://${host}/${base}/index.m3u8`;
             }
         }
         return url;
@@ -579,13 +602,13 @@
                                liveStatusRaw.includes('fin') || liveStatusRaw.includes('ft');
             const isScheduled = !isLive && !isFinished;
 
-            // Strict Filter: Eliminate corrupt / stuck / ghost matches (e.g. invalid minute > 140, or 'live' match from days/months ago)
+            // Robust Live Match Normalization
             if (isLive) {
                 if (m.minute && (Number(m.minute) > 140 || Number(m.minute) < 0)) {
-                    return; // Corrupt minute data (e.g. 1256')
+                    m.minute = null; // Clean up unusual raw counter; display live status cleanly
                 }
-                if (startDate && (now.getTime() - startDate.getTime() > 6 * 60 * 60 * 1000)) {
-                    return; // Zombie match stuck in database from previous days/months
+                if (startDate && (now.getTime() - startDate.getTime() > 12 * 60 * 60 * 1000)) {
+                    return; // Zombie match stuck in database from previous days
                 }
                 if (startDate && (startDate.getTime() - now.getTime() > 60 * 60 * 1000)) {
                     return; // Falsely tagged as live long before start
@@ -627,25 +650,26 @@
             // Stream Mirrors Discovery & Automatic Fallbacks
             const streams = [];
 
-            // 1. Primary match stream
+            // 1. Primary match stream and genuine CDN edge mirrors
             if (m.stream && typeof m.stream === 'string' && m.stream.startsWith('http')) {
                 const resolvedMain = resolveCdn3Fast(m.stream);
                 streams.push({
-                    name: '⚡ Основной поток',
+                    name: '⚡ Основной поток (1080p)',
                     url: resolvedMain,
                     rawUrl: m.stream
                 });
 
-                // Auto-discover alternative edge CDNs (t5, t7) for ultrastream sources
+                // Auto-discover alternative edge CDNs (t5, t6, t7) for ultrastream sources
                 if (resolvedMain.includes('.ultrastream.vip/')) {
-                    const edge5 = resolvedMain.replace(/t\d+\.ultrastream\.vip/, 't5.ultrastream.vip');
-                    const edge7 = resolvedMain.replace(/t\d+\.ultrastream\.vip/, 't7.ultrastream.vip');
-                    if (!streams.some(s => s.url === edge5)) {
-                        streams.push({ name: `⚡ Резерв ${streams.length}`, url: edge5 });
-                    }
-                    if (!streams.some(s => s.url === edge7)) {
-                        streams.push({ name: `⚡ Резерв ${streams.length}`, url: edge7 });
-                    }
+                    ['t5', 't6', 't7'].forEach(edge => {
+                        const edgeUrl = resolvedMain.replace(/t\d+\.ultrastream\.vip/, `${edge}.ultrastream.vip`);
+                        if (!streams.some(s => s.url === edgeUrl)) {
+                            streams.push({
+                                name: `⚡ Резерв ${edge.toUpperCase()} (CDN)`,
+                                url: edgeUrl
+                            });
+                        }
+                    });
                 }
             }
 
@@ -709,23 +733,49 @@
         return parsed;
     }
 
-    // Fetch Football Matches from VAR TV API (500 matches for the full upcoming week)
+    // Dynamic Mirror Domains (Resilient Domain Manager like VAR.TV)
+    const BOOTSTRAP_MIRRORS_URL = 'https://raw.githubusercontent.com/FletCHGM/3c1f9b7a-5e6d-4d2a-9f13-8c7b2a91e4c6/main/1.json';
+    const DEFAULT_VAR_DOMAINS = [
+        'xlsport.vip',
+        'hpsport.vip',
+        'lsport.vip',
+        'msport.vip',
+        'varline.store'
+    ];
+    let cachedVarDomains = [...DEFAULT_VAR_DOMAINS];
+
+    async function resolveLiveVarDomains() {
+        try {
+            const res = await fetch(BOOTSTRAP_MIRRORS_URL + '?t=' + Date.now(), {
+                signal: AbortSignal.timeout ? AbortSignal.timeout(3000) : undefined
+            });
+            if (res.ok) {
+                const json = await res.json();
+                if (Array.isArray(json.domains) && json.domains.length > 0) {
+                    cachedVarDomains = json.domains;
+                }
+            }
+        } catch (_) {}
+        return cachedVarDomains;
+    }
+
+    // Fetch Football Matches from VAR TV API
     async function fetchAllVarlineMatches(forceRefresh = false) {
         const now = Date.now();
         if (!forceRefresh && allMatchesCache && (now - lastCacheTime < CACHE_TTL_MS)) {
             return allMatchesCache;
         }
 
-        const endpoints = [
-            'https://varline.store/api/matchlist?limit=500',
-            'https://lsport.vip/api/matchlist?limit=500',
-            'https://msport.vip/api/matchlist?limit=500'
-        ];
-
+        const domains = await resolveLiveVarDomains();
         let rawMatches = null;
-        for (const url of endpoints) {
+
+        for (const domain of domains) {
+            const url = `https://${domain}/api/matchlist?limit=150`;
             try {
-                const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+                const res = await fetch(url, {
+                    headers: { 'Accept': 'application/json' },
+                    signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined
+                });
                 if (res.ok) {
                     const data = await res.json();
                     if (Array.isArray(data) && data.length > 0) {
@@ -734,7 +784,7 @@
                     }
                 }
             } catch (err) {
-                console.warn(`Endpoint ${url} failed:`, err);
+                console.warn(`[API] Mirror ${domain} failed:`, err.message);
             }
         }
 
@@ -1377,11 +1427,8 @@
             dynamicStreamPool[item.id].forEach(s => addCandidate(s.url, s.name));
         }
 
-        // 4. Match tournament fallbacks
-        if (!item.isChannel && item.tournament && item.tournament.groupKey) {
-            const fallbacks = getFallbackMirrorsForTournament(item.tournament.groupKey);
-            fallbacks.forEach((fb, idx) => addCandidate(fb.url, `⚡ Резерв ${idx + 1}`));
-        }
+        // 4. Note: Do NOT inject unrelated static channels into match streams!
+        // Matches only use verified direct broadcasts and edge CDN mirrors.
 
         return pool;
     }
@@ -1409,9 +1456,20 @@
         } else {
             // 2. If it's a match, re-fetch matchlist to find live stream updates
             try {
-                const res = await fetch('https://varline.store/api/matchlist?limit=500', {
-                    signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined
-                });
+                const domains = cachedVarDomains && cachedVarDomains.length > 0 ? cachedVarDomains : DEFAULT_VAR_DOMAINS;
+                let freshMatches = null;
+                for (const d of domains) {
+                    try {
+                        const r = await fetch(`https://${d}/api/matchlist?limit=150`, {
+                            signal: AbortSignal.timeout ? AbortSignal.timeout(4000) : undefined
+                        });
+                        if (r.ok) {
+                            freshMatches = await r.json();
+                            if (Array.isArray(freshMatches) && freshMatches.length > 0) break;
+                        }
+                    } catch (_) {}
+                }
+                const res = { ok: Array.isArray(freshMatches), json: async () => freshMatches };
                 if (res.ok) {
                     const freshMatches = await res.json();
                     const homeTarget = (currentMatch.team1 ? currentMatch.team1.name : '').toLowerCase();
