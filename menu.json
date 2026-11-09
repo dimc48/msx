@@ -26,50 +26,51 @@
                 "layout": "4,0,4,3",
                 "title": "Lampa (Лампа)",
                 "headline": "ТВ Онлайн-кинотеатр #1",
-                "text": "Фильмы, сериалы, 4K HDR. Онлайн балансеры и торренты настроены для пульта",
+                "text": "Фильмы, сериалы, 4K HDR. Официальная версия с поддержкой пульта ТВ",
                 "icon": "movie",
                 "color": "#e11d48",
-                "action": "link:https://dimc48.github.io/msx/lampa/index.html"
+                "action": "[settings:validate_links:0|link:http://lampa.mx]"
               },
               {
                 "type": "default",
                 "layout": "8,0,4,3",
-                "title": "VoKino TV",
-                "headline": "Каталог кино для Smart TV",
-                "text": "Онлайн-кинотеатр с навигацией стрелками пульта для телевизора",
-                "icon": "video-library",
-                "color": "#7c3aed",
-                "action": "content:http://vokino.tv/msx/start.json"
+                "title": "Zona (Зона ТВ)",
+                "headline": "Кинотеатр Zona Smart TV",
+                "text": "Официальная ТВ-версия (m.zona.ms): новинки фильмов и сериалов с пульта",
+                "image": "https://msx.zona.ms/assets/logo_512_512.png",
+                "imageFiller": "fit",
+                "color": "#0284c7",
+                "action": "[settings:validate_links:0|link:https://msx.zona.ms]"
               },
               {
                 "type": "default",
                 "layout": "0,3,4,3",
+                "title": "VoKino TV",
+                "headline": "Каталог кино для Smart TV",
+                "text": "Онлайн-кинотеатр с удобной навигацией стрелками пульта для ТВ",
+                "icon": "video-library",
+                "color": "#7c3aed",
+                "action": "[settings:validate_links:0|link:http://web.vokino.tv/]"
+              },
+              {
+                "type": "default",
+                "layout": "4,3,4,3",
                 "title": "Deeplex TV",
                 "headline": "Кинотеатр Deeplex для Smart TV",
                 "text": "Каталог фильмов и сериалов, адаптированный под пульт ТВ",
                 "icon": "live-tv",
                 "color": "#0ea5e9",
-                "action": "content:http://deeplex.cc/msx/start.json"
-              },
-              {
-                "type": "default",
-                "layout": "4,3,4,3",
-                "title": "Atodo TV (Онлайн Кино)",
-                "headline": "Smart TV Онлайн-кинотеатр",
-                "text": "Свежие фильмы, сериалы и мультфильмы с навигацией пультом",
-                "icon": "theaters",
-                "color": "#f59e0b",
-                "action": "link:http://msx.atodo.fun"
+                "action": "[settings:validate_links:0|link:http://smart.deeplex.cc/]"
               },
               {
                 "type": "default",
                 "layout": "8,3,4,3",
-                "title": "NoName TV (Портал кино)",
-                "headline": "Мультимедиа портал Smart TV",
-                "text": "Каталоги кино, сериалов, IPTV и медиасервисов для пульта",
-                "icon": "apps",
-                "color": "#6366f1",
-                "action": "content:http://nnmtv.pw/msx/start.json"
+                "title": "Atodo TV (Онлайн Кино)",
+                "headline": "Smart TV Онлайн-кинотеатр",
+                "text": "Каталог кино и сериалов в нативном разрешении без искажения пропорций",
+                "icon": "theaters",
+                "color": "#f59e0b",
+                "action": "[settings:validate_links:0|menu:request:interaction:menu@http://atodo.fun/fun.html]"
               }
             ]
           }
