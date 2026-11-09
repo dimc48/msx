@@ -71,6 +71,17 @@
                 "icon": "theaters",
                 "color": "#f59e0b",
                 "action": "[settings:validate_links:0|menu:request:interaction:menu@http://atodo.fun/fun.html]"
+              },
+              {
+                "type": "default",
+                "layout": "0,6,4,3",
+                "title": "Lift TV (Лифт)",
+                "headline": "Бесплатный онлайн-кинотеатр",
+                "text": "Фильмы и сериалы без рекламы для Smart TV и пульта (liftapp.ink)",
+                "image": "https://dimc48.github.io/msx/img/lift.png",
+                "imageFiller": "fit",
+                "color": "#0b2244",
+                "action": "[settings:validate_links:0|menu:request:interaction:menu@http://lift3.ws/msx]"
               }
             ]
           }
