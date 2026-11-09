@@ -12,7 +12,7 @@
             "items": [
               {
                 "type": "default",
-                "layout": "0,0,4,3",
+                "layout": "0,0,3,3",
                 "title": "FootDroid Web",
                 "headline": "Спорт и ТВ онлайн",
                 "text": "Прямые эфиры матчей, расписание игр и телеканалы Full HD",
@@ -23,7 +23,7 @@
               },
               {
                 "type": "default",
-                "layout": "4,0,4,3",
+                "layout": "3,0,3,3",
                 "title": "Lampa (Лампа)",
                 "headline": "ТВ Онлайн-кинотеатр #1",
                 "text": "Фильмы, сериалы, 4K HDR. Официальная версия с поддержкой пульта ТВ",
@@ -33,7 +33,7 @@
               },
               {
                 "type": "default",
-                "layout": "8,0,4,3",
+                "layout": "6,0,3,3",
                 "title": "Zona (Зона ТВ)",
                 "headline": "Кинотеатр Zona Smart TV",
                 "text": "Официальная ТВ-версия (m.zona.ms): новинки фильмов и сериалов с пульта",
@@ -41,6 +41,17 @@
                 "imageFiller": "fit",
                 "color": "#0284c7",
                 "action": "[settings:validate_links:0|link:https://msx.zona.ms]"
+              },
+              {
+                "type": "default",
+                "layout": "9,0,3,3",
+                "title": "Lift TV (Лифт)",
+                "headline": "Бесплатный онлайн-кинотеатр",
+                "text": "Фильмы и сериалы без рекламы для Smart TV и пульта (liftapp.ink)",
+                "image": "https://dimc48.github.io/msx/img/lift.png",
+                "imageFiller": "fit",
+                "color": "#0b2244",
+                "action": "[settings:validate_links:0|menu:request:interaction:menu@http://lift3.ws/msx]"
               },
               {
                 "type": "default",
@@ -71,17 +82,6 @@
                 "icon": "theaters",
                 "color": "#f59e0b",
                 "action": "[settings:validate_links:0|menu:request:interaction:menu@http://atodo.fun/fun.html]"
-              },
-              {
-                "type": "default",
-                "layout": "0,6,4,3",
-                "title": "Lift TV (Лифт)",
-                "headline": "Бесплатный онлайн-кинотеатр",
-                "text": "Фильмы и сериалы без рекламы для Smart TV и пульта (liftapp.ink)",
-                "image": "https://dimc48.github.io/msx/img/lift.png",
-                "imageFiller": "fit",
-                "color": "#0b2244",
-                "action": "[settings:validate_links:0|menu:request:interaction:menu@http://lift3.ws/msx]"
               }
             ]
           }
