@@ -1,6 +1,6 @@
 {
   "name": "FootDroid & Media Portal",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "parameter": "menu:https://dimc48.github.io/msx/start.json",
   "menu": [
     {
@@ -13,92 +13,63 @@
               {
                 "type": "default",
                 "layout": "0,0,4,3",
-                "title": "Lampa (Лампа)",
-                "headline": "Онлайн-кинотеатр #1",
-                "text": "Фильмы, сериалы, аниме, 4K HDR через торренты и онлайн-балансеры",
-                "icon": "movie",
-                "color": "#e11d48",
-                "action": "link:http://lampa.mx"
+                "title": "FootDroid Web",
+                "headline": "Спорт и ТВ онлайн",
+                "text": "Прямые эфиры матчей, расписание игр и телеканалы Full HD",
+                "image": "https://dimc48.github.io/msx/img/logo.png",
+                "imageFiller": "fit",
+                "color": "#10b981",
+                "action": "link:https://dimc48.github.io/msx/index.html"
               },
               {
                 "type": "default",
                 "layout": "4,0,4,3",
-                "title": "Zona (Зона)",
-                "headline": "Фильмы и сериалы",
-                "text": "Огромный каталог фильмов с мгновенным онлайн-просмотром",
-                "icon": "play-circle",
-                "color": "#0284c7",
-                "action": "link:https://w1.zona.plus"
+                "title": "Lampa (Лампа)",
+                "headline": "ТВ Онлайн-кинотеатр #1",
+                "text": "Фильмы, сериалы, 4K HDR. Онлайн балансеры и торренты настроены для пульта",
+                "icon": "movie",
+                "color": "#e11d48",
+                "action": "link:https://dimc48.github.io/msx/lampa/index.html"
               },
               {
                 "type": "default",
                 "layout": "8,0,4,3",
-                "title": "VoKino (ВоКино)",
-                "headline": "Медиа-каталог",
-                "text": "Популярный онлайн-кинотеатр с новинками кино и сериалов",
+                "title": "VoKino TV",
+                "headline": "Каталог кино для Smart TV",
+                "text": "Онлайн-кинотеатр с навигацией стрелками пульта для телевизора",
                 "icon": "video-library",
                 "color": "#7c3aed",
-                "action": "link:http://web.vokino.tv"
+                "action": "content:http://vokino.tv/msx/start.json"
               },
               {
                 "type": "default",
                 "layout": "0,3,4,3",
-                "title": "ForkPlayer",
-                "headline": "Медиа-агрегатор",
-                "text": "Браузер плейлистов, кинотеатров и сторонних порталов для Smart TV",
-                "icon": "language",
-                "color": "#ea580c",
-                "action": "link:http://operatv.obovse.ru/2.5/"
+                "title": "Deeplex TV",
+                "headline": "Кинотеатр Deeplex для Smart TV",
+                "text": "Каталог фильмов и сериалов, адаптированный под пульт ТВ",
+                "icon": "live-tv",
+                "color": "#0ea5e9",
+                "action": "content:http://deeplex.cc/msx/start.json"
               },
               {
                 "type": "default",
                 "layout": "4,3,4,3",
-                "title": "Deeplex",
-                "headline": "Кино и сериалы",
-                "text": "Современный удобный клиент для просмотра медиа-контента",
-                "icon": "tv",
-                "color": "#059669",
-                "action": "link:https://deeplex.ru"
+                "title": "Atodo TV (Онлайн Кино)",
+                "headline": "Smart TV Онлайн-кинотеатр",
+                "text": "Свежие фильмы, сериалы и мультфильмы с навигацией пультом",
+                "icon": "theaters",
+                "color": "#f59e0b",
+                "action": "link:http://msx.atodo.fun"
               },
               {
                 "type": "default",
                 "layout": "8,3,4,3",
-                "title": "HDRezka",
-                "headline": "Онлайн-кинотеатр",
-                "text": "Фильмы и сериалы с фирменными переводами студии Rezka",
-                "icon": "theaters",
-                "color": "#b45309",
-                "action": "link:https://rezka.ag"
-              },
-              {
-                "type": "default",
-                "layout": "0,6,4,3",
-                "title": "KinoPub (Кинопаб)",
-                "headline": "Премиум кинотеатр",
-                "text": "Фильмы и сериалы в оригинале и дубляже до 4K Dolby Vision",
-                "icon": "star",
-                "color": "#0f766e",
-                "action": "link:https://kino.pub"
-              },
-              {
-                "type": "default",
-                "layout": "4,6,4,3",
-                "title": "TorrServe Web",
-                "headline": "Торрент-сервер",
-                "text": "Веб-интерфейс для воспроизведения торрентов без скачивания",
-                "icon": "cloud-download",
-                "color": "#475569",
-                "action": "link:http://127.0.0.1:8090"
-              },
-              {
-                "type": "default",
-                "layout": "8,6,4,3",
-                "title": "FootDroid Web",
-                "headline": "Веб-приложение FootDroid",
-                "text": "Оригинальный интерфейс с календарем игр, счетом матчей и ТВ",
-                "icon": "sports-soccer",
-                "color": "#16a34a",
-                "action": "link:index.html"
+                "title": "NoName TV (Портал кино)",
+                "headline": "Мультимедиа портал Smart TV",
+                "text": "Каталоги кино, сериалов, IPTV и медиасервисов для пульта",
+                "icon": "apps",
+                "color": "#6366f1",
+                "action": "content:http://nnmtv.pw/msx/start.json"
               }
             ]
           }
@@ -106,227 +77,8 @@
       }
     },
     {
-      "label": "СПОРТ ТВ 24/7",
+      "label": "СПОРТ ТВ",
       "icon": "live-tv",
-      "data": {
-        "pages": [
-          {
-            "items": [
-              {
-                "type": "default",
-                "layout": "0,0,3,3",
-                "title": "Матч ТВ HD",
-                "headline": "Full HD 1080p",
-                "text": "Федеральный спортивный канал: футбол, еврокубки, аналитика",
-                "color": "#b91c1c",
-                "action": "video:http://stream.mcquack.net/169/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "3,0,3,3",
-                "title": "Матч Премьер HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России",
-                "color": "#059669",
-                "action": "video:http://stream.mcquack.net/193/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,0,3,3",
-                "title": "Матч! Футбол 1 HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Флагманский европейский футбол: Лига Чемпионов, топ-матчи",
-                "color": "#15803d",
-                "action": "video:http://stream.mcquack.net/130/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "9,0,3,3",
-                "title": "Матч! Футбол 2 HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Испанская Ла Лига (Реал, Барселона, Атлетико) и Кубок Испании",
-                "color": "#0f766e",
-                "action": "video:http://stream.mcquack.net/142/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "0,3,3,3",
-                "title": "Матч! Футбол 3 HD",
-                "headline": "Full HD 1080p",
-                "text": "Немецкая Бундеслига, Серия А и международные матчи",
-                "color": "#6b21a8",
-                "action": "video:http://stream.mcquack.net/185/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "3,3,3,3",
-                "title": "Sky Sports Football HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Английская Премьер-лига (АПЛ), Чемпионшип и кубки Англии",
-                "color": "#0369a1",
-                "action": "video:http://45.228.234.9:8000/play/a06b/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,3,3,3",
-                "title": "Setanta Sports 1 HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "АПЛ, Ла Лига, Серия А, Формула 1, НБА и бои UFC",
-                "color": "#b45309",
-                "action": "video:http://stream.mcquack.net/234/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "9,3,3,3",
-                "title": "Setanta Sports 2 HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Теннис ATP/WTA, Бундеслига, Евролига и автогонки",
-                "color": "#15803d",
-                "action": "video:http://stream.mcquack.net/235/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "0,6,3,3",
-                "title": "KHL Prime HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Континентальная Хоккейная Лига: матчи дня, Кубок Гагарина",
-                "color": "#1e3a8a",
-                "action": "video:http://stream.mcquack.net/178/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "3,6,3,3",
-                "title": "Беларусь 5 HD",
-                "headline": "Full HD 1080p",
-                "text": "Прямые трансляции КХЛ, еврокубков, биатлона и мирового спорта",
-                "color": "#15803d",
-                "action": "video:http://stream.mcquack.net/33/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,6,3,3",
-                "title": "viju+ Sport HD",
-                "headline": "Full HD 1080p",
-                "text": "Прямые трансляции НХЛ, НБА, европейского баскетбола и гонок",
-                "color": "#6b21a8",
-                "action": "video:http://stream.mcquack.net/333/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "9,6,3,3",
-                "title": "Телеканал UDAR HD",
-                "headline": "Full HD 1080p",
-                "text": "Кулачные бои Top Dog, Hardcore FC, RCC, турниры MMA",
-                "color": "#ea580c",
-                "action": "video:http://stream.mcquack.net/279/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "0,9,3,3",
-                "title": "Матч! Боец HD",
-                "headline": "Full HD 1080p",
-                "text": "Главный канал единоборств: UFC, Bellator, ACA, бокс",
-                "color": "#991b1b",
-                "action": "video:http://stream.mcquack.net/112/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "3,9,3,3",
-                "title": "Бокс ТВ HD",
-                "headline": "Full HD 1080p",
-                "text": "Профессиональный и олимпийский бокс, чемпионские бои",
-                "color": "#7f1d1d",
-                "action": "video:http://stream.mcquack.net/154/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,9,3,3",
-                "title": "MMA-TV.com HD",
-                "headline": "Full HD 1080p",
-                "text": "Международный канал о смешанных боевых единоборствах MMA",
-                "color": "#4c1d95",
-                "action": "video:https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "9,9,3,3",
-                "title": "Eurosport 1 HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Мировой спорт, теннис Большого шлема, велоспорт, снукер",
-                "color": "#0369a1",
-                "action": "video:https://s7.iptv-24.net/1439/playlist.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "0,12,3,3",
-                "title": "Eurosport 2 HD",
-                "headline": "Full HD 1080p / 50 FPS",
-                "text": "Эксклюзивные трансляции автоспорта, тенниса и кубков мира",
-                "color": "#0284c7",
-                "action": "video:https://s7.iptv-24.net/1452/playlist.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "3,12,3,3",
-                "title": "Матч! Арена HD",
-                "headline": "Full HD 1080p",
-                "text": "Биатлон, лыжные гонки, фигурное катание, плавание",
-                "color": "#1e40af",
-                "action": "video:http://stream.mcquack.net/163/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,12,3,3",
-                "title": "Матч! Игра HD",
-                "headline": "Full HD 1080p",
-                "text": "Игровые виды: баскетбол Единая лига ВТБ, волейбол, гандбол",
-                "color": "#0e7490",
-                "action": "video:http://stream.mcquack.net/188/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "9,12,3,3",
-                "title": "Матч! Страна HD",
-                "headline": "Full HD 1080p",
-                "text": "Российский спорт: региональные лиги, молодежный футбол",
-                "color": "#854d0e",
-                "action": "video:http://stream.mcquack.net/143/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "0,15,3,3",
-                "title": "Спортивный HD",
-                "headline": "Full HD 1080p",
-                "text": "Динамичный спортивный канал с футболом, хоккеем и гонками",
-                "color": "#4338ca",
-                "action": "video:https://live-3.otcnet.ru/sportivny/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "3,15,3,3",
-                "title": "Russian Extreme Ultra",
-                "headline": "2K Ultra HD 1440p",
-                "text": "Экстремальный спорт, сноуборд, мотоспорт, фрирайд и гонки",
-                "color": "#c2410c",
-                "action": "video:http://stream.mcquack.net/148/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,15,3,3",
-                "title": "Red Bull TV HD",
-                "headline": "Full HD 1080p",
-                "text": "Мировые соревнования по экстриму, мотокроссу, клифф-дайвингу",
-                "color": "#0f172a",
-                "action": "video:https://rbmn-live.akamaized.net/hls/live/590964/BoRB-AT/master.m3u8"
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "label": "ФУТБОЛ",
-      "icon": "sports-soccer",
       "data": {
         "pages": [
           {
@@ -335,106 +87,140 @@
                 "type": "default",
                 "layout": "0,0,4,3",
                 "title": "Матч ТВ HD",
-                "headline": "Лига Чемпионов / РПЛ",
+                "headline": "Главный спортивный канал",
+                "text": "Прямые эфиры, футбол, аналитика и новости спорта в Full HD",
                 "color": "#b91c1c",
-                "action": "video:http://stream.mcquack.net/169/index.m3u8"
+                "image": "https://dimc48.github.io/msx/img/channels/match-tv.png",
+                "imageFiller": "fit",
+                "action": "video:http://flussonic.linkintel.ru/match/index.m3u8"
               },
               {
                 "type": "default",
                 "layout": "4,0,4,3",
                 "title": "Матч Премьер HD",
-                "headline": "Все матчи РПЛ",
-                "color": "#059669",
-                "action": "video:http://stream.mcquack.net/193/index.m3u8"
+                "headline": "Российская Премьер-Лига",
+                "text": "Эксклюзивные трансляции РПЛ и Кубка России в 1080p 50 FPS",
+                "color": "#047857",
+                "image": "https://dimc48.github.io/msx/img/channels/match-premier.png",
+                "imageFiller": "fit",
+                "action": "video:http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8"
               },
               {
                 "type": "default",
                 "layout": "8,0,4,3",
-                "title": "Матч! Футбол 1 HD",
-                "headline": "Европейский футбол",
-                "color": "#15803d",
-                "action": "video:http://stream.mcquack.net/130/index.m3u8"
+                "title": "Okko Спорт HD",
+                "headline": "Еврокубки и Лига Чемпионов",
+                "text": "Лига Чемпионов УЕФА, Лига Европы и топ-еврокубки в 1080p",
+                "color": "#4338ca",
+                "image": "https://dimc48.github.io/msx/img/channels/okko-sport.png",
+                "imageFiller": "fit",
+                "action": "message:Канал Okko Спорт вещает во время прямых эфиров матчей. Откройте раздел 'В эфире' или FootDroid Web для просмотра расписания и трансляций."
               },
               {
                 "type": "default",
                 "layout": "0,3,4,3",
-                "title": "Матч! Футбол 2 HD",
-                "headline": "Испанская Ла Лига",
-                "color": "#0f766e",
-                "action": "video:http://stream.mcquack.net/142/index.m3u8"
+                "title": "Матч! Футбол 1 HD",
+                "headline": "Европейский футбол",
+                "text": "Лига Чемпионов, Лига Европы и топ-чемпионаты континента",
+                "color": "#0369a1",
+                "image": "https://dimc48.github.io/msx/img/channels/match-futbol1.png",
+                "imageFiller": "fit",
+                "action": "video:http://stream.mcquack.net/130/index.m3u8"
               },
               {
                 "type": "default",
                 "layout": "4,3,4,3",
-                "title": "Матч! Футбол 3 HD",
-                "headline": "Немецкая Бундеслига",
-                "color": "#6b21a8",
-                "action": "video:http://stream.mcquack.net/185/index.m3u8"
+                "title": "Матч! Футбол 2 HD",
+                "headline": "Мировой футбол",
+                "text": "Итальянская Серия А, Ла Лига и международные матчи",
+                "color": "#1d4ed8",
+                "image": "https://dimc48.github.io/msx/img/channels/match-futbol2.png",
+                "imageFiller": "fit",
+                "action": "video:http://stream.mcquack.net/142/index.m3u8"
               },
               {
                 "type": "default",
                 "layout": "8,3,4,3",
-                "title": "Sky Sports Football HD",
-                "headline": "Английская Премьер-лига (АПЛ)",
-                "color": "#0369a1",
-                "action": "video:http://45.228.234.9:8000/play/a06b/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "0,6,6,3",
-                "title": "Setanta Sports 1 HD",
-                "headline": "АПЛ / Ла Лига / Серия А",
-                "color": "#b45309",
-                "action": "video:http://stream.mcquack.net/234/index.m3u8"
-              },
-              {
-                "type": "default",
-                "layout": "6,6,6,3",
-                "title": "Setanta Sports 2 HD",
-                "headline": "Бундеслига / Серия А",
-                "color": "#15803d",
-                "action": "video:http://stream.mcquack.net/235/index.m3u8"
+                "title": "Матч! Футбол 3 HD",
+                "headline": "Немецкая Бундеслига",
+                "text": "Бундеслига, Лига 1 и международные футбольные кубки",
+                "color": "#0284c7",
+                "image": "https://dimc48.github.io/msx/img/channels/match-futbol3.png",
+                "imageFiller": "fit",
+                "action": "video:http://stream.mcquack.net/185/index.m3u8"
               }
             ]
-          }
-        ]
-      }
-    },
-    {
-      "label": "ХОККЕЙ",
-      "icon": "sports-hockey",
-      "data": {
-        "pages": [
+          },
           {
             "items": [
               {
                 "type": "default",
-                "layout": "0,0,6,4",
-                "title": "KHL Prime HD",
-                "headline": "Континентальная Хоккейная Лига (КХЛ)",
-                "text": "Матчи дня, дерби и плей-офф Кубка Гагарина в 1080p",
-                "color": "#1e3a8a",
-                "action": "video:http://stream.mcquack.net/178/index.m3u8"
+                "layout": "0,0,4,3",
+                "title": "WWE TV HD",
+                "headline": "Мировой рестлинг",
+                "text": "WWE Raw, SmackDown, турниры и главные поединки рестлинга",
+                "color": "#831843",
+                "image": "https://dimc48.github.io/msx/img/channels/wwe.svg",
+                "imageFiller": "fit",
+                "action": "video:https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8"
               },
               {
                 "type": "default",
-                "layout": "6,0,6,4",
+                "layout": "4,0,4,3",
+                "title": "Setanta Sports 1 HD",
+                "headline": "Международный спорт",
+                "text": "Английская Премьер-Лига, Серия А, Формула 1 и турниры ATP",
+                "color": "#b45309",
+                "image": "https://dimc48.github.io/msx/img/channels/setanta1.png",
+                "imageFiller": "fit",
+                "action": "message:Канал Setanta Sports вещает во время прямых эфиров. Откройте FootDroid Web для просмотра расписания и трансляций."
+              },
+              {
+                "type": "default",
+                "layout": "8,0,4,3",
                 "title": "Беларусь 5 HD",
-                "headline": "КХЛ и Экстралига",
-                "text": "Прямые хоккейные матчи и чемпионат Беларуси в Full HD",
+                "headline": "Футбол и спорт",
+                "text": "Прямые спортивные трансляции в высоком качестве Full HD",
                 "color": "#15803d",
-                "action": "video:http://stream.mcquack.net/33/index.m3u8"
+                "image": "https://dimc48.github.io/msx/img/channels/belarus5.png",
+                "imageFiller": "fit",
+                "action": "video:http://178.124.179.122:8080/BT5/index.m3u8"
+              },
+              {
+                "type": "default",
+                "layout": "0,3,4,3",
+                "title": "Eurosport 1 HD",
+                "headline": "Мировой спорт",
+                "text": "Теннис, биатлон, снукер, велоспорт и Олимпиада в Full HD",
+                "color": "#0284c7",
+                "image": "https://dimc48.github.io/msx/img/channels/eurosport1.png",
+                "imageFiller": "fit",
+                "action": "video:https://s7.iptv-24.net/1439/playlist.m3u8"
+              },
+              {
+                "type": "default",
+                "layout": "4,3,4,3",
+                "title": "Eurosport 2 HD",
+                "headline": "Экстремальный спорт",
+                "text": "Прямые трансляции мировых чемпионатов в Full HD",
+                "color": "#0369a1",
+                "image": "https://dimc48.github.io/msx/img/channels/eurosport2.png",
+                "imageFiller": "fit",
+                "action": "video:https://s7.iptv-24.net/1452/playlist.m3u8"
+              },
+              {
+                "type": "default",
+                "layout": "8,3,4,3",
+                "title": "КХЛ Prime HD",
+                "headline": "Хоккейная Лига",
+                "text": "Матчи дня, плей-офф Кубка Гагарина и аналитика в 1080p",
+                "color": "#1e3a8a",
+                "image": "https://dimc48.github.io/msx/img/channels/khl-prime.png",
+                "imageFiller": "fit",
+                "action": "video:http://stream.mcquack.net/178/index.m3u8"
               }
             ]
-          }
-        ]
-      }
-    },
-    {
-      "label": "UFC / MMA",
-      "icon": "sports-mma",
-      "data": {
-        "pages": [
+          },
           {
             "items": [
               {
@@ -444,6 +230,8 @@
                 "headline": "Top Dog / Hardcore / RCC",
                 "text": "Кулачные бои, кикбоксинг и турниры MMA в Full HD 1080p",
                 "color": "#ea580c",
+                "image": "https://dimc48.github.io/msx/img/channels/udar.svg",
+                "imageFiller": "fit",
                 "action": "video:http://stream.mcquack.net/279/index.m3u8"
               },
               {
@@ -453,6 +241,8 @@
                 "headline": "UFC / ACA / Bellator",
                 "text": "Главный канал единоборств в прямом эфире",
                 "color": "#991b1b",
+                "image": "https://dimc48.github.io/msx/img/channels/match-boets.png",
+                "imageFiller": "fit",
                 "action": "video:http://stream.mcquack.net/112/index.m3u8"
               },
               {
@@ -462,6 +252,8 @@
                 "headline": "Профессиональный бокс",
                 "text": "Титульные поединки и чемпионаты мира в Full HD",
                 "color": "#7f1d1d",
+                "image": "https://dimc48.github.io/msx/img/channels/boxtv.svg",
+                "imageFiller": "fit",
                 "action": "video:http://stream.mcquack.net/154/index.m3u8"
               },
               {
@@ -471,6 +263,8 @@
                 "headline": "Мировые турниры MMA",
                 "text": "Смешанные боевые единоборства и грэпплинг",
                 "color": "#4c1d95",
+                "image": "https://dimc48.github.io/msx/img/channels/mmatv.svg",
+                "imageFiller": "fit",
                 "action": "video:https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8"
               }
             ]
@@ -503,7 +297,7 @@
                 "text": "Смена параметра запуска и системные настройки MSX",
                 "icon": "settings",
                 "color": "#1e293b",
-                "action": "menu:settings"
+                "action": "settings"
               }
             ]
           }

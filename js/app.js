@@ -2,6 +2,63 @@
 (function () {
     'use strict';
 
+    // Compatibility Polyfills for Older Smart TVs (Samsung Tizen 3-5, LG webOS 3-4, Chromium 47+)
+    if (!String.prototype.padStart) {
+        String.prototype.padStart = function (targetLength, padString) {
+            targetLength = targetLength >> 0;
+            padString = String(typeof padString !== 'undefined' ? padString : ' ');
+            if (this.length > targetLength) return String(this);
+            targetLength = targetLength - this.length;
+            if (targetLength > padString.length) {
+                padString += padString.repeat(targetLength / padString.length);
+            }
+            return padString.slice(0, targetLength) + String(this);
+        };
+    }
+    if (!String.prototype.padEnd) {
+        String.prototype.padEnd = function (targetLength, padString) {
+            targetLength = targetLength >> 0;
+            padString = String(typeof padString !== 'undefined' ? padString : ' ');
+            if (this.length > targetLength) return String(this);
+            targetLength = targetLength - this.length;
+            if (targetLength > padString.length) {
+                padString += padString.repeat(targetLength / padString.length);
+            }
+            return String(this) + padString.slice(0, targetLength);
+        };
+    }
+    if (!Object.values) {
+        Object.values = function (obj) {
+            return Object.keys(obj || {}).map(function (k) { return obj[k]; });
+        };
+    }
+    if (!Object.entries) {
+        Object.entries = function (obj) {
+            return Object.keys(obj || {}).map(function (k) { return [k, obj[k]]; });
+        };
+    }
+
+    // Safe timeout-enabled fetch function that never crashes on older JS engines
+    function fetchWithTimeout(url, options, timeoutMs) {
+        options = options || {};
+        timeoutMs = timeoutMs || 5000;
+        if (typeof AbortController !== 'undefined') {
+            var controller = new AbortController();
+            var timer = setTimeout(function () {
+                try { controller.abort(); } catch (_) {}
+            }, timeoutMs);
+            var fetchOptions = Object.assign({}, options, { signal: controller.signal });
+            return fetch(url, fetchOptions).then(function (res) {
+                clearTimeout(timer);
+                return res;
+            }, function (err) {
+                clearTimeout(timer);
+                throw err;
+            });
+        }
+        return fetch(url, options);
+    }
+
     // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with Authentic Official Logos & Redundant Mirrors)
     const tvChannels = [
         {
@@ -507,7 +564,7 @@
     const CACHE_TTL_MS = 60 * 1000;
 
     function pad2(num) {
-        return String(num).padStart(2, '0');
+        return (num < 10 ? '0' : '') + num;
     }
 
     function formatHHMM(d) {
@@ -738,9 +795,7 @@
 
     async function resolveLiveVarDomains() {
         try {
-            const res = await fetch(BOOTSTRAP_MIRRORS_URL + '?t=' + Date.now(), {
-                signal: AbortSignal.timeout ? AbortSignal.timeout(3000) : undefined
-            });
+            const res = await fetchWithTimeout(BOOTSTRAP_MIRRORS_URL + '?t=' + Date.now(), {}, 3000);
             if (res.ok) {
                 const json = await res.json();
                 if (Array.isArray(json.domains) && json.domains.length > 0) {
@@ -764,10 +819,9 @@
         for (const domain of domains) {
             const url = `https://${domain}/api/matchlist?limit=150`;
             try {
-                const res = await fetch(url, {
-                    headers: { 'Accept': 'application/json' },
-                    signal: AbortSignal.timeout ? AbortSignal.timeout(5000) : undefined
-                });
+                const res = await fetchWithTimeout(url, {
+                    headers: { 'Accept': 'application/json' }
+                }, 5000);
                 if (res.ok) {
                     const data = await res.json();
                     if (Array.isArray(data) && data.length > 0) {
@@ -839,9 +893,9 @@
 
     function updateClock() {
         const now = new Date();
-        const h = String(now.getHours()).padStart(2, '0');
-        const m = String(now.getMinutes()).padStart(2, '0');
-        clockEl.textContent = `${h}:${m}`;
+        const h = pad2(now.getHours());
+        const m = pad2(now.getMinutes());
+        if (clockEl) clockEl.textContent = `${h}:${m}`;
     }
     setInterval(updateClock, 1000);
     updateClock();
@@ -1083,7 +1137,22 @@
             </div>
         `;
 
-        await renderCurrentCategory();
+        try {
+            await renderCurrentCategory();
+        } catch (renderErr) {
+            console.error('[Render Error]:', renderErr);
+            if (cardsGrid) {
+                cardsGrid.innerHTML = `
+                    <div class="live-empty-banner">
+                        <div class="live-empty-icon">⚠️</div>
+                        <div class="live-empty-info">
+                            <h2 class="live-empty-title">Не удалось загрузить расписание матчей</h2>
+                            <p class="live-empty-desc">Проверьте интернет-соединение или перейдите в раздел «ТВ каналы» для просмотра прямых эфиров.</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
     }
 
     // Render contents for current category and filter
@@ -1142,7 +1211,9 @@
 
             const livePart = todayMatches.filter(m => m.isLive);
             const scheduledPart = todayMatches.filter(m => !m.isLive && !m.isFinished).sort((a, b) => {
-                return (a.startDate?.getTime() || 0) - (b.startDate?.getTime() || 0);
+                const aTime = (a.startDate && a.startDate.getTime) ? a.startDate.getTime() : 0;
+                const bTime = (b.startDate && b.startDate.getTime) ? b.startDate.getTime() : 0;
+                return aTime - bTime;
             });
             const finishedPart = todayMatches.filter(m => m.isFinished);
 
@@ -1197,7 +1268,11 @@
             });
 
             Object.values(groupsMap).forEach(g => {
-                g.items.sort((a, b) => (a.startDate?.getTime() || 0) - (b.startDate?.getTime() || 0));
+                g.items.sort((a, b) => {
+                    const aTime = (a.startDate && a.startDate.getTime) ? a.startDate.getTime() : 0;
+                    const bTime = (b.startDate && b.startDate.getTime) ? b.startDate.getTime() : 0;
+                    return aTime - bTime;
+                });
             });
 
             const sortedSections = Object.values(groupsMap).sort((a, b) => a.order - b.order);
@@ -1311,7 +1386,7 @@
 
         for (const ep of endpoints) {
             try {
-                const res = await fetch(ep, { signal: AbortSignal.timeout ? AbortSignal.timeout(6000) : undefined });
+                const res = await fetchWithTimeout(ep, {}, 6000);
                 if (!res.ok) continue;
 
                 if (ep.endsWith('.m3u')) {
@@ -1424,9 +1499,7 @@
                 let freshMatches = null;
                 for (const d of domains) {
                     try {
-                        const r = await fetch(`https://${d}/api/matchlist?limit=150`, {
-                            signal: AbortSignal.timeout ? AbortSignal.timeout(4000) : undefined
-                        });
+                        const r = await fetchWithTimeout(`https://${d}/api/matchlist?limit=150`, {}, 4000);
                         if (r.ok) {
                             freshMatches = await r.json();
                             if (Array.isArray(freshMatches) && freshMatches.length > 0) break;
@@ -1564,12 +1637,9 @@
             }
         }
 
-        // 2. In Web / MSX browser: use fetch with fast abort
+        // 2. In Web / MSX browser: use fetch with safe timeout
         try {
-            const ctrl = new AbortController();
-            const timer = setTimeout(() => ctrl.abort(), 2600);
-            const resp = await fetch(url, { method: 'GET', signal: ctrl.signal });
-            clearTimeout(timer);
+            const resp = await fetchWithTimeout(url, { method: 'GET' }, 2600);
             return resp.ok;
         } catch (_) {
             return false;
@@ -1927,29 +1997,68 @@
     }
 
 
+    let currentAppVersion = '1.1.1';
+    let currentAppBuild = 7;
+
+    function updateVersionLabels(ver, build) {
+        currentAppVersion = ver || currentAppVersion;
+        currentAppBuild = build || currentAppBuild;
+        const curVerBadge = document.getElementById('settingsCurrentVersion');
+        if (curVerBadge) curVerBadge.textContent = 'v' + currentAppVersion;
+        const installedVer = document.getElementById('settingsInstalledVer');
+        if (installedVer) installedVer.textContent = currentAppVersion + ' (Сборка ' + currentAppBuild + ')';
+        const aboutVer = document.getElementById('settingsAboutVersion');
+        if (aboutVer) aboutVer.textContent = currentAppVersion + ' (Build ' + currentAppBuild + ')';
+        const platEl = document.getElementById('settingsPlatformVal');
+        if (platEl) {
+            platEl.textContent = (typeof window.AndroidBridge !== 'undefined')
+                ? 'Android TV (Native)'
+                : 'Smart TV / Media Station X (Web)';
+        }
+    }
+
+    async function syncAppVersion() {
+        if (window.AndroidBridge && typeof window.AndroidBridge.getVersionName === 'function') {
+            try {
+                updateVersionLabels(window.AndroidBridge.getVersionName(), window.AndroidBridge.getVersionCode());
+                return;
+            } catch (_) {}
+        }
+        try {
+            const res = await fetchWithTimeout('version.json?t=' + Date.now(), {}, 3000);
+            if (res.ok) {
+                const data = await res.json();
+                if (data && (data.version || data.versionName)) {
+                    updateVersionLabels(data.version || data.versionName, data.versionCode);
+                }
+            }
+        } catch (_) {}
+    }
+
     // Settings Modal Logic
     function openSettingsModal() {
         if (!settingsModal) return;
         isSettingsModalOpen = true;
         settingsModal.classList.remove('hidden');
 
-        const curVerBadge = document.getElementById('settingsCurrentVersion') || document.getElementById('settingsCurrentVersionBadge');
-        const installedVer = document.getElementById('settingsInstalledVer');
-        const statusEl = document.getElementById('settingsUpdateStatus');
-
-        let verText = '1.0.0';
-        let codeText = '5';
-        if (window.AndroidBridge && typeof window.AndroidBridge.getVersionCode === 'function') {
-            try {
-                verText = window.AndroidBridge.getVersionName();
-                codeText = window.AndroidBridge.getVersionCode();
-            } catch(e) {}
+        const isNativeAndroid = typeof window.AndroidBridge !== 'undefined';
+        const updateSection = document.getElementById('settingsUpdateSection');
+        if (updateSection) {
+            updateSection.style.display = isNativeAndroid ? '' : 'none';
         }
-        if (curVerBadge) curVerBadge.textContent = 'v' + verText;
-        if (installedVer) installedVer.textContent = verText + ' (Сборка ' + codeText + ')';
-        if (statusEl) statusEl.innerHTML = '<span style="color:#94a3b8;">Нажмите «Проверить обновления» для поиска новой версии</span>';
 
-        if (btnCheckUpdateManual) setFocus(btnCheckUpdateManual);
+        const statusEl = document.getElementById('settingsUpdateStatus');
+        if (statusEl) {
+            statusEl.innerHTML = '<span style="color:#94a3b8;">Нажмите «Проверить обновления» для поиска новой версии</span>';
+        }
+
+        syncAppVersion();
+
+        if (isNativeAndroid && btnCheckUpdateManual) {
+            setFocus(btnCheckUpdateManual);
+        } else if (btnCloseSettings) {
+            setFocus(btnCloseSettings);
+        }
     }
 
     function closeSettingsModal() {
@@ -1969,16 +2078,16 @@
             window.AndroidBridge.checkForUpdates();
         } else {
             // Web / MSX Fallback
-            fetch('https://raw.githubusercontent.com/dimc48/msx/main/version.json?t=' + Date.now())
+            fetchWithTimeout('version.json?t=' + Date.now(), {}, 3000)
                 .then(r => r.json())
                 .then(data => {
-                    const localVerCode = 5;
+                    const localVerCode = currentAppBuild || 7;
                     if (data && data.versionCode > localVerCode) {
                         closeSettingsModal();
                         window.showUpdatePrompt(data);
                     } else {
                         if (statusEl) {
-                            statusEl.innerHTML = '<span style="color:#4ade80;">✅ У вас установлена актуальная версия (v' + (data.versionName || '1.0.0') + ')! Обновлений не требуется.</span>';
+                            statusEl.innerHTML = '<span style="color:#4ade80;">✅ У вас установлена актуальная версия (v' + (data.versionName || data.version || '1.1.1') + ')! Обновлений не требуется.</span>';
                         }
                     }
                 })
@@ -2488,36 +2597,50 @@
     }
 
     // Top Navigation Click Listeners
-    categoriesNav.addEventListener('click', (e) => {
-        const btn = e.target.closest('.nav-btn');
-        if (btn && btn.dataset.cat) {
-            setFocus(btn);
-            switchCategory(btn.dataset.cat);
-        }
-    });
+    if (categoriesNav) {
+        categoriesNav.addEventListener('click', (e) => {
+            const btn = e.target.closest('.nav-btn');
+            if (btn && btn.dataset.cat) {
+                setFocus(btn);
+                switchCategory(btn.dataset.cat);
+            }
+        });
+    }
 
     // Sub-Filter Click Listeners
-    filterPills.addEventListener('click', (e) => {
-        const pill = e.target.closest('.pill-btn');
-        if (pill && pill.dataset.filter) {
-            setFocus(pill);
-            switchFilter(pill.dataset.filter);
-        }
-    });
+    if (filterPills) {
+        filterPills.addEventListener('click', (e) => {
+            const pill = e.target.closest('.pill-btn');
+            if (pill && pill.dataset.filter) {
+                setFocus(pill);
+                switchFilter(pill.dataset.filter);
+            }
+        });
+    }
 
     // Auto-refresh match live data every 60 seconds
     setInterval(async () => {
-        if (!playerModal.classList.contains('hidden')) return;
-        await fetchAllVarlineMatches(true);
-        await renderCurrentCategory();
+        try {
+            if (playerModal && !playerModal.classList.contains('hidden')) return;
+            await fetchAllVarlineMatches(true);
+            await renderCurrentCategory();
+        } catch (_) {}
     }, 60000);
 
     // Startup
     async function init() {
-        const liveBtn = categoriesNav.querySelector('[data-cat="live"]');
-        if (liveBtn) setFocus(liveBtn);
+        try {
+            syncAppVersion();
+            const liveBtn = categoriesNav ? categoriesNav.querySelector('[data-cat="live"]') : null;
+            if (liveBtn) setFocus(liveBtn);
 
-        await switchCategory('live', true);
+            await switchCategory('live', true);
+        } catch (initErr) {
+            console.error('[FootDroid Init Error]:', initErr);
+            try {
+                await switchCategory('channels', true);
+            } catch (_) {}
+        }
     }
 
     if (document.readyState === 'loading') {
