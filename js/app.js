@@ -60,7 +60,7 @@
     }
 
     // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with Authentic Official Logos & Redundant Mirrors)
-    const tvChannels = [
+    let tvChannels = [
         {
             id: 'ch-matchtv',
             isChannel: true,
@@ -905,6 +905,8 @@
     let hls = null;
     let overlayTimeout = null;
     let focusedElement = null;
+    let failoverTimer = null;
+    let failoverAttempts = 0;
 
     function updateClock() {
         const now = new Date();
@@ -1723,6 +1725,7 @@
             deadStreamUrls.add(broken.url);
         }
 
+        failoverAttempts++;
         // Permanently prune the broken stream from active mirror list
         currentMatch.streams.splice(idx, 1);
 
@@ -2723,11 +2726,84 @@
     window.addEventListener('resize', adaptScreenLayout);
     adaptScreenLayout();
 
+    async function loadDynamicChannels() {
+        function fetchLocalXhr(url) {
+            return new Promise(function(resolve, reject) {
+                try {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open('GET', url, true);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4) {
+                            if (xhr.status === 200 || xhr.status === 0) {
+                                try {
+                                    resolve(JSON.parse(xhr.responseText));
+                                } catch(e) {
+                                    reject(e);
+                                }
+                            } else {
+                                reject(new Error('XHR status ' + xhr.status));
+                            }
+                        }
+                    };
+                    xhr.onerror = reject;
+                    xhr.send();
+                } catch(err) {
+                    reject(err);
+                }
+            });
+        }
+
+        // 1. Try local assets first via XHR (immediate offline fallback)
+        try {
+            const localData = await fetchLocalXhr('channels.json');
+            if (localData && Array.isArray(localData.channels) && localData.channels.length > 0) {
+                console.log(`[Channels] Loaded ${localData.channels.length} channels from local assets`);
+                tvChannels = localData.channels;
+            }
+        } catch (_) {}
+
+        // 2. Fetch latest verified channels from GitHub
+        const remoteSources = [
+            'https://raw.githubusercontent.com/dimc48/msx/main/channels.json?t=' + Date.now(),
+            'https://dimc48.github.io/msx/channels.json?t=' + Date.now()
+        ];
+        for (const src of remoteSources) {
+            try {
+                const res = await fetchWithTimeout(src, {}, 3500);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && Array.isArray(data.channels) && data.channels.length > 0) {
+                        console.log(`[Channels] Successfully loaded ${data.channels.length} dynamic channels from ${src}`);
+                        tvChannels = data.channels;
+                        try {
+                            localStorage.setItem('footdroid_cached_channels_v2', JSON.stringify(data.channels));
+                        } catch(_) {}
+                        return;
+                    }
+                }
+            } catch (err) {
+                // Try next source
+            }
+        }
+
+        // 3. Cached fallback
+        try {
+            const cached = localStorage.getItem('footdroid_cached_channels_v2');
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                if (Array.isArray(parsed) && parsed.length > 0) {
+                    tvChannels = parsed;
+                }
+            }
+        } catch (_) {}
+    }
+
     // Startup
     async function init() {
         try {
             adaptScreenLayout();
             syncAppVersion();
+            await loadDynamicChannels();
             const liveBtn = categoriesNav ? categoriesNav.querySelector('[data-cat="live"]') : null;
             if (liveBtn) setFocus(liveBtn);
 

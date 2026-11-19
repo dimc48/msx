@@ -1,0 +1,45 @@
+name: Auto Update & Verify Sports Streams
+
+on:
+  schedule:
+    # Run every 4 hours automatically 24/7 without requiring user app to be open
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+permissions:
+  contents: write
+
+jobs:
+  verify-and-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify Live Streams & Generate Configurations
+        run: |
+          python scripts/update_streams.py
+
+      - name: Commit & Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add channels.json sport.m3u8 start.json default.json menu.json msx.json start_local.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(streams): automated background stream verification and update [skip ci]"
+            git push
+            echo "Updated channels and pushed to GitHub Pages successfully."
+          else
+            echo "All streams are optimal. No changes required."
+          fi

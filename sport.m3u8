@@ -1,0 +1,47 @@
+#EXTM3U
+#EXT-X-VERSION:3
+
+#EXTINF:-1 tvg-id="ch-matchtv" tvg-name="Матч ТВ HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-tv.png" group-title="Спорт HD",Матч ТВ HD
+http://stream.mcquack.net/169/index.m3u8
+#EXTINF:-1 tvg-id="ch-premier" tvg-name="Матч Премьер HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-premier.png" group-title="Спорт HD",Матч Премьер HD
+http://stream.mcquack.net/193/index.m3u8
+#EXTINF:-1 tvg-id="ch-okko" tvg-name="Okko Спорт HD" tvg-logo="https://dimc48.github.io/msx/img/channels/okko-sport.png" group-title="Спорт HD",Okko Спорт HD
+http://stream.mcquack.net/188/index.m3u8
+#EXTINF:-1 tvg-id="ch-futbol1" tvg-name="Матч! Футбол 1 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-futbol1.png" group-title="Спорт HD",Матч! Футбол 1 HD
+http://stream.mcquack.net/130/index.m3u8
+#EXTINF:-1 tvg-id="ch-futbol2" tvg-name="Матч! Футбол 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-futbol2.png" group-title="Спорт HD",Матч! Футбол 2 HD
+http://stream.mcquack.net/142/index.m3u8
+#EXTINF:-1 tvg-id="ch-futbol3" tvg-name="Матч! Футбол 3 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-futbol3.png" group-title="Спорт HD",Матч! Футбол 3 HD
+http://stream.mcquack.net/185/index.m3u8
+#EXTINF:-1 tvg-id="ch-setanta1" tvg-name="Setanta Sports 1 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/setanta1.png" group-title="Спорт HD",Setanta Sports 1 HD
+http://stream.mcquack.net/234/index.m3u8
+#EXTINF:-1 tvg-id="ch-setanta2" tvg-name="Setanta Sports 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/setanta2.png" group-title="Спорт HD",Setanta Sports 2 HD
+http://stream.mcquack.net/235/index.m3u8
+#EXTINF:-1 tvg-id="ch-bt5" tvg-name="Беларусь 5 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/belarus5.png" group-title="Спорт HD",Беларусь 5 HD
+http://stream.mcquack.net/33/index.m3u8
+#EXTINF:-1 tvg-id="ch-wwe" tvg-name="WWE TV HD" tvg-logo="https://dimc48.github.io/msx/img/channels/wwe.svg" group-title="Спорт HD",WWE TV HD
+https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8
+#EXTINF:-1 tvg-id="ch-euro1" tvg-name="Eurosport 1 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport1.png" group-title="Спорт HD",Eurosport 1 HD
+http://178.134.1.158:8081/eurosport/index.m3u8
+#EXTINF:-1 tvg-id="ch-euro2" tvg-name="Eurosport 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport2.png" group-title="Спорт HD",Eurosport 2 HD
+https://s7.iptv-24.net/1452/playlist.m3u8
+#EXTINF:-1 tvg-id="ch-khl" tvg-name="KHL Prime HD" tvg-logo="https://dimc48.github.io/msx/img/channels/khl-prime.png" group-title="Спорт HD",KHL Prime HD
+http://stream.mcquack.net/178/index.m3u8
+#EXTINF:-1 tvg-id="ch-viju" tvg-name="viju+ Sport HD" tvg-logo="https://dimc48.github.io/msx/img/channels/viju-sport.png" group-title="Спорт HD",viju+ Sport HD
+http://46.53.200.153:7777/play/a01l/index.m3u8
+#EXTINF:-1 tvg-id="ch-udar" tvg-name="Телеканал UDAR HD" tvg-logo="https://dimc48.github.io/msx/img/channels/udar.svg" group-title="Спорт HD",Телеканал UDAR HD
+http://stream.mcquack.net/279/index.m3u8
+#EXTINF:-1 tvg-id="ch-boxtv" tvg-name="Бокс ТВ HD" tvg-logo="https://dimc48.github.io/msx/img/channels/boxtv.svg" group-title="Спорт HD",Бокс ТВ HD
+http://stream.mcquack.net/154/index.m3u8
+#EXTINF:-1 tvg-id="ch-mmatv" tvg-name="MMA-TV.com HD" tvg-logo="https://dimc48.github.io/msx/img/channels/mmatv.svg" group-title="Спорт HD",MMA-TV.com HD
+https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8
+#EXTINF:-1 tvg-id="ch-sportivny" tvg-name="Спортивный HD" tvg-logo="https://dimc48.github.io/msx/img/channels/sportivny.svg" group-title="Спорт HD",Спортивный HD
+https://live-3.otcnet.ru/sportivny/index.m3u8
+#EXTINF:-1 tvg-id="ch-boets" tvg-name="Матч! Боец HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-boets.png" group-title="Спорт HD",Матч! Боец HD
+http://stream.mcquack.net/112/index.m3u8
+#EXTINF:-1 tvg-id="ch-strana" tvg-name="Матч! Страна HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-strana.png" group-title="Спорт HD",Матч! Страна HD
+http://stream.mcquack.net/143/index.m3u8
+#EXTINF:-1 tvg-id="ch-igra" tvg-name="Матч! Игра HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-igra.png" group-title="Спорт HD",Матч! Игра HD
+http://stream.mcquack.net/188/index.m3u8
+#EXTINF:-1 tvg-id="ch-arena" tvg-name="Матч! Арена HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-arena.png" group-title="Спорт HD",Матч! Арена HD
+http://31.148.5.241/kanal_3/index.m3u8
