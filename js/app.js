@@ -69,9 +69,8 @@
             desc: 'Главный федеральный спортивный телеканал России',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/mtv_laliga/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
-                { name: '⚡ Сервер 3 (Резерв)', url: 'http://stream.mcquack.net/169/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/169/index.m3u8' },
+                { name: '⚡ Сервер 2 (Официальный HD)', url: 'http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8' }
             ]
         },
         {
@@ -82,7 +81,7 @@
             desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/matchprem/index.m3u8' },
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://stream.mcquack.net/193/index.m3u8' },
                 { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' }
             ]
         },
@@ -94,7 +93,8 @@
             desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t6.ultrastream.vip/footbolokko/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1243/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/188/index.m3u8' }
             ]
         },
         {
@@ -127,7 +127,8 @@
             desc: 'Немецкая Бундеслига и итальянская Серия А',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD 50 FPS)', url: 'http://stream.mcquack.net/185/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD 50 FPS)', url: 'http://stream.mcquack.net/185/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://185.57.68.33/110/index.m3u8' }
             ]
         },
         {
@@ -138,8 +139,8 @@
             desc: 'АПЛ, Серия А, Формула 1 и мировые лиги',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/234/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв)', url: 'http://178.124.179.122:8080/Setanta1/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1263/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/234/index.m3u8' }
             ]
         },
         {
@@ -150,7 +151,8 @@
             desc: 'Бундеслига, теннис ATP/WTA и евробаскетбол',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/235/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1264/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/235/index.m3u8' }
             ]
         },
         {
@@ -161,8 +163,7 @@
             desc: 'Главный спортивный телеканал Республики Беларусь',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://178.124.179.122:8080/BT5/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/33/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/33/index.m3u8' }
             ]
         },
         {
@@ -185,7 +186,8 @@
             desc: 'Теннис, снукер, биатлон, автоспорт и мировые турниры',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://178.134.1.158:8081/eurosport/index.m3u8' }
             ]
         },
         {
@@ -196,7 +198,8 @@
             desc: 'Зимние виды спорта, автогонки и мировые кубки',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://stream8.cinerama.uz/1452/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
             ]
         },
         {
@@ -207,8 +210,8 @@
             desc: 'Матчи Континентальной Хоккейной Лиги и Кубок Гагарина',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t5.ultrastream.vip/KHL/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/178/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'http://stream.mcquack.net/178/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://stream8.cinerama.uz/1422/index.m3u8' }
             ]
         },
         {
@@ -219,8 +222,8 @@
             desc: 'Мировой баскетбол, хоккей и автогонки',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://46.53.200.153:7777/play/a01l/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв)', url: 'http://stream.mcquack.net/333/index.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1229/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв)', url: 'http://46.53.200.153:7777/play/a01l/index.m3u8' }
             ]
         },
         {
@@ -253,7 +256,8 @@
             desc: 'Мировые турниры MMA и боевые единоборства',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' }
+                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://stream8.cinerama.uz/1226/index.m3u8' }
             ]
         },
         {
@@ -286,7 +290,7 @@
             desc: 'Российский спорт и региональные турниры',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://31.148.48.15/Match_Strana/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/143/index.m3u8' }
             ]
         },
         {
@@ -297,7 +301,7 @@
             desc: 'Игровые виды спорта, гандбол, волейбол и баскетбол',
             quality: 'Full HD 1080p',
             streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://31.148.48.15/Match_Igra_HD/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/188/index.m3u8' }
             ]
         },
         {
@@ -308,7 +312,8 @@
             desc: 'Престижные мировые турниры по неигровым видам спорта',
             quality: 'Full HD 1080p / 50 FPS',
             streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'https://t7.ultrastream.vip/marena/index.m3u8' }
+                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://31.148.5.241/kanal_3/index.m3u8' },
+                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://stream8.cinerama.uz/1243/index.m3u8' }
             ]
         }
     ];
@@ -1343,47 +1348,71 @@
     // Verified Channel Clusters (Only Authentic Working Streams)
     const CLUSTER_FALLBACKS = {
         'ch-matchtv': [
-            { name: '⚡ Резерв 1 (HD)', url: 'http://flussonic.linkintel.ru/match/index.m3u8' },
-            { name: '⚡ Резерв 2', url: 'http://stream.mcquack.net/169/index.m3u8' }
+            { name: '⚡ Резерв 1 (Официальный HD)', url: 'http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8' }
         ],
         'ch-premier': [
             { name: '⚡ Резерв HD', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' }
         ],
-        'ch-okko': [],
+        'ch-okko': [
+            { name: '⚡ Резерв 1 (1080p)', url: 'http://stream.mcquack.net/188/index.m3u8' }
+        ],
         'ch-futbol1': [
-            { name: '⚡ Резерв', url: 'http://stream.mcquack.net/130/index.m3u8' }
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/130/index.m3u8' }
         ],
         'ch-futbol2': [
-            { name: '⚡ Резерв', url: 'http://stream.mcquack.net/142/index.m3u8' }
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/142/index.m3u8' }
         ],
-        'ch-futbol3': [],
+        'ch-futbol3': [
+            { name: '⚡ Резерв HD', url: 'http://185.57.68.33/110/index.m3u8' }
+        ],
         'ch-setanta1': [
-            { name: '⚡ Резерв 1', url: 'http://stream.mcquack.net/234/index.m3u8' },
-            { name: '⚡ Резерв 2', url: 'http://178.124.179.122:8080/Setanta1/index.m3u8' }
+            { name: '⚡ Резерв 1 (Full HD)', url: 'http://stream.mcquack.net/234/index.m3u8' }
         ],
         'ch-setanta2': [
-            { name: '⚡ Резерв', url: 'http://stream.mcquack.net/235/index.m3u8' }
+            { name: '⚡ Резерв 1 (Full HD)', url: 'http://stream.mcquack.net/235/index.m3u8' }
         ],
         'ch-bt5': [
-            { name: '⚡ Резерв HD', url: 'http://178.124.179.122:8080/BT5/index.m3u8' }
+            { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/33/index.m3u8' }
         ],
         'ch-wwe': [
             { name: '⚡ Резерв HD', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' }
         ],
-        'ch-euro1': [],
-        'ch-euro2': [],
-        'ch-khl': [
-            { name: '⚡ Резерв HD', url: 'http://stream.mcquack.net/178/index.m3u8' }
+        'ch-euro1': [
+            { name: '⚡ Резерв HD', url: 'http://178.134.1.158:8081/eurosport/index.m3u8' }
         ],
-        'ch-viju': [],
-        'ch-udar': [],
-        'ch-boxtv': [],
-        'ch-mmatv': [],
-        'ch-sportivny': [],
-        'ch-boets': [],
-        'ch-strana': [],
-        'ch-igra': [],
-        'ch-arena': []
+        'ch-euro2': [
+            { name: '⚡ Резерв HD', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
+        ],
+        'ch-khl': [
+            { name: '⚡ Резерв 1 (Full HD)', url: 'https://stream8.cinerama.uz/1422/index.m3u8' }
+        ],
+        'ch-viju': [
+            { name: '⚡ Резерв HD', url: 'http://46.53.200.153:7777/play/a01l/index.m3u8' }
+        ],
+        'ch-udar': [
+            { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' }
+        ],
+        'ch-boxtv': [
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/154/index.m3u8' }
+        ],
+        'ch-mmatv': [
+            { name: '⚡ Резерв HD', url: 'https://stream8.cinerama.uz/1226/index.m3u8' }
+        ],
+        'ch-sportivny': [
+            { name: '⚡ Сервер 1 (Full HD)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
+        ],
+        'ch-boets': [
+            { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/112/index.m3u8' }
+        ],
+        'ch-strana': [
+            { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/143/index.m3u8' }
+        ],
+        'ch-igra': [
+            { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/188/index.m3u8' }
+        ],
+        'ch-arena': [
+            { name: '⚡ Резерв HD', url: 'https://stream8.cinerama.uz/1243/index.m3u8' }
+        ]
     };
 
     async function harvestOnlineStreams() {
