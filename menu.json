@@ -207,7 +207,7 @@
                 "color": "#0284c7",
                 "image": "https://dimc48.github.io/msx/img/channels/eurosport1.png",
                 "imageFiller": "fit",
-                "action": "video:http://178.134.1.158:8081/eurosport/index.m3u8"
+                "action": "video:https://s7.iptv-24.net/1439/playlist.m3u8"
               },
               {
                 "type": "default",

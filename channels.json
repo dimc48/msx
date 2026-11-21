@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated_at": "2026-11-21T12:21:06Z",
+  "updated_at": "2026-11-21T21:32:21Z",
   "channels": [
     {
       "id": "ch-matchtv",
@@ -171,12 +171,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 3 (Резерв 2)",
-          "url": "http://178.134.1.158:8081/eurosport/index.m3u8"
-        },
-        {
           "name": "⚡ Сервер 2 (Резерв HD)",
           "url": "https://s7.iptv-24.net/1439/playlist.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 3 (Резерв 2)",
+          "url": "http://178.134.1.158:8081/eurosport/index.m3u8"
         },
         {
           "name": "⚡ Сервер 1 (Full HD 1080p)",
