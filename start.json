@@ -277,7 +277,7 @@
                 "color": "#4c1d95",
                 "image": "https://dimc48.github.io/msx/img/channels/mmatv.svg",
                 "imageFiller": "fit",
-                "action": "video:https://stream8.cinerama.uz/1226/index.m3u8"
+                "action": "video:https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8"
               }
             ]
           }

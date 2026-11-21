@@ -34,7 +34,7 @@ http://stream.mcquack.net/279/index.m3u8
 #EXTINF:-1 tvg-id="ch-boxtv" tvg-name="Бокс ТВ HD" tvg-logo="https://dimc48.github.io/msx/img/channels/boxtv.svg" group-title="Спорт HD",Бокс ТВ HD
 http://stream.mcquack.net/154/index.m3u8
 #EXTINF:-1 tvg-id="ch-mmatv" tvg-name="MMA-TV.com HD" tvg-logo="https://dimc48.github.io/msx/img/channels/mmatv.svg" group-title="Спорт HD",MMA-TV.com HD
-https://stream8.cinerama.uz/1226/index.m3u8
+https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8
 #EXTINF:-1 tvg-id="ch-sportivny" tvg-name="Спортивный HD" tvg-logo="https://dimc48.github.io/msx/img/channels/sportivny.svg" group-title="Спорт HD",Спортивный HD
 https://live-3.otcnet.ru/sportivny/index.m3u8
 #EXTINF:-1 tvg-id="ch-boets" tvg-name="Матч! Боец HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-boets.png" group-title="Спорт HD",Матч! Боец HD
