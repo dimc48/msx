@@ -24,7 +24,7 @@ https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-o
 #EXTINF:-1 tvg-id="ch-euro1" tvg-name="Eurosport 1 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport1.png" group-title="Спорт HD",Eurosport 1 HD
 http://178.134.1.158:8081/eurosport/index.m3u8
 #EXTINF:-1 tvg-id="ch-euro2" tvg-name="Eurosport 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport2.png" group-title="Спорт HD",Eurosport 2 HD
-https://s7.iptv-24.net/1452/playlist.m3u8
+https://stream8.cinerama.uz/1452/index.m3u8
 #EXTINF:-1 tvg-id="ch-khl" tvg-name="KHL Prime HD" tvg-logo="https://dimc48.github.io/msx/img/channels/khl-prime.png" group-title="Спорт HD",KHL Prime HD
 https://stream8.cinerama.uz/1422/index.m3u8
 #EXTINF:-1 tvg-id="ch-viju" tvg-name="viju+ Sport HD" tvg-logo="https://dimc48.github.io/msx/img/channels/viju-sport.png" group-title="Спорт HD",viju+ Sport HD

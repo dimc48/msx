@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated_at": "2026-11-23T00:41:06Z",
+  "updated_at": "2026-11-23T14:16:26Z",
   "channels": [
     {
       "id": "ch-matchtv",
@@ -193,12 +193,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 2 (Резерв HD)",
-          "url": "https://s7.iptv-24.net/1452/playlist.m3u8"
-        },
-        {
           "name": "⚡ Сервер 1 (Full HD 1080p)",
           "url": "https://stream8.cinerama.uz/1452/index.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (Резерв HD)",
+          "url": "https://s7.iptv-24.net/1452/playlist.m3u8"
         }
       ]
     },
