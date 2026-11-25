@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated_at": "2026-11-24T14:42:14Z",
+  "updated_at": "2026-11-25T00:30:01Z",
   "channels": [
     {
       "id": "ch-matchtv",
@@ -11,12 +11,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 2 (Официальный HD)",
-          "url": "http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8"
-        },
-        {
           "name": "⚡ Сервер 3 (Резерв)",
           "url": "http://zabava-htlive.cdn.ngenix.net/hls/CH_MATCHTV/variant.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (Официальный HD)",
+          "url": "http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8"
         }
       ]
     },
@@ -121,12 +121,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 1 (Full HD)",
-          "url": "http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8"
-        },
-        {
           "name": "⚡ Сервер 2 (Резерв HD)",
           "url": "https://stream8.cinerama.uz/1264/index.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 1 (Full HD)",
+          "url": "http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8"
         }
       ]
     },
@@ -153,12 +153,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 2 (HD 720p)",
-          "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
-        },
-        {
           "name": "⚡ Сервер 1 (Full HD 1080p)",
           "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (HD 720p)",
+          "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
         }
       ]
     },
@@ -170,10 +170,6 @@
       "desc": "Теннис, снукер, биатлон, автоспорт и мировые турниры",
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
-        {
-          "name": "⚡ Сервер 3 (Резерв 2)",
-          "url": "http://178.134.1.158:8081/eurosport/index.m3u8"
-        },
         {
           "name": "⚡ Сервер 2 (Резерв HD)",
           "url": "https://s7.iptv-24.net/1439/playlist.m3u8"

@@ -104,7 +104,7 @@
                 "color": "#b91c1c",
                 "image": "https://dimc48.github.io/msx/img/channels/match-tv.png",
                 "imageFiller": "fit",
-                "action": "video:http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8"
+                "action": "video:http://zabava-htlive.cdn.ngenix.net/hls/CH_MATCHTV/variant.m3u8"
               },
               {
                 "type": "default",
@@ -174,7 +174,7 @@
                 "color": "#831843",
                 "image": "https://dimc48.github.io/msx/img/channels/wwe.svg",
                 "imageFiller": "fit",
-                "action": "video:https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
+                "action": "video:https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8"
               },
               {
                 "type": "default",
@@ -207,7 +207,7 @@
                 "color": "#0284c7",
                 "image": "https://dimc48.github.io/msx/img/channels/eurosport1.png",
                 "imageFiller": "fit",
-                "action": "video:http://178.134.1.158:8081/eurosport/index.m3u8"
+                "action": "video:https://s7.iptv-24.net/1439/playlist.m3u8"
               },
               {
                 "type": "default",
