@@ -62,261 +62,418 @@
     // 1. Static Sports TV Channels (24/7 Verified IPTV Streams with Authentic Official Logos & Redundant Mirrors)
     let tvChannels = [
         {
-            id: 'ch-matchtv',
-            isChannel: true,
-            name: 'Матч ТВ HD',
-            logo: 'img/channels/match-tv.png',
-            desc: 'Главный федеральный спортивный телеканал России',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/169/index.m3u8' },
-                { name: '⚡ Сервер 2 (Официальный HD)', url: 'http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8' }
-            ]
+                "id": "ch-matchtv",
+                "isChannel": true,
+                "name": "Матч ТВ HD",
+                "logo": "img/channels/match-tv.png",
+                "desc": "Главный федеральный спортивный телеканал России",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (Официальный HD)",
+                                "url": "http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 3 (Uplink KZ)",
+                                "url": "https://fs.uplink.kz/match/mono.m3u8?token=onlinetv2"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-premier',
-            isChannel: true,
-            name: 'Матч Премьер HD',
-            logo: 'img/channels/match-premier.png',
-            desc: 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://stream.mcquack.net/193/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8' }
-            ]
+                "id": "ch-premier",
+                "isChannel": true,
+                "name": "Матч Премьер HD",
+                "logo": "img/channels/match-premier.png",
+                "desc": "Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 3 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/58793/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Резерв HD)",
+                                "url": "http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-ee3651e1e7ce5cbf/video.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-okko',
-            isChannel: true,
-            name: 'Okko Спорт HD',
-            logo: 'img/channels/okko-sport.png',
-            desc: 'Лига Чемпионов УЕФА, Лига Европы и еврокубки',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1243/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/188/index.m3u8' }
-            ]
+                "id": "ch-okko",
+                "isChannel": true,
+                "name": "Okko Спорт HD",
+                "logo": "img/channels/okko-sport.png",
+                "desc": "Лига Чемпионов УЕФА, Лига Европы и еврокубки",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 3 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/63048/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Резерв HD)",
+                                "url": "http://185.221.213.254:8080/Okko/tracks-v1a1/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD)",
+                                "url": "https://stream8.cinerama.uz/1243/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-futbol1',
-            isChannel: true,
-            name: 'Матч! Футбол 1 HD',
-            logo: 'img/channels/match-futbol1.png',
-            desc: 'Флагманский европейский футбол и топ-чемпионаты',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 50 FPS)', url: 'http://stream.mcquack.net/130/index.m3u8' }
-            ]
+                "id": "ch-futbol1",
+                "isChannel": true,
+                "name": "Матч! Футбол 1 HD",
+                "logo": "img/channels/match-futbol1.png",
+                "desc": "Флагманский европейский футбол и топ-чемпионаты",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/52846/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 50 FPS)",
+                                "url": "http://31.148.5.241/Match_Football_1_HD/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-futbol2',
-            isChannel: true,
-            name: 'Матч! Футбол 2 HD',
-            logo: 'img/channels/match-futbol2.png',
-            desc: 'Испанская Ла Лига и матчи Кубка Короля',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 50 FPS)', url: 'http://stream.mcquack.net/142/index.m3u8' }
-            ]
+                "id": "ch-futbol2",
+                "isChannel": true,
+                "name": "Матч! Футбол 2 HD",
+                "logo": "img/channels/match-futbol2.png",
+                "desc": "Испанская Ла Лига и матчи Кубка Короля",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/35647/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 50 FPS)",
+                                "url": "http://31.148.5.241/Match_Football_2_HD/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-futbol3',
-            isChannel: true,
-            name: 'Матч! Футбол 3 HD',
-            logo: 'img/channels/match-futbol3.png',
-            desc: 'Немецкая Бундеслига и итальянская Серия А',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 50 FPS)', url: 'http://stream.mcquack.net/185/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://185.57.68.33/110/index.m3u8' }
-            ]
+                "id": "ch-futbol3",
+                "isChannel": true,
+                "name": "Матч! Футбол 3 HD",
+                "logo": "img/channels/match-futbol3.png",
+                "desc": "Немецкая Бундеслига и итальянская Серия А",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 3 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/48756/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Резерв HD)",
+                                "url": "http://185.57.68.33/110/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 50 FPS)",
+                                "url": "http://31.148.5.241/Match_Football_3_HD/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-setanta1',
-            isChannel: true,
-            name: 'Setanta Sports 1 HD',
-            logo: 'img/channels/setanta1.png',
-            desc: 'АПЛ, Серия А, Формула 1 и мировые лиги',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1263/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/234/index.m3u8' }
-            ]
+                "id": "ch-setanta1",
+                "isChannel": true,
+                "name": "Setanta Sports 1 HD",
+                "logo": "img/channels/setanta1.png",
+                "desc": "АПЛ, Серия А, Формула 1 и мировые лиги",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (Splay HD)",
+                                "url": "http://vod.splay.uz/live_splay/original/Setanta1HD/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD)",
+                                "url": "https://stream8.cinerama.uz/1263/tracks-v1a1/mono.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-setanta2',
-            isChannel: true,
-            name: 'Setanta Sports 2 HD',
-            logo: 'img/channels/setanta2.png',
-            desc: 'Бундеслига, теннис ATP/WTA и евробаскетбол',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1264/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://stream.mcquack.net/235/index.m3u8' }
-            ]
+                "id": "ch-setanta2",
+                "isChannel": true,
+                "name": "Setanta Sports 2 HD",
+                "logo": "img/channels/setanta2.png",
+                "desc": "Бундеслига, теннис ATP/WTA и евробаскетбол",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (Splay HD)",
+                                "url": "http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD)",
+                                "url": "https://stream8.cinerama.uz/1264/tracks-v1a1/mono.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-bt5',
-            isChannel: true,
-            name: 'Беларусь 5 HD',
-            logo: 'img/channels/belarus5.png',
-            desc: 'Главный спортивный телеканал Республики Беларусь',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/33/index.m3u8' }
-            ]
+                "id": "ch-bt5",
+                "isChannel": true,
+                "name": "Беларусь 5 HD",
+                "logo": "img/channels/belarus5.png",
+                "desc": "Главный спортивный телеканал Республики Беларусь",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/82294/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Белтелеком HD)",
+                                "url": "https://edge55.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-wwe',
-            isChannel: true,
-            name: 'WWE TV HD',
-            logo: 'img/channels/wwe.svg',
-            desc: 'WWE Network 24/7 - Raw, SmackDown, WrestleMania & NXT',
-            quality: 'Full HD 1080p / 60 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8' },
-                { name: '⚡ Сервер 2 (HD 720p)', url: 'https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8' }
-            ]
+                "id": "ch-wwe",
+                "isChannel": true,
+                "name": "WWE TV HD",
+                "logo": "img/channels/wwe.svg",
+                "desc": "WWE Network 24/7 - Raw, SmackDown, WrestleMania & NXT",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (HD 720p)",
+                                "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 1080p)",
+                                "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-euro1',
-            isChannel: true,
-            name: 'Eurosport 1 HD',
-            logo: 'img/channels/eurosport1.png',
-            desc: 'Теннис, снукер, биатлон, автоспорт и мировые турниры',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://s7.iptv-24.net/1439/playlist.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'http://178.134.1.158:8081/eurosport/index.m3u8' }
-            ]
+                "id": "ch-euro1",
+                "isChannel": true,
+                "name": "Eurosport 1 HD",
+                "logo": "img/channels/eurosport1.png",
+                "desc": "Теннис, снукер, биатлон, автоспорт и мировые турниры",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 4 (Direct HD)",
+                                "url": "http://31.148.5.241/Eurosport_1_HD/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Резерв HD)",
+                                "url": "https://s7.iptv-24.net/1439/playlist.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 3 (Splay HD)",
+                                "url": "http://vod.splay.uz/live_splay/original/Eurosport/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 1080p)",
+                                "url": "https://stream8.cinerama.uz/1439/tracks-v1a1/mono.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-euro2',
-            isChannel: true,
-            name: 'Eurosport 2 HD',
-            logo: 'img/channels/eurosport2.png',
-            desc: 'Зимние виды спорта, автогонки и мировые кубки',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://stream8.cinerama.uz/1452/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://s7.iptv-24.net/1452/playlist.m3u8' }
-            ]
+                "id": "ch-euro2",
+                "isChannel": true,
+                "name": "Eurosport 2 HD",
+                "logo": "img/channels/eurosport2.png",
+                "desc": "Зимние виды спорта, автогонки и мировые кубки",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (Резерв HD)",
+                                "url": "https://s7.iptv-24.net/1452/playlist.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 3 (Splay HD)",
+                                "url": "http://vod.splay.uz/live_splay/original/Eurosport2HD/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 1080p)",
+                                "url": "https://stream8.cinerama.uz/1452/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-khl',
-            isChannel: true,
-            name: 'KHL Prime HD',
-            logo: 'img/channels/khl-prime.png',
-            desc: 'Матчи Континентальной Хоккейной Лиги и Кубок Гагарина',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'http://stream.mcquack.net/178/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://stream8.cinerama.uz/1422/index.m3u8' }
-            ]
+                "id": "ch-khl",
+                "isChannel": true,
+                "name": "KHL Prime HD",
+                "logo": "img/channels/khl-prime.png",
+                "desc": "Матчи Континентальной Хоккейной Лиги и Кубок Гагарина",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 3 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-e3d23fc7511b5fcd/video.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Uplink KZ HD)",
+                                "url": "https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv2"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Cinerama HD)",
+                                "url": "https://stream8.cinerama.uz/1422/tracks-v1a1/mono.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-viju',
-            isChannel: true,
-            name: 'viju+ Sport HD',
-            logo: 'img/channels/viju-sport.png',
-            desc: 'Мировой баскетбол, хоккей и автогонки',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'https://stream8.cinerama.uz/1229/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв)', url: 'http://46.53.200.153:7777/play/a01l/index.m3u8' }
-            ]
+                "id": "ch-viju",
+                "isChannel": true,
+                "name": "viju+ Sport HD",
+                "logo": "img/channels/viju-sport.png",
+                "desc": "Мировой баскетбол, хоккей и автогонки",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (Direct HD)",
+                                "url": "http://31.148.5.241/Viasat_Sport/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Full HD)",
+                                "url": "https://stream8.cinerama.uz/1229/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-udar',
-            isChannel: true,
-            name: 'Телеканал UDAR HD',
-            logo: 'img/channels/udar.svg',
-            desc: 'Top Dog, Hardcore FC, кулачные бои и турниры MMA',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/279/index.m3u8' }
-            ]
+                "id": "ch-udar",
+                "isChannel": true,
+                "name": "Телеканал UDAR HD",
+                "logo": "img/channels/udar.svg",
+                "desc": "Top Dog, Hardcore FC, кулачные бои и турниры MMA",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 1 (TVDosug 1080p)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/84449/hlsx/pl.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-boxtv',
-            isChannel: true,
-            name: 'Бокс ТВ HD',
-            logo: 'img/channels/boxtv.svg',
-            desc: 'Мировой бокс, титульные бои и прямые включения',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/154/index.m3u8' }
-            ]
+                "id": "ch-boxtv",
+                "isChannel": true,
+                "name": "Бокс ТВ HD",
+                "logo": "img/channels/boxtv.svg",
+                "desc": "Мировой бокс, титульные бои и прямые включения",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 1 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/11092/hlsx/pl.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-mmatv',
-            isChannel: true,
-            name: 'MMA-TV.com HD',
-            logo: 'img/channels/mmatv.svg',
-            desc: 'Мировые турниры MMA и боевые единоборства',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://stream8.cinerama.uz/1226/index.m3u8' }
-            ]
+                "id": "ch-mmatv",
+                "isChannel": true,
+                "name": "MMA-TV.com HD",
+                "logo": "img/channels/mmatv.svg",
+                "desc": "Мировые турниры MMA и боевые единоборства",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (Sofast HD)",
+                                "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Cinerama HD)",
+                                "url": "https://stream8.cinerama.uz/1226/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-sportivny',
-            isChannel: true,
-            name: 'Спортивный HD',
-            logo: 'img/channels/sportivny.svg',
-            desc: 'Российские чемпионаты, автоспорт и единоборства',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD 1080p)', url: 'https://live-3.otcnet.ru/sportivny/index.m3u8' }
-            ]
+                "id": "ch-sportivny",
+                "isChannel": true,
+                "name": "Спортивный HD",
+                "logo": "img/channels/sportivny.svg",
+                "desc": "Российские чемпионаты, автоспорт и единоборства",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 1 (Full HD 1080p)",
+                                "url": "https://live-3.otcnet.ru/sportivny/index.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-boets',
-            isChannel: true,
-            name: 'Матч! Боец HD',
-            logo: 'img/channels/match-boets.png',
-            desc: 'Единоборства, UFC, Bellator и бои в прямом эфире',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (Full HD)', url: 'http://stream.mcquack.net/112/index.m3u8' }
-            ]
+                "id": "ch-boets",
+                "isChannel": true,
+                "name": "Матч! Боец HD",
+                "logo": "img/channels/match-boets.png",
+                "desc": "Единоборства, UFC, Bellator и бои в прямом эфире",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 1 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/54482/hlsx/pl.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-strana',
-            isChannel: true,
-            name: 'Матч! Страна HD',
-            logo: 'img/channels/match-strana.png',
-            desc: 'Российский спорт и региональные турниры',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/143/index.m3u8' }
-            ]
+                "id": "ch-strana",
+                "isChannel": true,
+                "name": "Матч! Страна HD",
+                "logo": "img/channels/match-strana.png",
+                "desc": "Российский спорт и региональные турниры",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/26338/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-6db4f59c21aec361/video.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-igra',
-            isChannel: true,
-            name: 'Матч! Игра HD',
-            logo: 'img/channels/match-igra.png',
-            desc: 'Игровые виды спорта, гандбол, волейбол и баскетбол',
-            quality: 'Full HD 1080p',
-            streams: [
-                { name: '⚡ Сервер 1 (1080p)', url: 'http://stream.mcquack.net/188/index.m3u8' }
-            ]
+                "id": "ch-igra",
+                "isChannel": true,
+                "name": "Матч! Игра HD",
+                "logo": "img/channels/match-igra.png",
+                "desc": "Игровые виды спорта, гандбол, волейбол и баскетбол",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/47/hlsx/pl.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-1bfac9df3d938c1f/video.m3u8"
+                        }
+                ]
         },
         {
-            id: 'ch-arena',
-            isChannel: true,
-            name: 'Матч! Арена HD',
-            logo: 'img/channels/match-arena.png',
-            desc: 'Престижные мировые турниры по неигровым видам спорта',
-            quality: 'Full HD 1080p / 50 FPS',
-            streams: [
-                { name: '⚡ Сервер 1 (1080p 50 FPS)', url: 'http://31.148.5.241/kanal_3/index.m3u8' },
-                { name: '⚡ Сервер 2 (Резерв HD)', url: 'https://stream8.cinerama.uz/1243/index.m3u8' }
-            ]
+                "id": "ch-arena",
+                "isChannel": true,
+                "name": "Матч! Арена HD",
+                "logo": "img/channels/match-arena.png",
+                "desc": "Престижные мировые турниры по неигровым видам спорта",
+                "quality": "Full HD 1080p / 50 FPS",
+                "streams": [
+                        {
+                                "name": "⚡ Сервер 2 (1080p 50 FPS)",
+                                "url": "http://31.148.5.241/kanal_3/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-9dda1dd9d740a9a4/video.m3u8"
+                        }
+                ]
         }
-    ];
+];
 
     // Club & league emblem mapping for professional presentation
     const logoMap = {
@@ -529,38 +686,50 @@
         return null;
     }
 
+    function getChannelUrls(chId) {
+        const ch = tvChannels.find(c => c.id === chId);
+        if (ch && ch.streams && ch.streams.length > 0) {
+            return ch.streams.map(s => ({ url: s.url, name: `${ch.name}` }));
+        }
+        return [];
+    }
+
     // High quality alternative broadcast fallbacks by competition
     function getFallbackMirrorsForTournament(groupKey) {
         if (groupKey === 'uefa') {
             return [
-                { url: 'http://178.124.179.122:8080/Setanta1/index.m3u8' }, // Okko / Setanta
-                { url: 'http://stream.mcquack.net/130/index.m3u8' }, // Матч Футбол 1
-                { url: 'http://178.124.179.122:8080/BT5/index.m3u8' },  // Беларусь 5
-                { url: 'http://stream.mcquack.net/234/index.m3u8' }  // Setanta Sports 1
+                ...getChannelUrls('ch-okko'),
+                ...getChannelUrls('ch-futbol1'),
+                ...getChannelUrls('ch-bt5'),
+                ...getChannelUrls('ch-setanta1')
             ];
         } else if (groupKey === 'russia') {
             return [
-                { url: 'http://stream.mcquack.net/193/index.m3u8' },
-                { url: 'http://stream.mcquack.net/169/index.m3u8' }
+                ...getChannelUrls('ch-premier'),
+                ...getChannelUrls('ch-matchtv')
             ];
         } else if (groupKey === 'england') {
             return [
-                { url: 'http://45.228.234.9:8000/play/a06b/index.m3u8' },
-                { url: 'http://stream.mcquack.net/234/index.m3u8' }
+                ...getChannelUrls('ch-setanta1'),
+                ...getChannelUrls('ch-setanta2'),
+                ...getChannelUrls('ch-futbol1')
             ];
         } else if (groupKey === 'spain' || groupKey === 'italy') {
             return [
-                { url: 'http://stream.mcquack.net/142/index.m3u8' },
-                { url: 'http://stream.mcquack.net/234/index.m3u8' }
+                ...getChannelUrls('ch-futbol2'),
+                ...getChannelUrls('ch-futbol3'),
+                ...getChannelUrls('ch-setanta1')
             ];
         } else if (groupKey === 'germany') {
             return [
-                { url: 'http://stream.mcquack.net/185/index.m3u8' },
-                { url: 'http://stream.mcquack.net/235/index.m3u8' }
+                ...getChannelUrls('ch-futbol3'),
+                ...getChannelUrls('ch-setanta2')
             ];
         }
         return [
-            { url: 'http://stream.mcquack.net/234/index.m3u8' }
+            ...getChannelUrls('ch-matchtv'),
+            ...getChannelUrls('ch-premier'),
+            ...getChannelUrls('ch-setanta1')
         ];
     }
 

@@ -35,9 +35,9 @@ CHANNEL_CANDIDATES = {
         'desc': 'Главный федеральный спортивный телеканал России',
         'logo': 'img/channels/match-tv.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD)', 'http://stream.mcquack.net/169/index.m3u8'),
+            ('⚡ Сервер 1 (Flussonic HD)', 'https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8'),
             ('⚡ Сервер 2 (Официальный HD)', 'http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8'),
-            ('⚡ Сервер 3 (Резерв)', 'http://zabava-htlive.cdn.ngenix.net/hls/CH_MATCHTV/variant.m3u8')
+            ('⚡ Сервер 3 (Uplink KZ)', 'https://fs.uplink.kz/match/mono.m3u8?token=onlinetv2')
         ]
     },
     'ch-premier': {
@@ -45,9 +45,9 @@ CHANNEL_CANDIDATES = {
         'desc': 'Все матчи Российской Премьер-Лиги (РПЛ) и Кубка России',
         'logo': 'img/channels/match-premier.png',
         'urls': [
-            ('⚡ Сервер 1 (1080p 50 FPS)', 'http://stream.mcquack.net/193/index.m3u8'),
+            ('⚡ Сервер 1 (Flussonic HD)', 'https://flussonic.mkpnet.ru/tv-ee3651e1e7ce5cbf/video.m3u8'),
             ('⚡ Сервер 2 (Резерв HD)', 'http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8'),
-            ('⚡ Сервер 3 (Резерв 2)', 'http://91.194.191.241:8081/chid172/tracks-v1a1/mono.m3u8')
+            ('⚡ Сервер 3 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/58793/hlsx/pl.m3u8')
         ]
     },
     'ch-okko': {
@@ -56,8 +56,8 @@ CHANNEL_CANDIDATES = {
         'logo': 'img/channels/okko-sport.png',
         'urls': [
             ('⚡ Сервер 1 (Full HD)', 'https://stream8.cinerama.uz/1243/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'http://stream.mcquack.net/188/index.m3u8'),
-            ('⚡ Сервер 3 (Резерв 2)', 'http://185.221.213.254:8080/Okko/tracks-v1a1/index.m3u8')
+            ('⚡ Сервер 2 (Резерв HD)', 'http://185.221.213.254:8080/Okko/tracks-v1a1/index.m3u8'),
+            ('⚡ Сервер 3 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/63048/hlsx/pl.m3u8')
         ]
     },
     'ch-futbol1': {
@@ -65,7 +65,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Флагманский европейский футбол и топ-чемпионаты',
         'logo': 'img/channels/match-futbol1.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD 50 FPS)', 'http://stream.mcquack.net/130/index.m3u8')
+            ('⚡ Сервер 1 (Full HD 50 FPS)', 'http://31.148.5.241/Match_Football_1_HD/index.m3u8'),
+            ('⚡ Сервер 2 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/52846/hlsx/pl.m3u8')
         ]
     },
     'ch-futbol2': {
@@ -73,7 +74,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Испанская Ла Лига и матчи Кубка Короля',
         'logo': 'img/channels/match-futbol2.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD 50 FPS)', 'http://stream.mcquack.net/142/index.m3u8')
+            ('⚡ Сервер 1 (Full HD 50 FPS)', 'http://31.148.5.241/Match_Football_2_HD/index.m3u8'),
+            ('⚡ Сервер 2 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/35647/hlsx/pl.m3u8')
         ]
     },
     'ch-futbol3': {
@@ -81,8 +83,9 @@ CHANNEL_CANDIDATES = {
         'desc': 'Немецкая Бундеслига и итальянская Серия А',
         'logo': 'img/channels/match-futbol3.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD 50 FPS)', 'http://stream.mcquack.net/185/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'http://185.57.68.33/110/index.m3u8')
+            ('⚡ Сервер 1 (Full HD 50 FPS)', 'http://31.148.5.241/Match_Football_3_HD/index.m3u8'),
+            ('⚡ Сервер 2 (Резерв HD)', 'http://185.57.68.33/110/index.m3u8'),
+            ('⚡ Сервер 3 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/48756/hlsx/pl.m3u8')
         ]
     },
     'ch-setanta1': {
@@ -90,9 +93,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'АПЛ, Серия А, Формула 1 и мировые лиги',
         'logo': 'img/channels/setanta1.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD)', 'http://vod.splay.uz/live_splay/original/Setanta1HD/tracks-v1a1/mono.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'https://stream8.cinerama.uz/1263/index.m3u8'),
-            ('⚡ Сервер 3 (Резерв 2)', 'http://stream.mcquack.net/234/index.m3u8')
+            ('⚡ Сервер 1 (Full HD)', 'https://stream8.cinerama.uz/1263/tracks-v1a1/mono.m3u8'),
+            ('⚡ Сервер 2 (Splay HD)', 'http://vod.splay.uz/live_splay/original/Setanta1HD/tracks-v1a1/mono.m3u8')
         ]
     },
     'ch-setanta2': {
@@ -100,9 +102,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Бундеслига, теннис ATP/WTA и евробаскетбол',
         'logo': 'img/channels/setanta2.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD)', 'http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'https://stream8.cinerama.uz/1264/index.m3u8'),
-            ('⚡ Сервер 3 (Резерв 2)', 'http://stream.mcquack.net/235/index.m3u8')
+            ('⚡ Сервер 1 (Full HD)', 'https://stream8.cinerama.uz/1264/tracks-v1a1/mono.m3u8'),
+            ('⚡ Сервер 2 (Splay HD)', 'http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8')
         ]
     },
     'ch-bt5': {
@@ -110,7 +111,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Главный спортивный телеканал Республики Беларусь',
         'logo': 'img/channels/belarus5.png',
         'urls': [
-            ('⚡ Сервер 1 (1080p)', 'http://stream.mcquack.net/33/index.m3u8')
+            ('⚡ Сервер 1 (Белтелеком HD)', 'https://edge55.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8'),
+            ('⚡ Сервер 2 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/82294/hlsx/pl.m3u8')
         ]
     },
     'ch-wwe': {
@@ -127,9 +129,10 @@ CHANNEL_CANDIDATES = {
         'desc': 'Теннис, снукер, биатлон, автоспорт и мировые турниры',
         'logo': 'img/channels/eurosport1.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD 1080p)', 'http://vod.splay.uz/live_splay/original/Eurosport/tracks-v1a1/mono.m3u8'),
+            ('⚡ Сервер 1 (Full HD 1080p)', 'https://stream8.cinerama.uz/1439/tracks-v1a1/mono.m3u8'),
             ('⚡ Сервер 2 (Резерв HD)', 'https://s7.iptv-24.net/1439/playlist.m3u8'),
-            ('⚡ Сервер 3 (Резерв 2)', 'http://178.134.1.158:8081/eurosport/index.m3u8')
+            ('⚡ Сервер 3 (Splay HD)', 'http://vod.splay.uz/live_splay/original/Eurosport/tracks-v1a1/mono.m3u8'),
+            ('⚡ Сервер 4 (Direct HD)', 'http://31.148.5.241/Eurosport_1_HD/index.m3u8')
         ]
     },
     'ch-euro2': {
@@ -138,7 +141,8 @@ CHANNEL_CANDIDATES = {
         'logo': 'img/channels/eurosport2.png',
         'urls': [
             ('⚡ Сервер 1 (Full HD 1080p)', 'https://stream8.cinerama.uz/1452/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'https://s7.iptv-24.net/1452/playlist.m3u8')
+            ('⚡ Сервер 2 (Резерв HD)', 'https://s7.iptv-24.net/1452/playlist.m3u8'),
+            ('⚡ Сервер 3 (Splay HD)', 'http://vod.splay.uz/live_splay/original/Eurosport2HD/tracks-v1a1/mono.m3u8')
         ]
     },
     'ch-khl': {
@@ -146,8 +150,9 @@ CHANNEL_CANDIDATES = {
         'desc': 'Матчи Континентальной Хоккейной Лиги и Кубок Гагарина',
         'logo': 'img/channels/khl-prime.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD 1080p)', 'http://stream.mcquack.net/178/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'https://stream8.cinerama.uz/1422/index.m3u8')
+            ('⚡ Сервер 1 (Uplink KZ HD)', 'https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv2'),
+            ('⚡ Сервер 2 (Cinerama HD)', 'https://stream8.cinerama.uz/1422/tracks-v1a1/mono.m3u8'),
+            ('⚡ Сервер 3 (Flussonic HD)', 'https://flussonic.mkpnet.ru/tv-e3d23fc7511b5fcd/video.m3u8')
         ]
     },
     'ch-viju': {
@@ -156,7 +161,7 @@ CHANNEL_CANDIDATES = {
         'logo': 'img/channels/viju-sport.png',
         'urls': [
             ('⚡ Сервер 1 (Full HD)', 'https://stream8.cinerama.uz/1229/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв)', 'http://46.53.200.153:7777/play/a01l/index.m3u8')
+            ('⚡ Сервер 2 (Direct HD)', 'http://31.148.5.241/Viasat_Sport/index.m3u8')
         ]
     },
     'ch-udar': {
@@ -164,7 +169,7 @@ CHANNEL_CANDIDATES = {
         'desc': 'Top Dog, Hardcore FC, кулачные бои и турниры MMA',
         'logo': 'img/channels/udar.svg',
         'urls': [
-            ('⚡ Сервер 1 (1080p)', 'http://stream.mcquack.net/279/index.m3u8')
+            ('⚡ Сервер 1 (TVDosug 1080p)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/84449/hlsx/pl.m3u8')
         ]
     },
     'ch-boxtv': {
@@ -172,7 +177,7 @@ CHANNEL_CANDIDATES = {
         'desc': 'Мировой бокс, титульные бои и прямые включения',
         'logo': 'img/channels/boxtv.svg',
         'urls': [
-            ('⚡ Сервер 1 (Full HD)', 'http://stream.mcquack.net/154/index.m3u8')
+            ('⚡ Сервер 1 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/11092/hlsx/pl.m3u8')
         ]
     },
     'ch-mmatv': {
@@ -180,8 +185,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Мировые турниры MMA и боевые единоборства',
         'logo': 'img/channels/mmatv.svg',
         'urls': [
-            ('⚡ Сервер 1 (Full HD 1080p)', 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'https://stream8.cinerama.uz/1226/index.m3u8')
+            ('⚡ Сервер 1 (Cinerama HD)', 'https://stream8.cinerama.uz/1226/index.m3u8'),
+            ('⚡ Сервер 2 (Sofast HD)', 'https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8')
         ]
     },
     'ch-sportivny': {
@@ -197,7 +202,7 @@ CHANNEL_CANDIDATES = {
         'desc': 'Единоборства, UFC, Bellator и бои в прямом эфире',
         'logo': 'img/channels/match-boets.png',
         'urls': [
-            ('⚡ Сервер 1 (Full HD)', 'http://stream.mcquack.net/112/index.m3u8'),
+            ('⚡ Сервер 1 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/54482/hlsx/pl.m3u8'),
             ('⚡ Сервер 2 (Резерв HD)', 'http://91.194.191.241:8081/chid143/tracks-v1a1/mono.m3u8')
         ]
     },
@@ -206,8 +211,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Российский спорт и региональные турниры',
         'logo': 'img/channels/match-strana.png',
         'urls': [
-            ('⚡ Сервер 1 (1080p)', 'http://stream.mcquack.net/143/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'http://91.194.191.241:8081/chid56/tracks-v1a1/mono.m3u8')
+            ('⚡ Сервер 1 (Flussonic HD)', 'https://flussonic.mkpnet.ru/tv-6db4f59c21aec361/video.m3u8'),
+            ('⚡ Сервер 2 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/26338/hlsx/pl.m3u8')
         ]
     },
     'ch-igra': {
@@ -215,8 +220,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Игровые виды спорта, гандбол, волейбол и баскетбол',
         'logo': 'img/channels/match-igra.png',
         'urls': [
-            ('⚡ Сервер 1 (1080p)', 'http://stream.mcquack.net/188/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'http://91.194.191.241:8081/chid53/tracks-v1a1/mono.m3u8')
+            ('⚡ Сервер 1 (Flussonic HD)', 'https://flussonic.mkpnet.ru/tv-1bfac9df3d938c1f/video.m3u8'),
+            ('⚡ Сервер 2 (TVDosug HD)', 'http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/47/hlsx/pl.m3u8')
         ]
     },
     'ch-arena': {
@@ -224,9 +229,8 @@ CHANNEL_CANDIDATES = {
         'desc': 'Престижные мировые турниры по неигровым видам спорта',
         'logo': 'img/channels/match-arena.png',
         'urls': [
-            ('⚡ Сервер 1 (1080p 50 FPS)', 'http://31.148.5.241/kanal_3/index.m3u8'),
-            ('⚡ Сервер 2 (Резерв HD)', 'https://stream8.cinerama.uz/1243/index.m3u8'),
-            ('⚡ Сервер 3 (Резерв 2)', 'http://46.8.46.14/arena/index.m3u8')
+            ('⚡ Сервер 1 (Flussonic HD)', 'https://flussonic.mkpnet.ru/tv-9dda1dd9d740a9a4/video.m3u8'),
+            ('⚡ Сервер 2 (1080p 50 FPS)', 'http://31.148.5.241/kanal_3/index.m3u8')
         ]
     }
 }
