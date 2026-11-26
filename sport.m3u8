@@ -2,11 +2,11 @@
 #EXT-X-VERSION:3
 
 #EXTINF:-1 tvg-id="ch-matchtv" tvg-name="Матч ТВ HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-tv.png" group-title="Спорт HD",Матч ТВ HD
-http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8
+https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8
 #EXTINF:-1 tvg-id="ch-premier" tvg-name="Матч Премьер HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-premier.png" group-title="Спорт HD",Матч Премьер HD
-http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/58793/hlsx/pl.m3u8
+http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8
 #EXTINF:-1 tvg-id="ch-okko" tvg-name="Okko Спорт HD" tvg-logo="https://dimc48.github.io/msx/img/channels/okko-sport.png" group-title="Спорт HD",Okko Спорт HD
-http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/63048/hlsx/pl.m3u8
+http://185.221.213.254:8080/Okko/tracks-v1a1/index.m3u8
 #EXTINF:-1 tvg-id="ch-futbol1" tvg-name="Матч! Футбол 1 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-futbol1.png" group-title="Спорт HD",Матч! Футбол 1 HD
 http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/52846/hlsx/pl.m3u8
 #EXTINF:-1 tvg-id="ch-futbol2" tvg-name="Матч! Футбол 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-futbol2.png" group-title="Спорт HD",Матч! Футбол 2 HD
@@ -26,7 +26,7 @@ http://31.148.5.241/Eurosport_1_HD/index.m3u8
 #EXTINF:-1 tvg-id="ch-euro2" tvg-name="Eurosport 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport2.png" group-title="Спорт HD",Eurosport 2 HD
 https://s7.iptv-24.net/1452/playlist.m3u8
 #EXTINF:-1 tvg-id="ch-khl" tvg-name="KHL Prime HD" tvg-logo="https://dimc48.github.io/msx/img/channels/khl-prime.png" group-title="Спорт HD",KHL Prime HD
-https://flussonic.mkpnet.ru/tv-e3d23fc7511b5fcd/video.m3u8
+https://stream8.cinerama.uz/1422/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ch-viju" tvg-name="viju+ Sport HD" tvg-logo="https://dimc48.github.io/msx/img/channels/viju-sport.png" group-title="Спорт HD",viju+ Sport HD
 http://31.148.5.241/Viasat_Sport/index.m3u8
 #EXTINF:-1 tvg-id="ch-udar" tvg-name="Телеканал UDAR HD" tvg-logo="https://dimc48.github.io/msx/img/channels/udar.svg" group-title="Спорт HD",Телеканал UDAR HD
