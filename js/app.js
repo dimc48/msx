@@ -70,16 +70,16 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8"
+                        },
+                        {
                                 "name": "⚡ Сервер 2 (Официальный HD)",
                                 "url": "http://bl.video.matchtv.ru/media/playlist/free_d46d0cf1712c0542ec7fd4f0808f600a_hd/17_89756005/1080/e6bef86de8a133cd7b27deb040758a00/4796141934.m3u8"
                         },
                         {
                                 "name": "⚡ Сервер 3 (Uplink KZ)",
                                 "url": "https://fs.uplink.kz/match/mono.m3u8?token=onlinetv2"
-                        },
-                        {
-                                "name": "⚡ Сервер 1 (Flussonic HD)",
-                                "url": "https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8"
                         }
                 ]
         },
@@ -92,16 +92,16 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 3 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/58793/hlsx/pl.m3u8"
+                                "name": "⚡ Сервер 1 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-ee3651e1e7ce5cbf/video.m3u8"
                         },
                         {
                                 "name": "⚡ Сервер 2 (Резерв HD)",
                                 "url": "http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8"
                         },
                         {
-                                "name": "⚡ Сервер 1 (Flussonic HD)",
-                                "url": "https://flussonic.mkpnet.ru/tv-ee3651e1e7ce5cbf/video.m3u8"
+                                "name": "⚡ Сервер 3 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/58793/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -114,16 +114,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 3 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/63048/hlsx/pl.m3u8"
-                        },
-                        {
-                                "name": "⚡ Сервер 2 (Резерв HD)",
-                                "url": "http://185.221.213.254:8080/Okko/tracks-v1a1/index.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD)",
                                 "url": "https://stream8.cinerama.uz/1243/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 3 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/63048/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -136,12 +132,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/52846/hlsx/pl.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD 50 FPS)",
                                 "url": "http://31.148.5.241/Match_Football_1_HD/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/52846/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -154,12 +150,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/35647/hlsx/pl.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD 50 FPS)",
                                 "url": "http://31.148.5.241/Match_Football_2_HD/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/35647/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -172,16 +168,16 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 3 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/48756/hlsx/pl.m3u8"
+                                "name": "⚡ Сервер 1 (Full HD 50 FPS)",
+                                "url": "http://31.148.5.241/Match_Football_3_HD/index.m3u8"
                         },
                         {
                                 "name": "⚡ Сервер 2 (Резерв HD)",
                                 "url": "http://185.57.68.33/110/index.m3u8"
                         },
                         {
-                                "name": "⚡ Сервер 1 (Full HD 50 FPS)",
-                                "url": "http://31.148.5.241/Match_Football_3_HD/index.m3u8"
+                                "name": "⚡ Сервер 3 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/48756/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -194,12 +190,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (Splay HD)",
-                                "url": "http://vod.splay.uz/live_splay/original/Setanta1HD/tracks-v1a1/mono.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD)",
                                 "url": "https://stream8.cinerama.uz/1263/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Splay HD)",
+                                "url": "http://vod.splay.uz/live_splay/original/Setanta1HD/tracks-v1a1/mono.m3u8"
                         }
                 ]
         },
@@ -212,12 +208,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (Splay HD)",
-                                "url": "http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD)",
                                 "url": "https://stream8.cinerama.uz/1264/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Splay HD)",
+                                "url": "http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8"
                         }
                 ]
         },
@@ -230,12 +226,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/82294/hlsx/pl.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Белтелеком HD)",
                                 "url": "https://edge55.dc.beltelecom.by/ngtrk/smil:belarus5.smil/playlist.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/82294/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -248,12 +244,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (HD 720p)",
-                                "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD 1080p)",
                                 "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (HD 720p)",
+                                "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
                         }
                 ]
         },
@@ -266,8 +262,8 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 4 (Direct HD)",
-                                "url": "http://31.148.5.241/Eurosport_1_HD/index.m3u8"
+                                "name": "⚡ Сервер 1 (Full HD 1080p)",
+                                "url": "https://stream8.cinerama.uz/1439/tracks-v1a1/mono.m3u8"
                         },
                         {
                                 "name": "⚡ Сервер 2 (Резерв HD)",
@@ -278,8 +274,8 @@
                                 "url": "http://vod.splay.uz/live_splay/original/Eurosport/tracks-v1a1/mono.m3u8"
                         },
                         {
-                                "name": "⚡ Сервер 1 (Full HD 1080p)",
-                                "url": "https://stream8.cinerama.uz/1439/tracks-v1a1/mono.m3u8"
+                                "name": "⚡ Сервер 4 (Direct HD)",
+                                "url": "http://31.148.5.241/Eurosport_1_HD/index.m3u8"
                         }
                 ]
         },
@@ -292,16 +288,16 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
+                                "name": "⚡ Сервер 1 (Full HD 1080p)",
+                                "url": "https://stream8.cinerama.uz/1452/index.m3u8"
+                        },
+                        {
                                 "name": "⚡ Сервер 2 (Резерв HD)",
                                 "url": "https://s7.iptv-24.net/1452/playlist.m3u8"
                         },
                         {
                                 "name": "⚡ Сервер 3 (Splay HD)",
                                 "url": "http://vod.splay.uz/live_splay/original/Eurosport2HD/tracks-v1a1/mono.m3u8"
-                        },
-                        {
-                                "name": "⚡ Сервер 1 (Full HD 1080p)",
-                                "url": "https://stream8.cinerama.uz/1452/index.m3u8"
                         }
                 ]
         },
@@ -314,16 +310,16 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 3 (Flussonic HD)",
-                                "url": "https://flussonic.mkpnet.ru/tv-e3d23fc7511b5fcd/video.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Uplink KZ HD)",
                                 "url": "https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv2"
                         },
                         {
                                 "name": "⚡ Сервер 2 (Cinerama HD)",
                                 "url": "https://stream8.cinerama.uz/1422/tracks-v1a1/mono.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 3 (Flussonic HD)",
+                                "url": "https://flussonic.mkpnet.ru/tv-e3d23fc7511b5fcd/video.m3u8"
                         }
                 ]
         },
@@ -336,12 +332,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (Direct HD)",
-                                "url": "http://31.148.5.241/Viasat_Sport/index.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Full HD)",
                                 "url": "https://stream8.cinerama.uz/1229/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Direct HD)",
+                                "url": "http://31.148.5.241/Viasat_Sport/index.m3u8"
                         }
                 ]
         },
@@ -382,12 +378,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (Sofast HD)",
-                                "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Cinerama HD)",
                                 "url": "https://stream8.cinerama.uz/1226/index.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (Sofast HD)",
+                                "url": "https://streams2.sofast.tv/vglive-sk-462904/playlist.m3u8"
                         }
                 ]
         },
@@ -428,12 +424,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/26338/hlsx/pl.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Flussonic HD)",
                                 "url": "https://flussonic.mkpnet.ru/tv-6db4f59c21aec361/video.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/26338/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -446,12 +442,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (TVDosug HD)",
-                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/47/hlsx/pl.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Flussonic HD)",
                                 "url": "https://flussonic.mkpnet.ru/tv-1bfac9df3d938c1f/video.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (TVDosug HD)",
+                                "url": "http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/47/hlsx/pl.m3u8"
                         }
                 ]
         },
@@ -464,12 +460,12 @@
                 "quality": "Full HD 1080p / 50 FPS",
                 "streams": [
                         {
-                                "name": "⚡ Сервер 2 (1080p 50 FPS)",
-                                "url": "http://31.148.5.241/kanal_3/index.m3u8"
-                        },
-                        {
                                 "name": "⚡ Сервер 1 (Flussonic HD)",
                                 "url": "https://flussonic.mkpnet.ru/tv-9dda1dd9d740a9a4/video.m3u8"
+                        },
+                        {
+                                "name": "⚡ Сервер 2 (1080p 50 FPS)",
+                                "url": "http://31.148.5.241/kanal_3/index.m3u8"
                         }
                 ]
         }

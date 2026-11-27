@@ -25,6 +25,8 @@ ctx.verify_mode = ssl.CERT_NONE
 
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Origin': 'https://dimc48.github.io',
+    'Referer': 'https://dimc48.github.io/',
     'Accept': '*/*'
 }
 
@@ -266,26 +268,26 @@ def harvest_live_streams():
         for name, url in ch_info['urls']:
             tasks.append((ch_id, name, url))
 
-    alive_map = {}
+    results = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=16) as executor:
         future_to_task = {executor.submit(check_stream, url): (ch_id, name, url) for ch_id, name, url in tasks}
         for future in concurrent.futures.as_completed(future_to_task):
             ch_id, name, url = future_to_task[future]
             try:
-                is_alive = future.result()
-                if is_alive:
-                    if ch_id not in alive_map:
-                        alive_map[ch_id] = []
-                    alive_map[ch_id].append({'name': name, 'url': url})
-                    print(f"  [OK] {ch_id} -> {name}: {url}")
-                else:
-                    print(f"  [FAIL] {ch_id} -> {name}: {url}")
+                results[(ch_id, url)] = future.result()
             except Exception as e:
-                print(f"  [ERR] {ch_id} -> {name}: {e}")
+                results[(ch_id, url)] = False
 
-    # Build final structured channels
+    # Build final structured channels STRICTLY PRESERVING candidate priority order
     for ch_id, ch_info in CHANNEL_CANDIDATES.items():
-        streams = alive_map.get(ch_id, [])
+        streams = []
+        for name, url in ch_info['urls']:
+            if results.get((ch_id, url), False):
+                streams.append({'name': name, 'url': url})
+                print(f"  [OK] {ch_id} -> {name}: {url}")
+            else:
+                print(f"  [FAIL] {ch_id} -> {name}: {url}")
+
         # If no server responded, keep primary candidate as fallback
         if not streams:
             print(f"  [WARN] No online stream for {ch_id}, preserving fallback.")
@@ -348,7 +350,7 @@ def update_msx_json_files(verified_channels):
                 for item in page.get('items', []):
                     title = item.get('title', '')
                     if title in stream_map:
-                        item['action'] = f"video:{stream_map[title]}"
+                        item['action'] = f"[settings:validate_links:0|video:{stream_map[title]}]"
 
     # Write to all JSON targets in msx_repo
     for fname in ['start.json', 'default.json', 'menu.json', 'msx.json', 'start_local.json']:
