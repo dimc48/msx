@@ -2,7 +2,7 @@
 #EXT-X-VERSION:3
 
 #EXTINF:-1 tvg-id="ch-matchtv" tvg-name="Матч ТВ HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-tv.png" group-title="Спорт HD",Матч ТВ HD
-https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8
+https://fs.uplink.kz/match/mono.m3u8?token=onlinetv2
 #EXTINF:-1 tvg-id="ch-premier" tvg-name="Матч Премьер HD" tvg-logo="https://dimc48.github.io/msx/img/channels/match-premier.png" group-title="Спорт HD",Матч Премьер HD
 http://185.23.80.23:8080/MATCH_PREMIER/index.m3u8
 #EXTINF:-1 tvg-id="ch-okko" tvg-name="Okko Спорт HD" tvg-logo="https://dimc48.github.io/msx/img/channels/okko-sport.png" group-title="Спорт HD",Okko Спорт HD
@@ -20,15 +20,15 @@ http://vod.splay.uz/live_splay/original/Setanta2HD/tracks-v1a1/mono.m3u8
 #EXTINF:-1 tvg-id="ch-bt5" tvg-name="Беларусь 5 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/belarus5.png" group-title="Спорт HD",Беларусь 5 HD
 http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/82294/hlsx/pl.m3u8
 #EXTINF:-1 tvg-id="ch-wwe" tvg-name="WWE TV HD" tvg-logo="https://dimc48.github.io/msx/img/channels/wwe.svg" group-title="Спорт HD",WWE TV HD
-https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8
+https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8
 #EXTINF:-1 tvg-id="ch-euro1" tvg-name="Eurosport 1 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport1.png" group-title="Спорт HD",Eurosport 1 HD
 http://31.148.5.241/Eurosport_1_HD/index.m3u8
 #EXTINF:-1 tvg-id="ch-euro2" tvg-name="Eurosport 2 HD" tvg-logo="https://dimc48.github.io/msx/img/channels/eurosport2.png" group-title="Спорт HD",Eurosport 2 HD
-https://s7.iptv-24.net/1452/playlist.m3u8
+https://stream8.cinerama.uz/1452/index.m3u8
 #EXTINF:-1 tvg-id="ch-khl" tvg-name="KHL Prime HD" tvg-logo="https://dimc48.github.io/msx/img/channels/khl-prime.png" group-title="Спорт HD",KHL Prime HD
-https://stream8.cinerama.uz/1422/tracks-v1a1/mono.m3u8
+https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv2
 #EXTINF:-1 tvg-id="ch-viju" tvg-name="viju+ Sport HD" tvg-logo="https://dimc48.github.io/msx/img/channels/viju-sport.png" group-title="Спорт HD",viju+ Sport HD
-http://31.148.5.241/Viasat_Sport/index.m3u8
+https://stream8.cinerama.uz/1229/index.m3u8
 #EXTINF:-1 tvg-id="ch-udar" tvg-name="Телеканал UDAR HD" tvg-logo="https://dimc48.github.io/msx/img/channels/udar.svg" group-title="Спорт HD",Телеканал UDAR HD
 http://rr2.tvdosug.net/~201af66d572197816b137775813348e2276/84449/hlsx/pl.m3u8
 #EXTINF:-1 tvg-id="ch-boxtv" tvg-name="Бокс ТВ HD" tvg-logo="https://dimc48.github.io/msx/img/channels/boxtv.svg" group-title="Спорт HD",Бокс ТВ HD

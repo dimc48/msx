@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updated_at": "2026-11-26T14:32:42Z",
+  "updated_at": "2026-11-27T00:27:50Z",
   "channels": [
     {
       "id": "ch-matchtv",
@@ -11,12 +11,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 1 (Flussonic HD)",
-          "url": "https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8"
-        },
-        {
           "name": "⚡ Сервер 3 (Uplink KZ)",
           "url": "https://fs.uplink.kz/match/mono.m3u8?token=onlinetv2"
+        },
+        {
+          "name": "⚡ Сервер 1 (Flussonic HD)",
+          "url": "https://flussonic.mkpnet.ru/tv-d3098523a4409835/video.m3u8"
         },
         {
           "name": "⚡ Сервер 2 (Официальный HD)",
@@ -189,12 +189,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 2 (HD 720p)",
-          "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
-        },
-        {
           "name": "⚡ Сервер 1 (Full HD 1080p)",
           "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (HD 720p)",
+          "url": "https://aka-live1050.delivery.roku.com/34b065a4-682e-4e46-97f1-5c9a26aab12a/t2-origin/out/v1/live_720.m3u8"
         }
       ]
     },
@@ -211,12 +211,12 @@
           "url": "http://31.148.5.241/Eurosport_1_HD/index.m3u8"
         },
         {
-          "name": "⚡ Сервер 2 (Резерв HD)",
-          "url": "https://s7.iptv-24.net/1439/playlist.m3u8"
-        },
-        {
           "name": "⚡ Сервер 1 (Full HD 1080p)",
           "url": "https://stream8.cinerama.uz/1439/tracks-v1a1/mono.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (Резерв HD)",
+          "url": "https://s7.iptv-24.net/1439/playlist.m3u8"
         },
         {
           "name": "⚡ Сервер 3 (Splay HD)",
@@ -233,12 +233,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 2 (Резерв HD)",
-          "url": "https://s7.iptv-24.net/1452/playlist.m3u8"
-        },
-        {
           "name": "⚡ Сервер 1 (Full HD 1080p)",
           "url": "https://stream8.cinerama.uz/1452/index.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (Резерв HD)",
+          "url": "https://s7.iptv-24.net/1452/playlist.m3u8"
         },
         {
           "name": "⚡ Сервер 3 (Splay HD)",
@@ -255,16 +255,16 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
+          "name": "⚡ Сервер 1 (Uplink KZ HD)",
+          "url": "https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv2"
+        },
+        {
           "name": "⚡ Сервер 2 (Cinerama HD)",
           "url": "https://stream8.cinerama.uz/1422/tracks-v1a1/mono.m3u8"
         },
         {
           "name": "⚡ Сервер 3 (Flussonic HD)",
           "url": "https://flussonic.mkpnet.ru/tv-e3d23fc7511b5fcd/video.m3u8"
-        },
-        {
-          "name": "⚡ Сервер 1 (Uplink KZ HD)",
-          "url": "https://fs.uplink.kz/khl_prime/mono.m3u8?token=onlinetv2"
         }
       ]
     },
@@ -277,12 +277,12 @@
       "quality": "Full HD 1080p / 50 FPS",
       "streams": [
         {
-          "name": "⚡ Сервер 2 (Direct HD)",
-          "url": "http://31.148.5.241/Viasat_Sport/index.m3u8"
-        },
-        {
           "name": "⚡ Сервер 1 (Full HD)",
           "url": "https://stream8.cinerama.uz/1229/index.m3u8"
+        },
+        {
+          "name": "⚡ Сервер 2 (Direct HD)",
+          "url": "http://31.148.5.241/Viasat_Sport/index.m3u8"
         }
       ]
     },
